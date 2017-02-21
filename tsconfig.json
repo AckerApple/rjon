@@ -3,6 +3,6 @@
     "module": "commonjs"
   },
   "files": [
-    "index.ts"
+    "app/index.ts"
   ]
 }
