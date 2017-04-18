@@ -1,9 +1,14 @@
-import 'zone.js';
-import 'reflect-metadata';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+console.log('Using JiT')
 
-import { AppModule } from './app.module';
+import 'zone.js'
+import 'reflect-metadata'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
+//import { enableProdMode } from "@angular/core"
+import { AppModule } from './src/app.module'
+import { supportDocument } from 'ack-angular-fx/web-animations.min'
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+supportDocument(document)
 
-console.log(282,484,999)
+//enableProdMode()
+
+platformBrowserDynamic().bootstrapModule(AppModule)

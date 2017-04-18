@@ -1,0 +1,1 @@
+export const string = "<div *ngIf=\"!AppData.invalidJson &amp;&amp; AppData.rjon\"><absolute-overflow-y><div [innerHtml]=\"AppData.rjon | dump | safeHtml\"></div></absolute-overflow-y></div>"

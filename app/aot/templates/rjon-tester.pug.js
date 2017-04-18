@@ -1,0 +1,4 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.string = "<div class=\"flex child-pad-xs child-margin-xxs\"><div class=\"border border-grey-6x bg-grey-6x\">{{ testRoutes.length }} tests</div><div class=\"border border-grey-6x bg-grey-6x\">{{ actualTestRoutes.length }} ready</div></div><br/><label>Select Host</label><select class=\"width-full\" (change)=\"setHostByIndex($event.target.value)\"><option></option><option *ngFor=\"let host of AppData.rjon.hosts; let i=index\" [value]=\"i\" [selected]=\"host.hostname==(hostModel&amp;&amp;hostModel.hostname)\">{{ host.hostname }}:{{ host.port || 80 }}</option></select><br/><div class=\"pad-top flex text-center\" *ngIf=\"hostModel\" [@500]=\"'fadeInUp'\"><a class=\"flex-1 bg-calm pad-xs text-white\">Run Test{{ actualTestRoutes.length > 1 ? 's' : '' }}</a></div><br/><table-of-routes [routes]=\"actualRoutes\"></table-of-routes>";
+//# sourceMappingURL=rjon-tester.pug.js.map

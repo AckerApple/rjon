@@ -1,0 +1,10 @@
+.markdown-body
+  table
+    thead
+      tr
+        th HOSTNAME
+        th PORT
+    tbody
+      tr(*ngFor="let host of hosts|array")
+        td {{ host.hostname }}
+        td {{ host.port }}

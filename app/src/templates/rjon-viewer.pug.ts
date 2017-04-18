@@ -1,0 +1,1 @@
+export const string = "<rjon-markdown [rjon]=\"AppData.rjon\" (onChange)=\"AppData.setSaveRjon(AppData.rjon)\"></rjon-markdown>"

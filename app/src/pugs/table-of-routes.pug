@@ -1,0 +1,22 @@
+.markdown-body
+  table
+    thead
+      tr
+        th METHOD
+        th ROUTE
+        th RETURNS
+        th STAT
+    tbody
+      tr(*ngFor="let route of routes|array")
+        td {{ route.method }}
+        td
+          div(*ngIf="links")
+            a(href="\#{{route.method+':'+route.path | markdownAnchor}}" attr.replaceref="\#{{route.method+':'+route.path | markdownAnchor}}" pageScroll)
+              |{{ route.path }}
+          div(*ngIf="!links")
+            |{{ route.path }}
+        td {{ route.returnType }}
+        td.text-3x
+          .child-margin-xxs(*ngIf="route.status")
+            span(*ngFor="let status of route.status|array" "[attr.title]"="statIconMap[status] ? statIconMap[status].details : status")
+              |{{ statIconMap[status].icon ? statIconMap[status].icon : status }}

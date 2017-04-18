@@ -1,0 +1,4 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.string = "<div class=\"markdown-body\"><table><thead><tr><th>METHOD</th><th>ROUTE</th><th>RETURNS</th><th>STAT</th></tr></thead><tbody><tr *ngFor=\"let route of routes|array\"><td>{{ route.method }}</td><td><div *ngIf=\"links\"><a href=\"#{{route.method+':'+route.path | markdownAnchor}}\" attr.replaceref=\"#{{route.method+':'+route.path | markdownAnchor}}\" pageScroll=\"pageScroll\">{{ route.path }}</a></div><div *ngIf=\"!links\">{{ route.path }}</div>{{ route.path.length }}</td><td>{{ route.returnType }}</td><td class=\"text-3x\"><div class=\"child-margin-xxs\" *ngIf=\"route.status\"><span *ngFor=\"let status of route.status|array\" [attr.title]=\"statIconMap[status] ? statIconMap[status].details : status\">{{ statIconMap[status].icon ? statIconMap[status].icon : status }}</span></div></td></tr></tbody></table></div>";
+//# sourceMappingURL=table-of-routes.pug.js.map

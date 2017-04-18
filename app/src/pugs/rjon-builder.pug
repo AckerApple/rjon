@@ -1,0 +1,3 @@
+div(*ngIf="!AppData.invalidJson && AppData.rjon")
+  absolute-overflow-y
+    div("[innerHtml]"="AppData.rjon | dump | safeHtml")
