@@ -26,7 +26,8 @@ const assert = {
 export class Tester{
   //public requestSampleRoute:any
 
-  log(options:{type, message:string}){
+  log(options){
+    options = options || {}
     switch(options.type){
       case 'success':
         options.message = '\x1b[32m' + options.message + '\x1b[0m'

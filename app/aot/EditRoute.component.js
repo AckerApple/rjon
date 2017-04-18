@@ -40,7 +40,7 @@ var EditRoute = (function () {
     };
     EditRoute.prototype.addSample = function () {
         this.route.sample = pipes_class_1.pipes.array(this.route.sample);
-        this.route.sample.push({});
+        this.route.sample.push({ title: null, timeout: null, statusCode: null, only: null, skip: null });
     };
     EditRoute.prototype.addSampleTest = function (sample) {
         sample.test = pipes_class_1.pipes.array(sample.test);

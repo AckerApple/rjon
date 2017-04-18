@@ -17,31 +17,57 @@ var rjonTester_1 = require("./rjonTester");
 var prefx_1 = require("./prefx");
 var RjonTester = (function () {
     function RjonTester(AppData, http) {
+        var _this = this;
         this.AppData = AppData;
         this.http = http;
+        this.testlog = [];
         this.testing = false;
-        this.testResults = [];
-        this.testRoutes = [];
-        this.actualTestRoutes = [];
-        this.actualRoutes = [];
         this.myTester = new rjonTester_1.Tester();
+        this.testRoutes = [];
+        this.testRoutesChange = new core_1.EventEmitter();
+        this.actualRoutes = [];
+        this.actualRoutesChange = new core_1.EventEmitter();
+        this.actualTestRoutes = [];
+        this.actualTestRoutesChange = new core_1.EventEmitter();
         this.hostModelChange = new core_1.EventEmitter();
+        this.refChange = new core_1.EventEmitter();
+        this.myTester.log = function (options) { return _this.testlog.push(options); };
         this.myTester.requestSampleRoute = function (sample, route, options) {
             options = options || {};
             options.host = options.host || 'localhost';
             var simplePath = rjonTester_1.Tester.getRouteSamplePath(route, sample);
+            var url = 'http://' + _this.hostModel.hostname + ':' + _this.hostModel.port + simplePath;
             var reqops = {
                 method: route.method || 'GET',
-                url: 'http://' + options.host + ':' + options.port + simplePath,
                 body: sample.request || sample.post
             };
             //send request
-            return this.http.request(reqops);
+            return _this.http.request(url, reqops).toPromise()
+                .then(function (response) { return _this.parseResponse(response); })
+                .catch(function (response) { return Promise.reject(_this.parseResponse(response)); });
         };
     }
+    RjonTester.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            //this.ref = Object.assign(this.ref||this,this)&&this
+            _this.ref = Object.assign(_this, _this.ref);
+            _this.refChange.emit(_this.ref);
+        }, 0);
+    };
+    RjonTester.prototype.parseResponse = function (response) {
+        if (response['data'])
+            return response;
+        if (response.headers.get('Content-Type') == 'application/json') {
+            try {
+                response['data'] = JSON.parse(response.body || response._body);
+            }
+            catch (e) { }
+        }
+        return response;
+    };
     RjonTester.prototype.ngOnInit = function () {
         var _this = this;
-        this.hostModel = this.getDefaultHostModel();
         return this.AppData.load.then(function () {
             if (!_this.AppData.rjon || !_this.AppData.rjon.routes)
                 return;
@@ -51,6 +77,10 @@ var RjonTester = (function () {
             _this.actualTestRoutes = rjonTester_1.Tester.getRouteActualTests(_this.AppData.rjon.routes);
             //unique routes with ready to use tests
             _this.actualRoutes = rjonTester_1.Tester.getRoutesWithActualTests(_this.AppData.rjon.routes);
+            _this.testRoutesChange.emit(_this.testRoutes);
+            _this.actualRoutesChange.emit(_this.actualTestRoutes);
+            _this.actualTestRoutesChange.emit(_this.actualRoutes);
+            _this.hostModel = _this.getDefaultHostModel();
         });
     };
     RjonTester.prototype.getDefaultHostModel = function () {
@@ -65,17 +95,53 @@ var RjonTester = (function () {
         this.hostModelChange.emit(this.hostModel);
     };
     RjonTester.prototype.runTest = function () {
+        var _this = this;
         if (this.testing)
             return;
+        this.testlog.length = 0;
         this.testing = true;
-        return this.myTester.testRoutes(this.AppData.rjon.routes, this.hostModel);
+        return this.myTester.testRoutes(this.AppData.rjon.routes, this.hostModel)
+            .catch(function (e) { return console.log(_this.error = e); })
+            .then(function () { return _this.testing = false; });
     };
     return RjonTester;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
+], RjonTester.prototype, "testRoutes", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RjonTester.prototype, "testRoutesChange", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], RjonTester.prototype, "actualRoutes", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RjonTester.prototype, "actualRoutesChange", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], RjonTester.prototype, "actualTestRoutes", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RjonTester.prototype, "actualTestRoutesChange", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
 ], RjonTester.prototype, "hostModelChange", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], RjonTester.prototype, "ref", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RjonTester.prototype, "refChange", void 0);
 RjonTester = __decorate([
     core_1.Component({
         selector: 'rjon-tester',

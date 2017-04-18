@@ -23,8 +23,18 @@ var RjonMarkdown = (function () {
     RjonMarkdown.prototype.serverUrlByRoute = function (host, route, sample) {
         return rjonHelper.serverUrlByRoute(host, route, sample);
     };
+    /* deprecated */
     RjonMarkdown.prototype.defToArray = function (sample) {
         return rjonHelper.defToArray(sample);
+    };
+    RjonMarkdown.prototype.deleteRoute = function (route) {
+        for (var x = this.rjon.routes.length - 1; x >= 0; --x) {
+            if (this.rjon.routes[x] == route) {
+                this.rjon.routes.splice(x, 1);
+                this.onChange.emit();
+                return;
+            }
+        }
     };
     return RjonMarkdown;
 }());

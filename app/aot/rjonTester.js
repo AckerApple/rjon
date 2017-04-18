@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("rxjs/add/operator/toPromise");
 var pipes_class_1 = require("ack-angular/pipes.class");
 var ack = require("ack-x/index-browser");
 var icons = {
@@ -14,7 +15,7 @@ var assert = {
     equal: function (a, b, message) {
         if (a == b)
             return;
-        throw message ? new AssertionError(message) : new AssertionError(a.toString() + ' == ' + b.toString());
+        throw message ? new AssertionError(message) : new AssertionError(a + ' == ' + b);
     }
 };
 /*if (process.platform === 'win32') {
@@ -24,6 +25,21 @@ var Tester = (function () {
     function Tester() {
     }
     //public requestSampleRoute:any
+    Tester.prototype.log = function (options) {
+        options = options || {};
+        switch (options.type) {
+            case 'success':
+                options.message = '\x1b[32m' + options.message + '\x1b[0m';
+                break;
+            case 'error':
+                options.message = '\x1b[31m' + options.message + '\x1b[0m';
+                break;
+            case 'info':
+                options.message = '\x1b[36m' + options.message + '\x1b[0m';
+                break;
+        }
+        console.log.apply(console, options.message);
+    };
     /**
       @options{
         port - what port to conduct test on
@@ -40,24 +56,22 @@ var Tester = (function () {
         var processTestError = function (test, err) {
             var msg = errs.length + ') ' + test.name;
             errs.push({ msg: msg, error: err });
-            console.log('\x1b[31m' + msg + '\x1b[0m');
+            _this.log({ type: 'error', message: msg });
             return err;
         };
         var processTest = function (test, err) {
-            //if(err)return err
             if (err) {
                 failing.push(test);
                 return processTestError(test, err);
             }
             ++successCount;
-            var msg = '\x1b[32m' + icons.check + ' \x1b[90m' + test.name + '\x1b[0m';
-            if (test.time > 75) {
-                msg += ' \x1b[31m(' + test.time + 'ms)\x1b[0m';
-            }
-            else if (test.time > 37) {
-                msg += ' \x1b[33m(' + test.time + 'ms)\x1b[0m';
-            }
-            console.log(msg);
+            /*let msg = test.name
+            if(test.time>75){
+              msg += ' ('+test.time+'ms)'
+            }else if(test.time>37){
+              msg += ' ('+test.time+'ms)'
+            }*/
+            _this.log({ type: 'success', message: test.name, test: test });
             passing.push(test);
         };
         var tests = [];
@@ -78,41 +92,40 @@ var Tester = (function () {
         }
         var runs = onlyArray.length ? onlyArray : tests;
         return this.runTestCases(runs, processTest)
-            .then(function () {
-            console.log();
-            console.log('\x1b[32m' + successCount + ' passing\x1b[0m');
-            if (errs.length) {
-                console.log('\x1b[31m' + errs.length + ' failing\x1b[0m');
-                errs.forEach(function (err, i) {
-                    console.log();
-                    console.log('\x1b[32m' + err.msg + '\x1b[0m');
-                    if (err.error.message) {
-                        console.log('\x1b[31m' + err.error.message + '\x1b[0m');
-                        if (err.error.stack && !err.error.isTimeoutError) {
-                            console.log('\x1b[90m' + err.error.stack + '\x1b[0m');
-                        }
-                    }
-                    else {
-                        console.log('\x1b[31m');
-                        console.log(err.error);
-                        console.log('\x1b[0m');
-                    }
-                });
+            .then(function () { return _this.processRanCases(passing, failing, errs); });
+        //.catch(e=>console.error(e))
+    };
+    Tester.prototype.processRanCases = function (passing, failing, errs) {
+        var _this = this;
+        this.log({ type: 'success', message: passing.length + ' passing' });
+        if (errs.length) {
+            this.log({ type: 'error', message: errs.length + ' failing' });
+            errs.forEach(function (err) { return _this.logCaseError(err); });
+        }
+        return { passing: passing, failing: failing };
+    };
+    Tester.prototype.logCaseError = function (err) {
+        this.log({ type: 'error', message: err.msg, error: err });
+        var response = err.error || err;
+        var data = response.data || response; //try parsed json ELSE error is response
+        var resErr = data.error || data; //try response body for error ELSE error is body
+        if (resErr.message) {
+            this.log({ type: 'error', message: resErr.message });
+            if (resErr.stack && !resErr.isTimeoutError) {
+                this.log({ type: 'error', message: resErr.stack });
             }
-            return { passing: passing, failing: failing };
-        })
-            .catch(function (e) { return console.error(e); });
+        }
     };
     Tester.prototype.runTestCase = function (test) {
-        if (test.sample.test.skip) {
-            console.log('\x1b[36m- ' + test.name + '\x1b[0m');
-            return;
-        }
         var startTime = Date.now();
         return test.test()
             .then(function (x) { return (test.time = Date.now() - startTime) && x; });
     };
     Tester.prototype.promiseTestCase = function (test, processTest) {
+        if (test.sample.test.skip) {
+            this.log({ type: 'info', message: 'skipped ' + test.name, test: { time: 0 } });
+            return;
+        }
         return Promise.resolve(this.runTestCase(test))
             .catch(function (err) { return err; })
             .then(function (err) { return processTest(test, err); });
@@ -223,7 +236,8 @@ var Tester = (function () {
                 }
             }
             var statusCode = sample.test.statusCode || 200;
-            assert.equal(res.statusCode, statusCode);
+            var resStatus = res.status || res.statusCode;
+            assert.equal(resStatus, statusCode);
             return Promise.all(promises).then(function () { });
         };
     };
@@ -253,7 +267,8 @@ var Tester = (function () {
     Tester.prototype.mapSample = function (sample, route, options) {
         var test = this.getTestBySampleRoute(sample, route, options);
         var simplePath = Tester.getRouteSamplePath(route, sample);
-        var itsName = (route.method || 'GET') + ':' + options.port + simplePath;
+        //const itsName = (route.method||'GET')+':'+options.port+simplePath
+        var itsName = (route.method || 'GET') + ':' + simplePath;
         if (!sample.test)
             return;
         if (options.method && route.method != options.method) {

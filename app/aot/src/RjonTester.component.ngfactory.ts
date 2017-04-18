@@ -8,12 +8,14 @@
 
 import * as import0 from '@angular/core';
 import * as import1 from '@angular/forms';
-import * as import2 from '../../src/RjonTester.component';
-import * as import3 from '@angular/common';
-import * as import4 from './app.module.ngfactory';
-import * as import5 from '../../src/app.module';
-import * as import6 from '../../src/AppData';
-import * as import7 from '@angular/http';
+import * as import2 from '@angular/common';
+import * as import3 from '../node_modules/ack-angular/components.ngfactory';
+import * as import4 from 'ack-angular/components';
+import * as import5 from '../../src/RjonTester.component';
+import * as import6 from './app.module.ngfactory';
+import * as import7 from '../../src/app.module';
+import * as import8 from '../../src/AppData';
+import * as import9 from '@angular/http';
 const styles_RjonTester:any[] = ([] as any[]);
 export const RenderType_RjonTester:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
@@ -7249,7 +7251,7 @@ function View_RjonTester_1(l:any):import0.ɵViewDefinition {
 }
 function View_RjonTester_2(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
-      (l()(),import0.ɵeld(0,(null as any),(null as any),2,'div',[[
+      (l()(),import0.ɵeld(0,(null as any),(null as any),3,'div',[[
         'class',
         'pad-top flex text-center'
       ]
@@ -7259,52 +7261,154 @@ function View_RjonTester_2(l:any):import0.ɵViewDefinition {
         0
       ]
     ],(null as any),(null as any),(null as any),(null as any))),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'a',[[
+      (l()(),import0.ɵeld(0,(null as any),(null as any),2,'a',[[
         'class',
-        'flex-1 bg-calm pad-xs text-white'
+        'flex-1 pad-xs text-white'
       ]
-    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      ],(null as any),[[
+        (null as any),
+        'click'
+      ]
+    ],(v,en,$event) => {
+      var ad:boolean = true;
+      var co:any = v.component;
+      if (('click' === en)) {
+        const pd_0:any = ((<any>co.runTest()) !== false);
+        ad = (pd_0 && ad);
+      }
+      return ad;
+    },(null as any),(null as any))),
+    import0.ɵdid(139264,(null as any),0,import2.NgClass,[
+      import0.IterableDiffers,
+      import0.KeyValueDiffers,
+      import0.ElementRef,
+      import0.Renderer
+    ]
+    ,{
+      klass: [
+        0,
+        'klass'
+      ]
+      ,
+      ngClass: [
+        1,
+        'ngClass'
+      ]
+
+    }
+    ,(null as any)),
     (l()(),import0.ɵted((null as any),[
       'Run Test',
       ''
     ]
     ))
   ]
-  ,(null as any),(ck,v) => {
+  ,(ck,v) => {
+    var co:any = v.component;
+    const currVal_1:any = 'flex-1 pad-xs text-white';
+    const currVal_2:any = (co.testing? 'bg-grey-6x': 'bg-calm');
+    ck(v,2,0,currVal_1,currVal_2);
+  },(ck,v) => {
     var co:any = v.component;
     const currVal_0:any = 'fadeInUp';
     ck(v,0,0,currVal_0);
-    const currVal_1:any = ((co.actualTestRoutes.length > 1)? 's': '');
-    ck(v,2,0,currVal_1);
+    const currVal_3:any = ((co.actualTestRoutes.length > 1)? 's': '');
+    ck(v,3,0,currVal_3);
+  });
+}
+function View_RjonTester_3(l:any):import0.ɵViewDefinition {
+  return import0.ɵvid(0,[
+      (l()(),import0.ɵeld(0,(null as any),(null as any),2,'div',[[
+        'class',
+        'pad-top'
+      ]
+      ],[[
+        24,
+        '@500',
+        0
+      ]
+    ],(null as any),(null as any),(null as any),(null as any))),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),0,'div',[[
+        'class',
+        'fa fa-spinner fa-spin fa-lg'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),[' Testing...']))
+  ]
+  ,(null as any),(ck,v) => {
+    const currVal_0:any = 'fadeInUp';
+    ck(v,0,0,currVal_0);
+  });
+}
+function View_RjonTester_5(l:any):import0.ɵViewDefinition {
+  return import0.ɵvid(0,[
+    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'span',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),[
+      '',
+      'ms '
+    ]
+    ))
+  ]
+  ,(null as any),(ck,v) => {
+    const currVal_0:any = (<any>v.parent).context.$implicit.test.time;
+    ck(v,1,0,currVal_0);
+  });
+}
+function View_RjonTester_4(l:any):import0.ɵViewDefinition {
+  return import0.ɵvid(0,[
+      (l()(),import0.ɵeld(0,(null as any),(null as any),4,'div',([] as any[]),[[
+        24,
+        '@500',
+        0
+      ]
+    ],(null as any),(null as any),(null as any),(null as any))),
+    import0.ɵdid(139264,(null as any),0,import2.NgClass,[
+      import0.IterableDiffers,
+      import0.KeyValueDiffers,
+      import0.ElementRef,
+      import0.Renderer
+    ]
+      ,{ngClass: [
+        0,
+        'ngClass'
+      ]
+    },(null as any)),
+    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_RjonTester_5)),
+    import0.ɵdid(8192,(null as any),0,import2.NgIf,[
+      import0.ViewContainerRef,
+      import0.TemplateRef
+    ]
+      ,{ngIf: [
+        0,
+        'ngIf'
+      ]
+    },(null as any)),
+    (l()(),import0.ɵted((null as any),[
+      '',
+      ''
+    ]
+    ))
+  ]
+  ,(ck,v) => {
+    const currVal_1:any = ('bg-' + ((v.context.$implicit.type == 'error')? 'danger': v.context.$implicit.type));
+    ck(v,1,0,currVal_1);
+    const currVal_2:any = (((v.context.$implicit.test == null)? (null as any): v.context.$implicit.test.time) != (null as any));
+    ck(v,3,0,currVal_2);
+  },(ck,v) => {
+    const currVal_0:any = 'fadeInUp';
+    ck(v,0,0,currVal_0);
+    const currVal_3:any = v.context.$implicit.message;
+    ck(v,4,0,currVal_3);
   });
 }
 export function View_RjonTester_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
-      (l()(),import0.ɵeld(0,(null as any),(null as any),4,'div',[[
-        'class',
-        'flex child-pad-xs child-margin-xxs'
+    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'error-well',([] as any[]),(null as any),(null as any),(null as any),import3.View_ErrorWell_0,import3.RenderType_ErrorWell)),
+      import0.ɵdid(57344,(null as any),0,import4.ErrorWell,([] as any[]),{error: [
+        0,
+        'error'
       ]
-    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'div',[[
-        'class',
-        'border border-grey-6x bg-grey-6x'
-      ]
-    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵted((null as any),[
-      '',
-      ' tests'
-    ]
-    )),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'div',[[
-        'class',
-        'border border-grey-6x bg-grey-6x'
-      ]
-    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵted((null as any),[
-      '',
-      ' ready'
-    ]
-    )),
+    },(null as any)),
     (l()(),import0.ɵeld(0,(null as any),(null as any),0,'br',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
     (l()(),import0.ɵeld(0,(null as any),(null as any),1,'label',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
     (l()(),import0.ɵted((null as any),['Select Host'])),
@@ -7318,7 +7422,7 @@ export function View_RjonTester_0(l:any):import0.ɵViewDefinition {
       ]
     ],(v,en,$event) => {
       var ad:boolean = true;
-      var co:import2.RjonTester = v.component;
+      var co:import5.RjonTester = v.component;
       if (('change' === en)) {
         const pd_0:any = ((<any>co.setHostByIndex($event.target.value)) !== false);
         ad = (pd_0 && ad);
@@ -7347,7 +7451,7 @@ export function View_RjonTester_0(l:any):import0.ɵViewDefinition {
     ]
     ,(null as any),(null as any)),
     (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_RjonTester_1)),
-    import0.ɵdid(401408,(null as any),0,import3.NgForOf,[
+    import0.ɵdid(401408,(null as any),0,import2.NgForOf,[
       import0.ViewContainerRef,
       import0.TemplateRef,
       import0.IterableDiffers
@@ -7359,7 +7463,7 @@ export function View_RjonTester_0(l:any):import0.ɵViewDefinition {
     },(null as any)),
     (l()(),import0.ɵeld(0,(null as any),(null as any),0,'br',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
     (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_RjonTester_2)),
-    import0.ɵdid(8192,(null as any),0,import3.NgIf,[
+    import0.ɵdid(8192,(null as any),0,import2.NgIf,[
       import0.ViewContainerRef,
       import0.TemplateRef
     ]
@@ -7368,36 +7472,68 @@ export function View_RjonTester_0(l:any):import0.ɵViewDefinition {
         'ngIf'
       ]
     },(null as any)),
+    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_RjonTester_3)),
+    import0.ɵdid(8192,(null as any),0,import2.NgIf,[
+      import0.ViewContainerRef,
+      import0.TemplateRef
+    ]
+      ,{ngIf: [
+        0,
+        'ngIf'
+      ]
+    },(null as any)),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),2,'div',[[
+        'class',
+        'pad-top child-margin-xxs child-pad-xxs text-sm'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_RjonTester_4)),
+    import0.ɵdid(401408,(null as any),0,import2.NgForOf,[
+      import0.ViewContainerRef,
+      import0.TemplateRef,
+      import0.IterableDiffers
+    ]
+      ,{ngForOf: [
+        0,
+        'ngForOf'
+      ]
+    },(null as any)),
     (l()(),import0.ɵeld(0,(null as any),(null as any),0,'br',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'table-of-routes',([] as any[]),(null as any),(null as any),(null as any),import4.View_TableOfRoutes_0,import4.RenderType_TableOfRoutes)),
-      import0.ɵdid(24576,(null as any),0,import5.TableOfRoutes,([] as any[]),{routes: [
+      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'h4',[[
+        'class',
+        'margin-bottom-0'
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['Table of Tests'])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'table-of-routes',([] as any[]),(null as any),(null as any),(null as any),import6.View_TableOfRoutes_0,import6.RenderType_TableOfRoutes)),
+      import0.ɵdid(24576,(null as any),0,import7.TableOfRoutes,([] as any[]),{routes: [
         0,
         'routes'
       ]
     },(null as any))
   ]
   ,(ck,v) => {
-    var co:import2.RjonTester = v.component;
-    const currVal_2:any = co.AppData.rjon.hosts;
+    var co:import5.RjonTester = v.component;
+    const currVal_0:any = co.error;
+    ck(v,1,0,currVal_0);
+    const currVal_1:any = co.AppData.rjon.hosts;
+    ck(v,10,0,currVal_1);
+    const currVal_2:any = co.hostModel;
     ck(v,13,0,currVal_2);
-    const currVal_3:any = co.hostModel;
-    ck(v,16,0,currVal_3);
-    const currVal_4:any = co.actualRoutes;
-    ck(v,19,0,currVal_4);
-  },(ck,v) => {
-    var co:import2.RjonTester = v.component;
-    const currVal_0:any = co.testRoutes.length;
-    ck(v,2,0,currVal_0);
-    const currVal_1:any = co.actualTestRoutes.length;
-    ck(v,4,0,currVal_1);
-  });
+    const currVal_3:any = co.testing;
+    ck(v,15,0,currVal_3);
+    const currVal_4:any = co.testlog;
+    ck(v,18,0,currVal_4);
+    const currVal_5:any = co.actualRoutes;
+    ck(v,23,0,currVal_5);
+  },(null as any));
 }
 function View_RjonTester_Host_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
     (l()(),import0.ɵeld(0,(null as any),(null as any),1,'rjon-tester',([] as any[]),(null as any),(null as any),(null as any),View_RjonTester_0,RenderType_RjonTester)),
-    import0.ɵdid(57344,(null as any),0,import2.RjonTester,[
-      import6.AppData,
-      import7.Http
+    import0.ɵdid(2154496,(null as any),0,import5.RjonTester,[
+      import8.AppData,
+      import9.Http
     ]
     ,(null as any),(null as any))
   ]
@@ -7405,5 +7541,18 @@ function View_RjonTester_Host_0(l:any):import0.ɵViewDefinition {
     ck(v,1,0);
   },(null as any));
 }
-export const RjonTesterNgFactory:import0.ComponentFactory<import2.RjonTester> = import0.ɵccf('rjon-tester',import2.RjonTester,View_RjonTester_Host_0,{hostModelChange: 'hostModelChange'},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL1Jqb25UZXN0ZXIuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL1Jqb25UZXN0ZXIuY29tcG9uZW50LnRzIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvUmpvblRlc3Rlci5jb21wb25lbnQudHMuUmpvblRlc3Rlci5odG1sIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvUmpvblRlc3Rlci5jb21wb25lbnQudHMuUmpvblRlc3Rlcl9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxkaXYgY2xhc3M9XCJmbGV4IGNoaWxkLXBhZC14cyBjaGlsZC1tYXJnaW4teHhzXCI+PGRpdiBjbGFzcz1cImJvcmRlciBib3JkZXItZ3JleS02eCBiZy1ncmV5LTZ4XCI+e3sgdGVzdFJvdXRlcy5sZW5ndGggfX0gdGVzdHM8L2Rpdj48ZGl2IGNsYXNzPVwiYm9yZGVyIGJvcmRlci1ncmV5LTZ4IGJnLWdyZXktNnhcIj57eyBhY3R1YWxUZXN0Um91dGVzLmxlbmd0aCB9fSByZWFkeTwvZGl2PjwvZGl2Pjxici8+PGxhYmVsPlNlbGVjdCBIb3N0PC9sYWJlbD48c2VsZWN0IGNsYXNzPVwid2lkdGgtZnVsbFwiIChjaGFuZ2UpPVwic2V0SG9zdEJ5SW5kZXgoJGV2ZW50LnRhcmdldC52YWx1ZSlcIj48b3B0aW9uPjwvb3B0aW9uPjxvcHRpb24gKm5nRm9yPVwibGV0IGhvc3Qgb2YgQXBwRGF0YS5yam9uLmhvc3RzOyBsZXQgaT1pbmRleFwiIFt2YWx1ZV09XCJpXCIgW3NlbGVjdGVkXT1cImhvc3QuaG9zdG5hbWU9PShob3N0TW9kZWwmYW1wOyZhbXA7aG9zdE1vZGVsLmhvc3RuYW1lKVwiPnt7IGhvc3QuaG9zdG5hbWUgfX06e3sgaG9zdC5wb3J0IHx8IDgwIH19PC9vcHRpb24+PC9zZWxlY3Q+PGJyLz48ZGl2IGNsYXNzPVwicGFkLXRvcCBmbGV4IHRleHQtY2VudGVyXCIgKm5nSWY9XCJob3N0TW9kZWxcIiBbQDUwMF09XCInZmFkZUluVXAnXCI+PGEgY2xhc3M9XCJmbGV4LTEgYmctY2FsbSBwYWQteHMgdGV4dC13aGl0ZVwiPlJ1biBUZXN0e3sgYWN0dWFsVGVzdFJvdXRlcy5sZW5ndGggPiAxID8gJ3MnIDogJycgfX08L2E+PC9kaXY+PGJyLz48dGFibGUtb2Ytcm91dGVzIFtyb3V0ZXNdPVwiYWN0dWFsUm91dGVzXCI+PC90YWJsZS1vZi1yb3V0ZXM+IiwiPHJqb24tdGVzdGVyPjwvcmpvbi10ZXN0ZXI+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O01DQXdWO1FBQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtnQkFBQTs7O01BQUE7UUFBQTtRQUFBO01BQUE7O0lBQUE7T0FBQTtRQUFBO1FBQUE7TUFBQTtJQUFBO2dCQUFBOzs7TUFBQTtRQUFBO1FBQUE7TUFBQTs7SUFBQTtPQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBNkk7TUFBQTtNQUFBO01BQUE7SUFBQTtJQUFBOzs7SUFBaEY7SUFBN0QsU0FBNkQsU0FBN0Q7SUFBNkQ7SUFBN0QsU0FBNkQsU0FBN0Q7OztJQUF5RTtJQUF6RSxTQUF5RSxTQUF6RTtJQUE2STtJQUFBO0lBQUE7Ozs7O01BQWdFO1FBQUE7UUFBQTtNQUFBO01BQUE7UUFBQTtRQUFBO1FBQUE7TUFBQTtJQUFBO01BQTRFO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBNEM7TUFBQTtNQUFBO0lBQUE7SUFBQTs7OztJQUFoRTtJQUF4RCxTQUF3RCxTQUF4RDtJQUF3SDtJQUFBOzs7OztNQUE3cEI7UUFBQTtRQUFBO01BQUE7SUFBQTtNQUFnRDtRQUFBO1FBQUE7TUFBQTtJQUFBO0lBQThDO01BQUE7TUFBQTtJQUFBO0lBQUE7TUFBbUM7UUFBQTtRQUFBO01BQUE7SUFBQTtJQUE4QztNQUFBO01BQUE7SUFBQTtJQUFBO0lBQStDO0lBQUs7SUFBTztNQUFtQjtRQUFBO1FBQUE7TUFBQTtNQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7TUFBQTtNQUFBO01BQTJCO1FBQUE7UUFBQTtNQUFBO01BQTNCO0lBQUE7SUFBMEU7Z0JBQUE7OztNQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO0tBQUE7Z0JBQUE7OztNQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO0tBQUE7SUFBaUI7Z0JBQUE7Ozs7SUFBQTtPQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBd007SUFBSztnQkFBQTs7O0lBQUE7T0FBQTtRQUFBO1FBQUE7TUFBQTtJQUFBO0lBQXNMO0lBQUs7a0JBQUE7UUFBQTtRQUFBO01BQUE7SUFBQTs7OztJQUFoWTtJQUFSLFVBQVEsU0FBUjtJQUFtUDtJQUF0QyxVQUFzQyxTQUF0QztJQUE0TTtJQUFqQixVQUFpQixTQUFqQjs7O0lBQWxvQjtJQUFBO0lBQWlGO0lBQUE7Ozs7O0lDQS9LO2dCQUFBOzs7SUFBQTtLQUFBOzs7SUFBQTs7OyJ9
+export const RjonTesterNgFactory:import0.ComponentFactory<import5.RjonTester> = import0.ɵccf('rjon-tester',import5.RjonTester,View_RjonTester_Host_0,{
+  testRoutes: 'testRoutes',
+  actualRoutes: 'actualRoutes',
+  actualTestRoutes: 'actualTestRoutes',
+  hostModelChange: 'hostModelChange',
+  ref: 'ref'
+}
+,{
+  testRoutesChange: 'testRoutesChange',
+  actualRoutesChange: 'actualRoutesChange',
+  actualTestRoutesChange: 'actualTestRoutesChange',
+  refChange: 'refChange'
+}
+,([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL1Jqb25UZXN0ZXIuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL1Jqb25UZXN0ZXIuY29tcG9uZW50LnRzIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvUmpvblRlc3Rlci5jb21wb25lbnQudHMuUmpvblRlc3Rlci5odG1sIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvUmpvblRlc3Rlci5jb21wb25lbnQudHMuUmpvblRlc3Rlcl9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxlcnJvci13ZWxsIFtlcnJvcl09XCJlcnJvclwiPjwvZXJyb3Itd2VsbD48YnIvPjxsYWJlbD5TZWxlY3QgSG9zdDwvbGFiZWw+PHNlbGVjdCBjbGFzcz1cIndpZHRoLWZ1bGxcIiAoY2hhbmdlKT1cInNldEhvc3RCeUluZGV4KCRldmVudC50YXJnZXQudmFsdWUpXCI+PG9wdGlvbj48L29wdGlvbj48b3B0aW9uICpuZ0Zvcj1cImxldCBob3N0IG9mIEFwcERhdGEucmpvbi5ob3N0czsgbGV0IGk9aW5kZXhcIiBbdmFsdWVdPVwiaVwiIFtzZWxlY3RlZF09XCJob3N0Lmhvc3RuYW1lPT0oaG9zdE1vZGVsJmFtcDsmYW1wO2hvc3RNb2RlbC5ob3N0bmFtZSlcIj57eyBob3N0Lmhvc3RuYW1lIH19Ont7IGhvc3QucG9ydCB8fCA4MCB9fTwvb3B0aW9uPjwvc2VsZWN0Pjxici8+PGRpdiBjbGFzcz1cInBhZC10b3AgZmxleCB0ZXh0LWNlbnRlclwiICpuZ0lmPVwiaG9zdE1vZGVsXCIgW0A1MDBdPVwiJ2ZhZGVJblVwJ1wiPjxhIGNsYXNzPVwiZmxleC0xIHBhZC14cyB0ZXh0LXdoaXRlXCIgKGNsaWNrKT1cInJ1blRlc3QoKVwiIFtuZ0NsYXNzXT1cInRlc3Rpbmc/J2JnLWdyZXktNngnOidiZy1jYWxtJ1wiPlJ1biBUZXN0e3sgYWN0dWFsVGVzdFJvdXRlcy5sZW5ndGggPiAxID8gJ3MnIDogJycgfX08L2E+PC9kaXY+PGRpdiBjbGFzcz1cInBhZC10b3BcIiAqbmdJZj1cInRlc3RpbmdcIiBbQDUwMF09XCInZmFkZUluVXAnXCI+PGRpdiBjbGFzcz1cImZhIGZhLXNwaW5uZXIgZmEtc3BpbiBmYS1sZ1wiPjwvZGl2PiZuYnNwO1Rlc3RpbmcuLi48L2Rpdj48ZGl2IGNsYXNzPVwicGFkLXRvcCBjaGlsZC1tYXJnaW4teHhzIGNoaWxkLXBhZC14eHMgdGV4dC1zbVwiPjxkaXYgKm5nRm9yPVwibGV0IGxvZyBvZiB0ZXN0bG9nXCIgW25nQ2xhc3NdPVwiJ2JnLScrKGxvZy50eXBlPT0nZXJyb3InPydkYW5nZXInOmxvZy50eXBlKVwiIFtANTAwXT1cIidmYWRlSW5VcCdcIj48c3BhbiAqbmdJZj1cImxvZy50ZXN0Py50aW1lIT1udWxsXCI+e3sgbG9nLnRlc3QudGltZSB9fW1zJm5ic3A7PC9zcGFuPnt7IGxvZy5tZXNzYWdlIH19PC9kaXY+PC9kaXY+PGJyLz48aDQgY2xhc3M9XCJtYXJnaW4tYm90dG9tLTBcIj5UYWJsZSBvZiBUZXN0czwvaDQ+PHRhYmxlLW9mLXJvdXRlcyBbcm91dGVzXT1cImFjdHVhbFJvdXRlc1wiPjwvdGFibGUtb2Ytcm91dGVzPiIsIjxyam9uLXRlc3Rlcj48L3Jqb24tdGVzdGVyPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O01DQW1LO1FBQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtnQkFBQTs7O01BQUE7UUFBQTtRQUFBO01BQUE7O0lBQUE7T0FBQTtRQUFBO1FBQUE7TUFBQTtJQUFBO2dCQUFBOzs7TUFBQTtRQUFBO1FBQUE7TUFBQTs7SUFBQTtPQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBNkk7TUFBQTtNQUFBO01BQUE7SUFBQTtJQUFBOzs7SUFBaEY7SUFBN0QsU0FBNkQsU0FBN0Q7SUFBNkQ7SUFBN0QsU0FBNkQsU0FBN0Q7OztJQUF5RTtJQUF6RSxTQUF5RSxTQUF6RTtJQUE2STtJQUFBO0lBQUE7Ozs7O01BQWdFO1FBQUE7UUFBQTtNQUFBO01BQUE7UUFBQTtRQUFBO1FBQUE7TUFBQTtJQUFBO01BQTRFO1FBQUE7UUFBQTtNQUFBO01BQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtNQUFBO01BQUE7TUFBb0M7UUFBQTtRQUFBO01BQUE7TUFBcEM7SUFBQTtnQkFBQTs7Ozs7SUFBQTtLQUFBO01BQUE7UUFBQTtRQUFBO01BQUE7O01BQUE7UUFBQTtRQUFBO01BQUE7O0lBQUE7S0FBQTtJQUFtRztNQUFBO01BQUE7SUFBQTtJQUFBOzs7O0lBQWhHO0lBQXFEO0lBQXhELFNBQUcsVUFBcUQsU0FBeEQ7OztJQUFwQjtJQUF4RCxTQUF3RCxTQUF4RDtJQUErSztJQUFBOzs7OztNQUE4RDtRQUFBO1FBQUE7TUFBQTtNQUFBO1FBQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtNQUF5RDtRQUFBO1FBQUE7TUFBQTtJQUFBO0lBQStDOzs7SUFBbkU7SUFBckMsU0FBcUMsU0FBckM7Ozs7O0lBQXVTO0lBQW1DO01BQUE7TUFBQTtJQUFBO0lBQUE7OztJQUFBO0lBQUE7Ozs7O01BQWhKO1FBQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtnQkFBQTs7Ozs7SUFBQTtPQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBNkc7Z0JBQUE7OztJQUFBO09BQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtJQUFxRTtNQUFBO01BQUE7SUFBQTtJQUFBOzs7SUFBako7SUFBakMsU0FBaUMsU0FBakM7SUFBbUg7SUFBTixTQUFNLFNBQU47O0lBQXBCO0lBQXpGLFNBQXlGLFNBQXpGO0lBQWtMO0lBQUE7Ozs7O0lBQXo4QjtrQkFBQTtRQUFBO1FBQUE7TUFBQTtJQUFBO0lBQXlDO0lBQUs7SUFBTztNQUFtQjtRQUFBO1FBQUE7TUFBQTtNQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7TUFBQTtNQUFBO01BQTJCO1FBQUE7UUFBQTtNQUFBO01BQTNCO0lBQUE7SUFBMEU7Z0JBQUE7OztNQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO0tBQUE7Z0JBQUE7OztNQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO0tBQUE7SUFBaUI7Z0JBQUE7Ozs7SUFBQTtPQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBd007SUFBSztnQkFBQTs7O0lBQUE7T0FBQTtRQUFBO1FBQUE7TUFBQTtJQUFBO0lBQTZPO2dCQUFBOzs7SUFBQTtPQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7TUFBOEg7UUFBQTtRQUFBO01BQUE7SUFBQTtJQUE0RDtnQkFBQTs7OztJQUFBO09BQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtJQUErTTtNQUFLO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBNEI7SUFBbUI7a0JBQUE7UUFBQTtRQUFBO01BQUE7SUFBQTs7OztJQUE5Z0M7SUFBWixTQUFZLFNBQVo7SUFBMks7SUFBUixVQUFRLFNBQVI7SUFBbVA7SUFBdEMsVUFBc0MsU0FBdEM7SUFBa1E7SUFBckIsVUFBcUIsU0FBckI7SUFBK0w7SUFBTCxVQUFLLFNBQUw7SUFBb1I7SUFBakIsVUFBaUIsU0FBakI7Ozs7O0lDQTFoQztnQkFBQTs7O0lBQUE7S0FBQTs7O0lBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
