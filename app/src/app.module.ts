@@ -7,6 +7,7 @@ import {
   Pipe,
   EventEmitter,
   Input,
+  Output,
   Component,
   NgModule
 } from '@angular/core'
@@ -29,9 +30,10 @@ import { AppData } from "./AppData"
 import { TestRoute } from "./TestRoute.component"
 import { EditRoute } from "./EditRoute.component"
 import { OverviewComponent } from "./OverviewComponent.component"
+import { RjonMerge } from "./RjonMerge.component"
 import { RjonTester } from "./RjonTester.component"
-
 import { RjonMarkdown } from "./RjonMarkdown.component"
+import { statIconMap } from "./statIconMap"
 
 import * as nodedump from 'nodedump'
 
@@ -46,8 +48,31 @@ import * as nodedump from 'nodedump'
 import { string as rjonBuilder } from "./templates/rjon-builder.pug"
 @Component({
   selector:'rjon-builder',
-  template:rjonBuilder
+  template:rjonBuilder,
+  animations:fxArray
 }) export class RjonBuilder{
+  constructor(public AppData:AppData){}
+
+  routeToBgClass(route){
+    const method = (route.method||'GET').toUpperCase()
+
+    switch(method){
+      case 'GET':return 'bg-info'
+      case 'PUT':case 'POST':case 'PATCH':return 'bg-warning'
+      case 'DELETE':return 'bg-danger'
+    }
+    return ''
+  }
+}
+
+import { string as iconTable } from "./templates/icon-table.pug"
+@Component({
+  selector:'icon-table',
+  template:iconTable
+}) export class IconTable{
+  public statIconMap = statIconMap
+  @Input() activeIcons = []
+  @Output() onClick = new EventEmitter()
   constructor(public AppData:AppData){}
 }
 
@@ -59,7 +84,6 @@ import { string as tableOfHosts } from "./templates/table-of-hosts.pug"
   @Input() public hosts
 }
 
-import { statIconMap } from "./statIconMap"
 import { string as tableOfRoutes } from "./templates/table-of-routes.pug"
 @Component({
   selector:'table-of-routes',
@@ -112,7 +136,7 @@ import { string as rjonAppStage } from "./templates/rjon-app-stage.pug"
   animations: fxArray
 }) export class AppComponent {
   public version = packJson['version']
-  @Input() public panelAnim = 'slideInLeft'
+  @Input() public panelAnim = 'slideInRight'
 
   constructor(public AppData:AppData){}
 }
@@ -153,7 +177,9 @@ import { string as rjonViewer } from "./templates/rjon-viewer.pug"
     RouteReporter,
     AppComponent,
     OverviewComponent,
+    RjonMerge,
     RjonViewer,
+    IconTable,
     ...stateDecs
     //...ackDecs,
     //...ackPipes

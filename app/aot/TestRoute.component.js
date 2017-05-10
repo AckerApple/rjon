@@ -17,20 +17,25 @@ var rjonHelper = require("./rjonHelper");
 var TestRoute = (function () {
     function TestRoute(AckApi) {
         this.AckApi = AckApi;
+        this.route = {};
+        this.spaceSaving = true;
+        this.hostModelChange = new core_1.EventEmitter();
         this.rjonHelper = rjonHelper;
         this.sending = 0;
         this.headers = {
             'Content-Type': 'application/json'
         };
-        this.hostModelChange = new core_1.EventEmitter();
     }
     TestRoute.prototype.ngOnInit = function () {
         var _this = this;
-        this.pathModel = this.route.path;
-        this.methodModel = this.route.method;
+        this.pathModel = this.route['path'];
+        this.methodModel = this.route['method'];
         this.bodyModel = this.getDefaultBodyModel();
         this.hostModel = this.getDefaultHostModel();
-        setTimeout(function () { return _this.hostModelChange.emit(_this.hostModel); }, 0);
+        setTimeout(function () {
+            _this.route = _this.route || {};
+            _this.hostModelChange.emit(_this.hostModel);
+        }, 0);
     };
     TestRoute.prototype.getDefaultHostModel = function () {
         if (this.hostModel)
@@ -44,7 +49,7 @@ var TestRoute = (function () {
         this.hostModelChange.emit(this.hostModel);
     };
     TestRoute.prototype.getDefaultBodyModel = function () {
-        var firstSample = rjonHelper.defToArray(this.route.sample);
+        var firstSample = rjonHelper.defToArray(this.route['sample']);
         var rtn = this.bodyModel || (firstSample.length && firstSample[0].request);
         return rtn ? JSON.stringify(rtn, null, 2) : '';
     };
@@ -66,7 +71,7 @@ var TestRoute = (function () {
         var protocol = this.hostModel.hostname.search(/^http(s)?:/) >= 0 ? '' : 'http://';
         var host = protocol + this.hostModel.hostname;
         var route = (this.pathModel.substring(0, 1) == '/' ? '' : '/') + this.pathModel;
-        var url = host + ':' + port + '/' + route;
+        var url = host + ':' + port + route;
         var config = {
             method: this.methodModel,
             url: url,
@@ -77,7 +82,7 @@ var TestRoute = (function () {
         ++this.sending;
         this.AckApi.request(config)
             .then(function (response) { return _this.response = response; })
-            .catch(function (e) { return _this.error = e; })
+            .catch(function (e) { return console.log(_this.error = e); })
             .then(function () { return --_this.sending; })
             .then(function () { return _this.responseView = 'map'; });
     };
@@ -91,6 +96,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
 ], TestRoute.prototype, "hosts", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], TestRoute.prototype, "spaceSaving", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)

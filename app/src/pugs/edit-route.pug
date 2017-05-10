@@ -90,13 +90,6 @@ form("(onFormChanged)"="onChange.emit(route)")
         //-.text-xs.pad-v-xxs {{ key }}
         //-.text-xs.width-100.height-20.overflow
           |{{ statIconMap[key].details }}
-    table.table-hover-energized.width-full.table-pad-xs.border-collapse.table-striped(*ngIf="statusView=='table'" "[@500]"="'fadeInUp'")
-      tr
-        td icon
-        td name
-        td details
-      tr.cursor-pointer(*ngFor="let key of statIconMap|keys" "[ngClass]"="(route.status|array).indexOf(key)>=0?'bg-success':null" "(click)"="toggleRouteStatus(key)")
-        td {{ statIconMap[key].icon }}
-        td {{ key | uppercase }}
-        td {{ statIconMap[key].details }}
+    icon-table(*ngIf="statusView=='table'" "[@500]"="'fadeInUp'" "(onClick)"="toggleRouteStatus($event)" "[activeIcons]"="(route.status|array)")
+      
 

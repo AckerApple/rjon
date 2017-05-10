@@ -8,76 +8,22 @@
 
 import * as import0 from '@angular/core';
 import * as import1 from '../../src/states.object';
-const styles_Overview:any[] = ([] as any[]);
-export const RenderType_Overview:import0.RendererType2 = import0.ɵcrt({
+const styles_FakeCom:any[] = ([] as any[]);
+export const RenderType_FakeCom:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
-  styles: styles_Overview,
+  styles: styles_FakeCom,
   data: {}
 }
 );
-export function View_Overview_0(l:any):import0.ɵViewDefinition {
+export function View_FakeCom_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,([] as any[]),(null as any),(null as any));
 }
-function View_Overview_Host_0(l:any):import0.ɵViewDefinition {
+function View_FakeCom_Host_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
-    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'ng-component',([] as any[]),(null as any),(null as any),(null as any),View_Overview_0,RenderType_Overview)),
-    import0.ɵdid(24576,(null as any),0,import1.Overview,([] as any[]),(null as any),(null as any))
+    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'ng-component',([] as any[]),(null as any),(null as any),(null as any),View_FakeCom_0,RenderType_FakeCom)),
+    import0.ɵdid(24576,(null as any),0,import1.FakeCom,([] as any[]),(null as any),(null as any))
   ]
   ,(null as any),(null as any));
 }
-export const OverviewNgFactory:import0.ComponentFactory<import1.Overview> = import0.ɵccf('ng-component',import1.Overview,View_Overview_Host_0,{},{},([] as any[]));
-const styles_Builder:any[] = ([] as any[]);
-export const RenderType_Builder:import0.RendererType2 = import0.ɵcrt({
-  encapsulation: 2,
-  styles: styles_Builder,
-  data: {}
-}
-);
-export function View_Builder_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,([] as any[]),(null as any),(null as any));
-}
-function View_Builder_Host_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,[
-    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'ng-component',([] as any[]),(null as any),(null as any),(null as any),View_Builder_0,RenderType_Builder)),
-    import0.ɵdid(24576,(null as any),0,import1.Builder,([] as any[]),(null as any),(null as any))
-  ]
-  ,(null as any),(null as any));
-}
-export const BuilderNgFactory:import0.ComponentFactory<import1.Builder> = import0.ɵccf('ng-component',import1.Builder,View_Builder_Host_0,{},{},([] as any[]));
-const styles_Reviewing:any[] = ([] as any[]);
-export const RenderType_Reviewing:import0.RendererType2 = import0.ɵcrt({
-  encapsulation: 2,
-  styles: styles_Reviewing,
-  data: {}
-}
-);
-export function View_Reviewing_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,([] as any[]),(null as any),(null as any));
-}
-function View_Reviewing_Host_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,[
-    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'ng-component',([] as any[]),(null as any),(null as any),(null as any),View_Reviewing_0,RenderType_Reviewing)),
-    import0.ɵdid(24576,(null as any),0,import1.Reviewing,([] as any[]),(null as any),(null as any))
-  ]
-  ,(null as any),(null as any));
-}
-export const ReviewingNgFactory:import0.ComponentFactory<import1.Reviewing> = import0.ɵccf('ng-component',import1.Reviewing,View_Reviewing_Host_0,{},{},([] as any[]));
-const styles_Testing:any[] = ([] as any[]);
-export const RenderType_Testing:import0.RendererType2 = import0.ɵcrt({
-  encapsulation: 2,
-  styles: styles_Testing,
-  data: {}
-}
-);
-export function View_Testing_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,([] as any[]),(null as any),(null as any));
-}
-function View_Testing_Host_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,[
-    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'ng-component',([] as any[]),(null as any),(null as any),(null as any),View_Testing_0,RenderType_Testing)),
-    import0.ɵdid(24576,(null as any),0,import1.Testing,([] as any[]),(null as any),(null as any))
-  ]
-  ,(null as any),(null as any));
-}
-export const TestingNgFactory:import0.ComponentFactory<import1.Testing> = import0.ɵccf('ng-component',import1.Testing,View_Testing_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvc3RhdGVzLm9iamVjdC50cyIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QudHMuT3ZlcnZpZXdfSG9zdC5odG1sIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvc3RhdGVzLm9iamVjdC50cy5CdWlsZGVyX0hvc3QuaHRtbCIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QudHMuUmV2aWV3aW5nX0hvc3QuaHRtbCIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QudHMuVGVzdGluZ19Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxuZy1jb21wb25lbnQ+PC9uZy1jb21wb25lbnQ+IiwiPG5nLWNvbXBvbmVudD48L25nLWNvbXBvbmVudD4iLCI8bmctY29tcG9uZW50PjwvbmctY29tcG9uZW50PiIsIjxuZy1jb21wb25lbnQ+PC9uZy1jb21wb25lbnQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQ0FBO2dCQUFBOzs7Ozs7Ozs7Ozs7Ozs7OztJQ0FBO2dCQUFBOzs7Ozs7Ozs7Ozs7Ozs7OztJQ0FBO2dCQUFBOzs7Ozs7Ozs7Ozs7Ozs7OztJQ0FBO2dCQUFBOzs7OyJ9
+export const FakeComNgFactory:import0.ComponentFactory<import1.FakeCom> = import0.ɵccf('ng-component',import1.FakeCom,View_FakeCom_Host_0,{},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvc3RhdGVzLm9iamVjdC50cyIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QudHMuRmFrZUNvbV9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxuZy1jb21wb25lbnQ+PC9uZy1jb21wb25lbnQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQ0FBO2dCQUFBOzs7OyJ9

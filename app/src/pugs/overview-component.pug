@@ -4,97 +4,8 @@ h2.margin-v-0 Route Javascript Object Notation
 
 p.margin-0.pad-h.text-grey-2x A superb conduit to building, testing, and reviewing API end-points
 
-h3.margin-bottom-0 Current Route JSON
-
-.flex-valign-center.child-pad-xs.child-margin-xxs
-  .flex-1.pad-h([ngClass]="AppData.invalidJson?'text-danger':(AppData.invalidRjon?'text-warning':'text-success')")
-    |Have an existing rjon? Paste it below&nbsp;
-  .border.border-grey-4x.text-xs.radius-5.text-danger.bg-danger(*ngIf="AppData.invalidJson")
-    |invalid Json
-  .border.border-grey-4x.text-xs.radius-5.text-warning.bg-warning(*ngIf="AppData.invalidRjon")
-    |invalid Rjon
-  .border.border-grey-4x.text-xs.radius-5.text-success.bg-success(*ngIf="!AppData.invalidJson && !AppData.invalidRjon")
-    |valid Rjon
-  //-.border.border-grey-4x.text-xs.radius-5.bg-info.bg-grey-4x
-    |routes {{ AppData.rjon.routes.length }}
-  //-.border.border-grey-4x.text-xs.radius-5.bg-info.bg-grey-4x
-    |hosts {{ AppData.rjon.hosts.length }}
-
-form("(onFormAlter)"="AppData.setRjonString(AppData.rjonString)")
-  -placeholder = '{"routes":[...], "hosts": [{"hostname":"localhost","port": 8080}]}'
-  -attrs = {};
-  //-attrs.placeholder=placeholder
-  -attrs["[(ngModel)]"]="AppData.rjonString"
-  -attrs["(change)"]="setSaveRjonStringAs(AppData.rjonString, AppData.rjon.name)"
-  -attrs.name="AppData.rjonString"
-  textarea.width-full.height-300.radius-5.border-grey-3x(placeholder=placeholder)&attributes(attrs)
-  .text-center.text-sm.text-success("*ngIf"="AppData.lastSaveAt" "[@500]"="'fadeInUp'")
-    |Last Saved @&nbsp;
-    span("[shakeOn]"="AppData.lastSaveAt" shakeType="shake-little")
-      |{{ AppData.lastSaveAt | date:'mediumTime' }}
-
-.pad-xs
-  .flex.child-margin-xxs
-    .flex-1
-      label save as name
-      input.width-full("[(ngModel)]"="AppData.rjon.name" "(onEnterKey)"="setSaveRjonStringAs(AppData.rjonString, AppData.rjon.name)")
-    div
-      label &nbsp;
-      input.width-full("(click)"="setSaveRjonStringAs(AppData.rjonString, AppData.rjon.name)" value="save as" type="button")
-    div
-      label load memory
-      select.width-full("(change)"="loadByOfflineName(loadOfflineName)" "[(ngModel)]"="loadOfflineName")
-        option
-        option("*ngFor"="let item of (AppData.rjonSaves|keys)" "[value]"="item" "[selected]"="loadOfflineName==item") {{item}}
-    div
-      label &nbsp;
-      input.width-full("(click)"="dedup()" value="dedup" type="button")
-    div
-      label &nbsp;
-      input.width-full("(click)"="viewRjonMerge=!viewRjonMerge" value="merge rjons" type="button" "[ngClass]"="{'bg-energized':viewRjonMerge}")
-
-.pad("*ngIf"="viewRjonMerge" "[@500]"="'fadeInUp'")
-  h4 RJON Merge
-  p Merge rjon defition into existing definition
-  textarea.width-full.height-300.radius-5.border-grey-3x("[(ngModel)]"="mergeRjonString" placeholder="paste rjon here")
-  .flex
-    a.hover-bg-energized.flex1.block.pad-xs.bg-info.border.border-info.text-center("(click)"="compareRjon(mergeRjonString)")
-      |compare rjon
-    a.hover-bg-energized.flex1.block.pad-xs.bg-calm.border.border-calm.text-center("(click)"="mergeRjon(mergeRjonString)")
-      |merge rjon
-
-  error-well([error]="mergeError")
-  
-  div("*ngIf"="viewRjonMergeResults" "[@500]"="'fadeInUp'")
-    .flex-valign-center.flex-wrap.child-margin-h-xs.child-pad-xxs
-      .flex-1
-        h4 RJON Comparison Results
-      .radius-5.bg-info.text-xs
-        |merge routes {{ rjonMerge.routes.length }}
-      .radius-5.bg-info.text-xs
-        |add routes {{compareResults.add.routes.length}}
-      .radius-5.bg-info.text-xs
-        |drop routes {{compareResults.drop.routes.length}}
-      .radius-5.bg-info.text-xs
-        |merge hosts {{rjonMerge.hosts.length}}
-      .radius-5.bg-info.text-xs
-        |add hosts {{compareResults.add.hosts.length}}
-      .radius-5.bg-info.text-xs
-        |drop hosts {{compareResults.drop.hosts.length}}
-    div Add Hosts
-    absolute-overflow-y
-      pre.code-sample {{ compareResults.add.hosts | json }}
-    div Drop Hosts
-    absolute-overflow-y
-      pre.code-sample {{ compareResults.drop.hosts | json }}
-    div Add Routes
-    absolute-overflow-y
-      pre.code-sample {{ compareResults.add.routes | json }}
-    div Drop Routes
-    absolute-overflow-y
-      pre.code-sample {{ compareResults.drop.routes | json }}
-
 h3 RJON Map
+p.margin-v-0 Below is a map to how standarized RJON is defined
 pre.code-sample(ngNonBindable).
   &#123;
     "routes": [
@@ -104,7 +15,7 @@ pre.code-sample(ngNonBindable).
         "returnType: "",#[span.text-grey-2x //expected type of response]
         "description": "",
         "notes": [""],
-        "status": [""],#[span.text-grey-2x //keyword state descriptors often matching a status icon]
+        "status": ["star"],#[span.text-grey-2x //keyword descriptors. Often matches status icon. star=⭐]
         "variables":&#123;
           "query":&#123; "name":"type" &#125;,#[span.text-grey-2x //url variable details]
           "post":&#123; "name":"type" &#125;,#[span.text-grey-2x //post variable details]
@@ -136,5 +47,12 @@ pre.code-sample(ngNonBindable).
         "description": "",
         "notes": [""]
       &#125;
-    ]
+    ],
+    "name":""#[span.text-grey-2x //save-reference]
   &#125;
+
+br
+
+h3 Route Status Icons
+p.text-grey-2x The icons below help explain what route status icons definitions mean
+icon-table

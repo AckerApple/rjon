@@ -1,6 +1,6 @@
 {
   "name": "rjon",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "route js object notation is a way to standardize route metadata for use and testing in  universal route interpreter software",
   "main": "index.js",
   "scripts": {
@@ -46,6 +46,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "ack-angular": "^0.4.0",
     "ack-angular-fx": "^1.1.2",
     "ack-css-boot": "^1.2.29",
     "ack-pug-bundler": "^1.3.0",
@@ -61,7 +62,7 @@
     "zone.js": "^0.7.8"
   },
   "jsDependencies": {
-    "ack-angular": "github:ackerapple/ack-angular",
+    "ack-angular": "^0.4.0",
     "@angular/forms": "4.0.0",
     "@angular/router": "4.0.0"
   }

@@ -241,7 +241,7 @@ export class Tester{
         }
       }
 
-      const method = route.method ? route.method.toUpperCase() : 'GET'
+      const method = (route.method || 'GET').toUpperCase()
       const isParseBody = !sample.request
 
       if(sample.test.cases){

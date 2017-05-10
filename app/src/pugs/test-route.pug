@@ -1,6 +1,6 @@
-h3 Test : {{ route.path }}
+h3 Test : {{ route.path }} - {{spaceSaving}}
 
-div("*ngIf"="!tryingSend" "[@500]"="'fadeInUp'")
+div("*ngIf"="!(spaceSaving|boolean) || !tryingSend" "[@500]"="'fadeInUp'")
   .flex-wrap.child-pad-xs
     .flex-1
       label Select Method
@@ -33,7 +33,7 @@ div("*ngIf"="!tryingSend" "[@500]"="'fadeInUp'")
       .pad-xs.child-margin-top-lg(*ngIf="loadSample==i" "[@500]"="'fadeInUp'")
         div(*ngIf="sample.request")
           .text-sm Request Body
-          absolute-overflow-y
+          absolute-overflow-x
             pre.code-sample.max-height-200 {{ sample.request | json}}
           a.pad-xs.block.text-center.bg-calm.border-calm.border.text-white("(click)"="setBodyObject(sample.request)")
             |Use Request Body
@@ -41,7 +41,7 @@ div("*ngIf"="!tryingSend" "[@500]"="'fadeInUp'")
         div(*ngFor="let test of rjonHelper.defToArray(sample.test); let testIndex=index")
           div(*ngIf="test.request")
             .text-sm Test \#{{testIndex}} Request Body
-            absolute-overflow-y
+            absolute-overflow-x
               pre.code-sample.max-height-200 {{ test.request | json}}
             a.pad-xs.block.text-center.bg-calm.border-calm.border.text-white("(click)"="setBodyObject(test.request)")
               |Use Request Body
@@ -84,11 +84,11 @@ div("*ngIf"="!tryingSend" "[@500]"="'fadeInUp'")
   error-well("[error]"="error")
 
   div(*ngIf="response && responseView=='map'" "[@500]"="'fadeInUp'")
-    absolute-overflow-y
+    absolute-overflow-x
       div([innerHtml]="response | dump | safeHtml")
 
   div(*ngIf="response && responseView=='json'" "[@500]"="'fadeInUp'")
-    absolute-overflow-y
+    absolute-overflow-x
       pre.code-sample.max-height-300 {{ response | json }}
 
   div(*ngIf="response && responseView=='body'" "[@500]"="'fadeInUp'")

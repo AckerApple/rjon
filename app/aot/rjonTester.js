@@ -209,7 +209,7 @@ var Tester = (function () {
                     break;
                 }
             }
-            var method = route.method ? route.method.toUpperCase() : 'GET';
+            var method = (route.method || 'GET').toUpperCase();
             var isParseBody = !sample.request;
             if (sample.test.cases) {
                 var cases = sample.test.cases.constructor == Array ? sample.test.cases : [sample.test.cases];

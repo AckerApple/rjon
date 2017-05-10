@@ -28,8 +28,10 @@ var AppData_1 = require("./AppData");
 var TestRoute_component_1 = require("./TestRoute.component");
 var EditRoute_component_1 = require("./EditRoute.component");
 var OverviewComponent_component_1 = require("./OverviewComponent.component");
+var RjonMerge_component_1 = require("./RjonMerge.component");
 var RjonTester_component_1 = require("./RjonTester.component");
 var RjonMarkdown_component_1 = require("./RjonMarkdown.component");
+var statIconMap_1 = require("./statIconMap");
 var nodedump = require("nodedump");
 var Dump = (function () {
     function Dump() {
@@ -50,16 +52,54 @@ var RjonBuilder = (function () {
     function RjonBuilder(AppData) {
         this.AppData = AppData;
     }
+    RjonBuilder.prototype.routeToBgClass = function (route) {
+        var method = (route.method || 'GET').toUpperCase();
+        switch (method) {
+            case 'GET': return 'bg-info';
+            case 'PUT':
+            case 'POST':
+            case 'PATCH': return 'bg-warning';
+            case 'DELETE': return 'bg-danger';
+        }
+        return '';
+    };
     return RjonBuilder;
 }());
 RjonBuilder = __decorate([
     core_1.Component({
         selector: 'rjon-builder',
-        template: rjon_builder_pug_1.string
+        template: rjon_builder_pug_1.string,
+        animations: prefx_1.fxArray
     }),
     __metadata("design:paramtypes", [AppData_1.AppData])
 ], RjonBuilder);
 exports.RjonBuilder = RjonBuilder;
+var icon_table_pug_1 = require("./templates/icon-table.pug");
+var IconTable = (function () {
+    function IconTable(AppData) {
+        this.AppData = AppData;
+        this.statIconMap = statIconMap_1.statIconMap;
+        this.activeIcons = [];
+        this.onClick = new core_1.EventEmitter();
+    }
+    return IconTable;
+}());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], IconTable.prototype, "activeIcons", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], IconTable.prototype, "onClick", void 0);
+IconTable = __decorate([
+    core_1.Component({
+        selector: 'icon-table',
+        template: icon_table_pug_1.string
+    }),
+    __metadata("design:paramtypes", [AppData_1.AppData])
+], IconTable);
+exports.IconTable = IconTable;
 var table_of_hosts_pug_1 = require("./templates/table-of-hosts.pug");
 var TableOfHosts = (function () {
     function TableOfHosts() {
@@ -77,7 +117,6 @@ TableOfHosts = __decorate([
     })
 ], TableOfHosts);
 exports.TableOfHosts = TableOfHosts;
-var statIconMap_1 = require("./statIconMap");
 var table_of_routes_pug_1 = require("./templates/table-of-routes.pug");
 var TableOfRoutes = (function () {
     function TableOfRoutes() {
@@ -136,7 +175,7 @@ var AppComponent = (function () {
     function AppComponent(AppData) {
         this.AppData = AppData;
         this.version = packJson['version'];
-        this.panelAnim = 'slideInLeft';
+        this.panelAnim = 'slideInRight';
     }
     return AppComponent;
 }());
@@ -202,7 +241,9 @@ AppModule = __decorate([
             RouteReporter_component_1.RouteReporter,
             AppComponent,
             OverviewComponent_component_1.OverviewComponent,
-            RjonViewer
+            RjonMerge_component_1.RjonMerge,
+            RjonViewer,
+            IconTable
         ].concat(states_object_1.declarations
         //...ackDecs,
         //...ackPipes

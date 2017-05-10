@@ -101,19 +101,19 @@ rjon-links.text-right.text-sm("[rjon]"="rjon")
             li(*ngIf="sample.test.body" "#showBody"="var" "[var]"="false")
               button("(click)"="showBody.var=!showBody.var") request-body
               div(*ngIf="showBody.var" "[@500]"="'fadeInUp'")
-                absolute-overflow-y
+                absolute-overflow-x
                   pre.code-sample {{ sample.test.body | json}}
               
 
         li(*ngIf="sample.response" "#showBody"="var" "[var]"="false")
           button("(click)"="showBody.var=!showBody.var") sample response
           div(*ngIf="showBody.var" "[@500]"="'fadeInUp'")
-            absolute-overflow-y
+            absolute-overflow-x
               pre.code-sample {{ sample.response | json }}
         li(*ngIf="sample.request" "#showBody"="var" "[var]"="false")
           button("(click)"="showBody.var=!showBody.var") sample request
           div(*ngIf="showBody.var" "[@500]"="'fadeInUp'")
-            absolute-overflow-y
+            absolute-overflow-x
               pre.code-sample {{ sample.request | json}}
       br
 

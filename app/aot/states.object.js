@@ -8,56 +8,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
-var Overview = (function () {
-    function Overview() {
+var FakeCom = (function () {
+    function FakeCom() {
     }
-    return Overview;
+    return FakeCom;
 }());
-Overview = __decorate([
+FakeCom = __decorate([
     core_1.Component({ template: '' })
-], Overview);
-exports.Overview = Overview;
-var Builder = (function () {
-    function Builder() {
-    }
-    return Builder;
-}());
-Builder = __decorate([
-    core_1.Component({ template: '' })
-], Builder);
-exports.Builder = Builder;
-var Reviewing = (function () {
-    function Reviewing() {
-    }
-    return Reviewing;
-}());
-Reviewing = __decorate([
-    core_1.Component({ template: '' })
-], Reviewing);
-exports.Reviewing = Reviewing;
-var Testing = (function () {
-    function Testing() {
-    }
-    return Testing;
-}());
-Testing = __decorate([
-    core_1.Component({ template: '' })
-], Testing);
-exports.Testing = Testing;
-exports.declarations = [
-    Overview,
-    Builder,
-    Reviewing,
-    Testing
-];
+], FakeCom);
+exports.FakeCom = FakeCom;
+exports.declarations = [FakeCom];
 exports.routes = [
-    { name: 'overview', path: 'overview', component: Overview },
-    { name: 'builder', path: 'builder', component: Builder },
-    { name: 'reviewing', path: 'reviewing', component: Reviewing },
-    { name: 'testing', path: 'testing', component: Testing },
+    { name: 'overview', path: 'overview', component: FakeCom },
+    { name: 'builder', path: 'builder', component: FakeCom },
+    { name: 'reviewing', path: 'reviewing', component: FakeCom },
+    { name: 'http', path: 'http', component: FakeCom },
+    { name: 'testing', path: 'testing', component: FakeCom },
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: '**', redirectTo: 'overview' } //404
 ];
-exports.routeConfig = { useHash: true, initialNavigation: true, enableTracing: false };
+exports.routeConfig = {
+    useHash: true,
+    initialNavigation: true,
+    enableTracing: false
+};
 exports.routing = router_1.RouterModule.forRoot(exports.routes, exports.routeConfig);
 //# sourceMappingURL=states.object.js.map
