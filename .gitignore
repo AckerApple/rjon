@@ -1,6 +1,17 @@
-aot
+*.ngFactory.ts
+*.metadata.json
+aot/
 .DS_Store
 updaters
+*.css.map
+www/index.js.map
+etc
+styles.css.map
+js_modules
+.ack-webpack-temp
+
+
+
 
 # Logs
 logs
