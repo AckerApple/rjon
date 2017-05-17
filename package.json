@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "route js object notation is a way to standardize route metadata for use and testing in  universal route interpreter software",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ack-webpack": "ack-webpack",
