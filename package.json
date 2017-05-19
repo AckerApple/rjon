@@ -1,6 +1,6 @@
 {
   "name": "rjon",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "route js object notation is a way to standardize route metadata for use and testing in  universal route interpreter software",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -71,6 +71,7 @@
     "zone.js": "^0.8.10"
   },
   "jsDependencies": {
+    "ng2-page-scroll": "^4.0.0-beta.7",
     "nodedump": "^0.0.8",
     "ack-angular": "^0.4.4",
     "@angular/forms": "^4.1.2",
