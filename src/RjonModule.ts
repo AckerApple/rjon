@@ -1,3 +1,5 @@
+import { Ng2PageScrollModule, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
+
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule }   from '@angular/forms'
@@ -13,8 +15,9 @@ import { AckModule } from "ack-angular"
     ,FormsModule
     ,HttpModule
     ,AckModule
+    ,Ng2PageScrollModule.forRoot()
   ]
   ,declarations: declarations
   //,providers:providers
-  ,exports:[ ...declarations ]
+  ,exports:[ Ng2PageScrollModule, ...declarations ]
 }) export class RjonModule {}

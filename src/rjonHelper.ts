@@ -32,7 +32,8 @@ export function serverUrlByRoute(host, route, sample){
   }
 
   const port = host.port || 80
-  const address = 'http://'+host.hostname+':'+port
+  const protocol = host.protocol || 'http'
+  const address = protocol + '://' + host.hostname + ':' + port
   const sep = routePath.substring(0, 1) == '/' ? '' : '/'
   return address+sep+routePath
 }

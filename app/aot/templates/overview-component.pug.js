@@ -35,6 +35,7 @@ exports.string = "<error-well [error]=\"error\"></error-well><h2 class=\"margin-
     "\n  ]," +
     "\n  \"hosts\": [" +
     "\n    &#123;" +
+    "\n      \"protocol\": \"https\"," +
     "\n      \"hostname\": \"localhost\"," +
     "\n      \"port\": 8080," +
     "\n      \"description\": \"\"," +

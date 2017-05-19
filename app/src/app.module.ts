@@ -1,7 +1,6 @@
 //-import { UIRouterModule } from "ui-router-ng2"
 //import * as marked from "marked"
 import { FormsModule }   from '@angular/forms'
-import { Ng2PageScrollModule, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
 import {
   Pipe,
   EventEmitter,
@@ -49,6 +48,18 @@ import { string as rjonBuilder } from "./templates/rjon-builder.pug"
     }
     return ''
   }
+
+  setSaveRjonStringAs(string, name){
+    if(!name)return this.AppData.saveOffline(string);
+
+    try{
+      const rjon = JSON.parse(string)
+      rjon.name = name
+      return this.AppData.setSaveRjon(rjon)
+    }catch(e){
+      this.AppData.saveOffline(string)
+    }
+  }
 }
 
 import { string as rjonAppStage } from "./templates/rjon-app-stage.pug"
@@ -78,7 +89,6 @@ import { string as rjonViewer } from "./templates/rjon-viewer.pug"
     BrowserModule,
     BrowserAnimationsModule,
     routing,
-    Ng2PageScrollModule.forRoot(),
     FormsModule,
     AckModule,
     RjonModule

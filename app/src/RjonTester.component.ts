@@ -46,7 +46,8 @@ import { fxArray } from "./prefx"
       options.host = options.host || 'localhost'
 
       const simplePath = Tester.getRouteSamplePath(route, sample)
-      const url = 'http://'+this.hostModel.hostname+':'+this.hostModel.port + simplePath
+      const protocol = this.hostModel.protcol || 'http'
+      const url = protocol + '://'+this.hostModel.hostname+':'+this.hostModel.port + simplePath
       const reqops = {
         method : route.method || 'GET'
         ,body: sample.request || sample.post

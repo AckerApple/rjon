@@ -28,7 +28,8 @@ function serverUrlByRoute(host, route, sample) {
         }
     }
     var port = host.port || 80;
-    var address = 'http://' + host.hostname + ':' + port;
+    var protocol = host.protocol || 'http';
+    var address = protocol + '://' + host.hostname + ':' + port;
     var sep = routePath.substring(0, 1) == '/' ? '' : '/';
     return address + sep + routePath;
 }

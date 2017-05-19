@@ -59,7 +59,7 @@ var TestRoute = (function () {
     TestRoute.prototype.send = function () {
         var _this = this;
         var port = this.hostModel.port || 80;
-        var protocol = this.hostModel.hostname.search(/^http(s)?:/) >= 0 ? '' : 'http://';
+        var protocol = this.hostModel.hostname.search(/^http(s)?:/) >= 0 ? '' : (this.hostModel.protocol || 'http') + '://';
         var host = protocol + this.hostModel.hostname;
         var route = (this.pathModel.substring(0, 1) == '/' ? '' : '/') + this.pathModel;
         var url = host + ':' + port + route;

@@ -78,7 +78,7 @@ import * as rjonHelper from "./rjonHelper"
 
   send(){
     const port = this.hostModel.port||80
-    const protocol = this.hostModel.hostname.search(/^http(s)?:/)>=0 ? '' : 'http://'
+    const protocol = this.hostModel.hostname.search(/^http(s)?:/)>=0 ? '' : (this.hostModel.protocol||'http')+'://'
     const host = protocol+this.hostModel.hostname
     const route = (this.pathModel.substring(0, 1)=='/' ? '' : '/') + this.pathModel
     const url = host+':' + port + route

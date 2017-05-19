@@ -22,16 +22,4 @@ import { array } from "ack-angular/pipes.class"
     if(!name)return
     this.AppData.setRjonString( this.AppData.rjonSaves[name] )
   }
-
-  setSaveRjonStringAs(string, name){
-    if(!name)return this.AppData.saveOffline(string);
-
-    try{
-      const rjon = JSON.parse(string)
-      rjon.name = name
-      return this.AppData.setSaveRjon(rjon)
-    }catch(e){
-      this.AppData.saveOffline(string)
-    }
-  }
 }

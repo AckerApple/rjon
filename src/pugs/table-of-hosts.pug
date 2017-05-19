@@ -2,9 +2,11 @@
   table
     thead
       tr
+        th PROTOCOL
         th HOSTNAME
         th PORT
     tbody
       tr(*ngFor="let host of hosts|array")
+        td {{ host.protocol || 'http' }}
         td {{ host.hostname }}
         td {{ host.port }}

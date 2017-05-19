@@ -12,91 +12,99 @@ import * as import2 from '@angular/common';
 import * as import3 from '@angular/forms';
 import * as import4 from '@angular/http';
 import * as import5 from 'ack-angular/AckModule';
-import * as import6 from 'ack-angular/Log';
-import * as import7 from 'ack-angular/ErrorLog';
-import * as import8 from 'ack-angular/AckOffline';
-import * as import9 from 'ack-angular/AckCache';
-import * as import10 from 'ack-angular/AckQue';
-import * as import11 from 'ack-angular/AckApi';
+import * as import6 from 'ng2-page-scroll/src/ng2-page-scroll.module';
+import * as import7 from 'ack-angular/Log';
+import * as import8 from 'ack-angular/ErrorLog';
+import * as import9 from 'ack-angular/AckOffline';
+import * as import10 from 'ack-angular/AckCache';
+import * as import11 from 'ack-angular/AckQue';
+import * as import12 from 'ack-angular/AckApi';
+import * as import13 from 'ng2-page-scroll/src/ng2-page-scroll.service';
 class RjonModuleInjector extends import0.ɵNgModuleInjector<import1.RjonModule> {
   _CommonModule_0:import2.CommonModule;
   _ɵba_1:import3.ɵba;
   _FormsModule_2:import3.FormsModule;
   _HttpModule_3:import4.HttpModule;
   _AckModule_4:import5.AckModule;
-  _RjonModule_5:import1.RjonModule;
-  __NgLocalization_6:import2.NgLocaleLocalization;
-  __ɵi_7:import3.ɵi;
-  __BrowserXhr_8:import4.BrowserXhr;
-  __ResponseOptions_9:import4.BaseResponseOptions;
-  __XSRFStrategy_10:any;
-  __XHRBackend_11:import4.XHRBackend;
-  __RequestOptions_12:import4.BaseRequestOptions;
-  __Http_13:any;
-  __Log_14:import6.Log;
-  __ErrorLog_15:import7.ErrorLog;
-  __AckOffline_16:import8.AckOffline;
-  __AckCache_17:import9.AckCache;
-  __AckQue_18:import10.AckQue;
-  __AckApi_19:import11.AckApi;
+  _Ng2PageScrollModule_5:import6.Ng2PageScrollModule;
+  _RjonModule_6:import1.RjonModule;
+  __NgLocalization_7:import2.NgLocaleLocalization;
+  __ɵi_8:import3.ɵi;
+  __BrowserXhr_9:import4.BrowserXhr;
+  __ResponseOptions_10:import4.BaseResponseOptions;
+  __XSRFStrategy_11:any;
+  __XHRBackend_12:import4.XHRBackend;
+  __RequestOptions_13:import4.BaseRequestOptions;
+  __Http_14:any;
+  __Log_15:import7.Log;
+  __ErrorLog_16:import8.ErrorLog;
+  __AckOffline_17:import9.AckOffline;
+  __AckCache_18:import10.AckCache;
+  __AckQue_19:import11.AckQue;
+  __AckApi_20:import12.AckApi;
+  __PageScrollService_21:import13.PageScrollService;
   constructor(parent:import0.Injector) {
     super(parent,([] as any[]),([] as any[]));
   }
-  get _NgLocalization_6():import2.NgLocaleLocalization {
-    if ((this.__NgLocalization_6 == null)) { (this.__NgLocalization_6 = new import2.NgLocaleLocalization(this.parent.get(import0.LOCALE_ID))); }
-    return this.__NgLocalization_6;
+  get _NgLocalization_7():import2.NgLocaleLocalization {
+    if ((this.__NgLocalization_7 == null)) { (this.__NgLocalization_7 = new import2.NgLocaleLocalization(this.parent.get(import0.LOCALE_ID))); }
+    return this.__NgLocalization_7;
   }
-  get _ɵi_7():import3.ɵi {
-    if ((this.__ɵi_7 == null)) { (this.__ɵi_7 = new import3.ɵi()); }
-    return this.__ɵi_7;
+  get _ɵi_8():import3.ɵi {
+    if ((this.__ɵi_8 == null)) { (this.__ɵi_8 = new import3.ɵi()); }
+    return this.__ɵi_8;
   }
-  get _BrowserXhr_8():import4.BrowserXhr {
-    if ((this.__BrowserXhr_8 == null)) { (this.__BrowserXhr_8 = new import4.BrowserXhr()); }
-    return this.__BrowserXhr_8;
+  get _BrowserXhr_9():import4.BrowserXhr {
+    if ((this.__BrowserXhr_9 == null)) { (this.__BrowserXhr_9 = new import4.BrowserXhr()); }
+    return this.__BrowserXhr_9;
   }
-  get _ResponseOptions_9():import4.BaseResponseOptions {
-    if ((this.__ResponseOptions_9 == null)) { (this.__ResponseOptions_9 = new import4.BaseResponseOptions()); }
-    return this.__ResponseOptions_9;
+  get _ResponseOptions_10():import4.BaseResponseOptions {
+    if ((this.__ResponseOptions_10 == null)) { (this.__ResponseOptions_10 = new import4.BaseResponseOptions()); }
+    return this.__ResponseOptions_10;
   }
-  get _XSRFStrategy_10():any {
-    if ((this.__XSRFStrategy_10 == null)) { (this.__XSRFStrategy_10 = import4.ɵb()); }
-    return this.__XSRFStrategy_10;
+  get _XSRFStrategy_11():any {
+    if ((this.__XSRFStrategy_11 == null)) { (this.__XSRFStrategy_11 = import4.ɵb()); }
+    return this.__XSRFStrategy_11;
   }
-  get _XHRBackend_11():import4.XHRBackend {
-    if ((this.__XHRBackend_11 == null)) { (this.__XHRBackend_11 = new import4.XHRBackend(this._BrowserXhr_8,this._ResponseOptions_9,this._XSRFStrategy_10)); }
-    return this.__XHRBackend_11;
+  get _XHRBackend_12():import4.XHRBackend {
+    if ((this.__XHRBackend_12 == null)) { (this.__XHRBackend_12 = new import4.XHRBackend(this._BrowserXhr_9,this._ResponseOptions_10,this._XSRFStrategy_11)); }
+    return this.__XHRBackend_12;
   }
-  get _RequestOptions_12():import4.BaseRequestOptions {
-    if ((this.__RequestOptions_12 == null)) { (this.__RequestOptions_12 = new import4.BaseRequestOptions()); }
-    return this.__RequestOptions_12;
+  get _RequestOptions_13():import4.BaseRequestOptions {
+    if ((this.__RequestOptions_13 == null)) { (this.__RequestOptions_13 = new import4.BaseRequestOptions()); }
+    return this.__RequestOptions_13;
   }
-  get _Http_13():any {
-    if ((this.__Http_13 == null)) { (this.__Http_13 = import4.ɵc(this._XHRBackend_11,this._RequestOptions_12)); }
-    return this.__Http_13;
+  get _Http_14():any {
+    if ((this.__Http_14 == null)) { (this.__Http_14 = import4.ɵc(this._XHRBackend_12,this._RequestOptions_13)); }
+    return this.__Http_14;
   }
-  get _Log_14():import6.Log {
-    if ((this.__Log_14 == null)) { (this.__Log_14 = new import6.Log()); }
-    return this.__Log_14;
+  get _Log_15():import7.Log {
+    if ((this.__Log_15 == null)) { (this.__Log_15 = new import7.Log()); }
+    return this.__Log_15;
   }
-  get _ErrorLog_15():import7.ErrorLog {
-    if ((this.__ErrorLog_15 == null)) { (this.__ErrorLog_15 = new import7.ErrorLog()); }
-    return this.__ErrorLog_15;
+  get _ErrorLog_16():import8.ErrorLog {
+    if ((this.__ErrorLog_16 == null)) { (this.__ErrorLog_16 = new import8.ErrorLog()); }
+    return this.__ErrorLog_16;
   }
-  get _AckOffline_16():import8.AckOffline {
-    if ((this.__AckOffline_16 == null)) { (this.__AckOffline_16 = new import8.AckOffline()); }
-    return this.__AckOffline_16;
+  get _AckOffline_17():import9.AckOffline {
+    if ((this.__AckOffline_17 == null)) { (this.__AckOffline_17 = new import9.AckOffline()); }
+    return this.__AckOffline_17;
   }
-  get _AckCache_17():import9.AckCache {
-    if ((this.__AckCache_17 == null)) { (this.__AckCache_17 = new import9.AckCache()); }
-    return this.__AckCache_17;
+  get _AckCache_18():import10.AckCache {
+    if ((this.__AckCache_18 == null)) { (this.__AckCache_18 = new import10.AckCache()); }
+    return this.__AckCache_18;
   }
-  get _AckQue_18():import10.AckQue {
-    if ((this.__AckQue_18 == null)) { (this.__AckQue_18 = new import10.AckQue()); }
-    return this.__AckQue_18;
+  get _AckQue_19():import11.AckQue {
+    if ((this.__AckQue_19 == null)) { (this.__AckQue_19 = new import11.AckQue()); }
+    return this.__AckQue_19;
   }
-  get _AckApi_19():import11.AckApi {
-    if ((this.__AckApi_19 == null)) { (this.__AckApi_19 = new import11.AckApi(this._Http_13)); }
-    return this.__AckApi_19;
+  get _AckApi_20():import12.AckApi {
+    if ((this.__AckApi_20 == null)) { (this.__AckApi_20 = new import12.AckApi(this._Http_14)); }
+    return this.__AckApi_20;
+  }
+  get _PageScrollService_21():import13.PageScrollService {
+    if ((this.__PageScrollService_21 == null)) { (this.__PageScrollService_21 = new import13.PageScrollService()); }
+    return this.__PageScrollService_21;
   }
   createInternal():import1.RjonModule {
     this._CommonModule_0 = new import2.CommonModule();
@@ -104,8 +112,9 @@ class RjonModuleInjector extends import0.ɵNgModuleInjector<import1.RjonModule> 
     this._FormsModule_2 = new import3.FormsModule();
     this._HttpModule_3 = new import4.HttpModule();
     this._AckModule_4 = new import5.AckModule();
-    this._RjonModule_5 = new import1.RjonModule();
-    return this._RjonModule_5;
+    this._Ng2PageScrollModule_5 = new import6.Ng2PageScrollModule();
+    this._RjonModule_6 = new import1.RjonModule();
+    return this._RjonModule_6;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
@@ -113,25 +122,27 @@ class RjonModuleInjector extends import0.ɵNgModuleInjector<import1.RjonModule> 
     if ((token === import3.FormsModule)) { return this._FormsModule_2; }
     if ((token === import4.HttpModule)) { return this._HttpModule_3; }
     if ((token === import5.AckModule)) { return this._AckModule_4; }
-    if ((token === import1.RjonModule)) { return this._RjonModule_5; }
-    if ((token === import2.NgLocalization)) { return this._NgLocalization_6; }
-    if ((token === import3.ɵi)) { return this._ɵi_7; }
-    if ((token === import4.BrowserXhr)) { return this._BrowserXhr_8; }
-    if ((token === import4.ResponseOptions)) { return this._ResponseOptions_9; }
-    if ((token === import4.XSRFStrategy)) { return this._XSRFStrategy_10; }
-    if ((token === import4.XHRBackend)) { return this._XHRBackend_11; }
-    if ((token === import4.RequestOptions)) { return this._RequestOptions_12; }
-    if ((token === import4.Http)) { return this._Http_13; }
-    if ((token === import6.Log)) { return this._Log_14; }
-    if ((token === import7.ErrorLog)) { return this._ErrorLog_15; }
-    if ((token === import8.AckOffline)) { return this._AckOffline_16; }
-    if ((token === import9.AckCache)) { return this._AckCache_17; }
-    if ((token === import10.AckQue)) { return this._AckQue_18; }
-    if ((token === import11.AckApi)) { return this._AckApi_19; }
+    if ((token === import6.Ng2PageScrollModule)) { return this._Ng2PageScrollModule_5; }
+    if ((token === import1.RjonModule)) { return this._RjonModule_6; }
+    if ((token === import2.NgLocalization)) { return this._NgLocalization_7; }
+    if ((token === import3.ɵi)) { return this._ɵi_8; }
+    if ((token === import4.BrowserXhr)) { return this._BrowserXhr_9; }
+    if ((token === import4.ResponseOptions)) { return this._ResponseOptions_10; }
+    if ((token === import4.XSRFStrategy)) { return this._XSRFStrategy_11; }
+    if ((token === import4.XHRBackend)) { return this._XHRBackend_12; }
+    if ((token === import4.RequestOptions)) { return this._RequestOptions_13; }
+    if ((token === import4.Http)) { return this._Http_14; }
+    if ((token === import7.Log)) { return this._Log_15; }
+    if ((token === import8.ErrorLog)) { return this._ErrorLog_16; }
+    if ((token === import9.AckOffline)) { return this._AckOffline_17; }
+    if ((token === import10.AckCache)) { return this._AckCache_18; }
+    if ((token === import11.AckQue)) { return this._AckQue_19; }
+    if ((token === import12.AckApi)) { return this._AckApi_20; }
+    if ((token === import13.PageScrollService)) { return this._PageScrollService_21; }
     return notFoundResult;
   }
   destroyInternal():void {
   }
 }
 export const RjonModuleNgFactory:import0.NgModuleFactory<import1.RjonModule> = new import0.NgModuleFactory<any>(RjonModuleInjector,import1.RjonModule);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vUmpvbk1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL1Jqb25Nb2R1bGUuZC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vUmpvbk1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL1Jqb25Nb2R1bGUuZC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

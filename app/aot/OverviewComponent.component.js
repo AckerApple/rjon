@@ -25,18 +25,6 @@ var OverviewComponent = (function () {
             return;
         this.AppData.setRjonString(this.AppData.rjonSaves[name]);
     };
-    OverviewComponent.prototype.setSaveRjonStringAs = function (string, name) {
-        if (!name)
-            return this.AppData.saveOffline(string);
-        try {
-            var rjon = JSON.parse(string);
-            rjon.name = name;
-            return this.AppData.setSaveRjon(rjon);
-        }
-        catch (e) {
-            this.AppData.saveOffline(string);
-        }
-    };
     return OverviewComponent;
 }());
 OverviewComponent = __decorate([

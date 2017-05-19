@@ -36,7 +36,8 @@ var RjonTester = (function () {
             options = options || {};
             options.host = options.host || 'localhost';
             var simplePath = rjonTester_1.Tester.getRouteSamplePath(route, sample);
-            var url = 'http://' + _this.hostModel.hostname + ':' + _this.hostModel.port + simplePath;
+            var protocol = _this.hostModel.protcol || 'http';
+            var url = protocol + '://' + _this.hostModel.hostname + ':' + _this.hostModel.port + simplePath;
             var reqops = {
                 method: route.method || 'GET',
                 body: sample.request || sample.post

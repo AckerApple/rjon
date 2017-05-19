@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //-import { UIRouterModule } from "ui-router-ng2"
 //import * as marked from "marked"
 var forms_1 = require("@angular/forms");
-var ng2_page_scroll_1 = require("ng2-page-scroll");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var animations_1 = require("@angular/platform-browser/animations");
@@ -42,6 +41,18 @@ var RjonBuilder = (function () {
             case 'DELETE': return 'bg-danger';
         }
         return '';
+    };
+    RjonBuilder.prototype.setSaveRjonStringAs = function (string, name) {
+        if (!name)
+            return this.AppData.saveOffline(string);
+        try {
+            var rjon = JSON.parse(string);
+            rjon.name = name;
+            return this.AppData.setSaveRjon(rjon);
+        }
+        catch (e) {
+            this.AppData.saveOffline(string);
+        }
     };
     return RjonBuilder;
 }());
@@ -104,7 +115,6 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             animations_1.BrowserAnimationsModule,
             states_object_1.routing,
-            ng2_page_scroll_1.Ng2PageScrollModule.forRoot(),
             forms_1.FormsModule,
             ack_angular_1.AckModule,
             index_1.RjonModule

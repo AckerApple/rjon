@@ -12,10 +12,10 @@ import * as import2 from '@angular/common';
 import * as import3 from '@angular/router';
 import * as import4 from '@angular/platform-browser';
 import * as import5 from '@angular/platform-browser/animations';
-import * as import6 from 'ng2-page-scroll/src/ng2-page-scroll.module';
-import * as import7 from '@angular/forms';
-import * as import8 from '@angular/http';
-import * as import9 from 'ack-angular/AckModule';
+import * as import6 from '@angular/forms';
+import * as import7 from '@angular/http';
+import * as import8 from 'ack-angular/AckModule';
+import * as import9 from 'ng2-page-scroll/src/ng2-page-scroll.module';
 import * as import10 from '../../src/rjon/RjonModule';
 import * as import11 from 'ack-angular/Log';
 import * as import12 from 'ack-angular/ErrorLog';
@@ -68,11 +68,11 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
   _ROUTES_19:any[];
   _Router_20:any;
   _RouterModule_21:import3.RouterModule;
-  _Ng2PageScrollModule_22:import6.Ng2PageScrollModule;
-  _ɵba_23:import7.ɵba;
-  _FormsModule_24:import7.FormsModule;
-  _HttpModule_25:import8.HttpModule;
-  _AckModule_26:import9.AckModule;
+  _ɵba_22:import6.ɵba;
+  _FormsModule_23:import6.FormsModule;
+  _HttpModule_24:import7.HttpModule;
+  _AckModule_25:import8.AckModule;
+  _Ng2PageScrollModule_26:import9.Ng2PageScrollModule;
   _RjonModule_27:import10.RjonModule;
   _AppModule_28:import1.AppModule;
   __LOCALE_ID_29:any;
@@ -95,12 +95,12 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
   __Testability_46:import0.Testability;
   __Meta_47:import4.Meta;
   __Title_48:import4.Title;
-  __ɵi_49:import7.ɵi;
-  __BrowserXhr_50:import8.BrowserXhr;
-  __ResponseOptions_51:import8.BaseResponseOptions;
+  __ɵi_49:import6.ɵi;
+  __BrowserXhr_50:import7.BrowserXhr;
+  __ResponseOptions_51:import7.BaseResponseOptions;
   __XSRFStrategy_52:any;
-  __XHRBackend_53:import8.XHRBackend;
-  __RequestOptions_54:import8.BaseRequestOptions;
+  __XHRBackend_53:import7.XHRBackend;
+  __RequestOptions_54:import7.BaseRequestOptions;
   __Http_55:any;
   __Log_56:import11.Log;
   __ErrorLog_57:import12.ErrorLog;
@@ -108,14 +108,14 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
   __AckCache_59:import14.AckCache;
   __AckQue_60:import15.AckQue;
   __AckApi_61:import16.AckApi;
-  __ActivatedRoute_62:any;
-  __NoPreloading_63:import3.NoPreloading;
-  __PreloadingStrategy_64:any;
-  __RouterPreloader_65:import3.RouterPreloader;
-  __PreloadAllModules_66:import3.PreloadAllModules;
-  __ROUTER_INITIALIZER_67:any;
-  __APP_BOOTSTRAP_LISTENER_68:any[];
-  __PageScrollService_69:import17.PageScrollService;
+  __PageScrollService_62:import17.PageScrollService;
+  __ActivatedRoute_63:any;
+  __NoPreloading_64:import3.NoPreloading;
+  __PreloadingStrategy_65:any;
+  __RouterPreloader_66:import3.RouterPreloader;
+  __PreloadAllModules_67:import3.PreloadAllModules;
+  __ROUTER_INITIALIZER_68:any;
+  __APP_BOOTSTRAP_LISTENER_69:any[];
   __AppData_70:import18.AppData;
   __RouteWatchReporter_71:import19.RouteWatchReporter;
   constructor(parent:import0.Injector) {
@@ -210,32 +210,32 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
     if ((this.__Title_48 == null)) { (this.__Title_48 = new import4.Title(this.parent.get(import4.DOCUMENT))); }
     return this.__Title_48;
   }
-  get _ɵi_49():import7.ɵi {
-    if ((this.__ɵi_49 == null)) { (this.__ɵi_49 = new import7.ɵi()); }
+  get _ɵi_49():import6.ɵi {
+    if ((this.__ɵi_49 == null)) { (this.__ɵi_49 = new import6.ɵi()); }
     return this.__ɵi_49;
   }
-  get _BrowserXhr_50():import8.BrowserXhr {
-    if ((this.__BrowserXhr_50 == null)) { (this.__BrowserXhr_50 = new import8.BrowserXhr()); }
+  get _BrowserXhr_50():import7.BrowserXhr {
+    if ((this.__BrowserXhr_50 == null)) { (this.__BrowserXhr_50 = new import7.BrowserXhr()); }
     return this.__BrowserXhr_50;
   }
-  get _ResponseOptions_51():import8.BaseResponseOptions {
-    if ((this.__ResponseOptions_51 == null)) { (this.__ResponseOptions_51 = new import8.BaseResponseOptions()); }
+  get _ResponseOptions_51():import7.BaseResponseOptions {
+    if ((this.__ResponseOptions_51 == null)) { (this.__ResponseOptions_51 = new import7.BaseResponseOptions()); }
     return this.__ResponseOptions_51;
   }
   get _XSRFStrategy_52():any {
-    if ((this.__XSRFStrategy_52 == null)) { (this.__XSRFStrategy_52 = import8.ɵb()); }
+    if ((this.__XSRFStrategy_52 == null)) { (this.__XSRFStrategy_52 = import7.ɵb()); }
     return this.__XSRFStrategy_52;
   }
-  get _XHRBackend_53():import8.XHRBackend {
-    if ((this.__XHRBackend_53 == null)) { (this.__XHRBackend_53 = new import8.XHRBackend(this._BrowserXhr_50,this._ResponseOptions_51,this._XSRFStrategy_52)); }
+  get _XHRBackend_53():import7.XHRBackend {
+    if ((this.__XHRBackend_53 == null)) { (this.__XHRBackend_53 = new import7.XHRBackend(this._BrowserXhr_50,this._ResponseOptions_51,this._XSRFStrategy_52)); }
     return this.__XHRBackend_53;
   }
-  get _RequestOptions_54():import8.BaseRequestOptions {
-    if ((this.__RequestOptions_54 == null)) { (this.__RequestOptions_54 = new import8.BaseRequestOptions()); }
+  get _RequestOptions_54():import7.BaseRequestOptions {
+    if ((this.__RequestOptions_54 == null)) { (this.__RequestOptions_54 = new import7.BaseRequestOptions()); }
     return this.__RequestOptions_54;
   }
   get _Http_55():any {
-    if ((this.__Http_55 == null)) { (this.__Http_55 = import8.ɵc(this._XHRBackend_53,this._RequestOptions_54)); }
+    if ((this.__Http_55 == null)) { (this.__Http_55 = import7.ɵc(this._XHRBackend_53,this._RequestOptions_54)); }
     return this.__Http_55;
   }
   get _Log_56():import11.Log {
@@ -262,44 +262,44 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
     if ((this.__AckApi_61 == null)) { (this.__AckApi_61 = new import16.AckApi(this._Http_55)); }
     return this.__AckApi_61;
   }
-  get _ActivatedRoute_62():any {
-    if ((this.__ActivatedRoute_62 == null)) { (this.__ActivatedRoute_62 = import3.ɵf(this._Router_20)); }
-    return this.__ActivatedRoute_62;
+  get _PageScrollService_62():import17.PageScrollService {
+    if ((this.__PageScrollService_62 == null)) { (this.__PageScrollService_62 = new import17.PageScrollService()); }
+    return this.__PageScrollService_62;
   }
-  get _NoPreloading_63():import3.NoPreloading {
-    if ((this.__NoPreloading_63 == null)) { (this.__NoPreloading_63 = new import3.NoPreloading()); }
-    return this.__NoPreloading_63;
+  get _ActivatedRoute_63():any {
+    if ((this.__ActivatedRoute_63 == null)) { (this.__ActivatedRoute_63 = import3.ɵf(this._Router_20)); }
+    return this.__ActivatedRoute_63;
   }
-  get _PreloadingStrategy_64():any {
-    if ((this.__PreloadingStrategy_64 == null)) { (this.__PreloadingStrategy_64 = this._NoPreloading_63); }
-    return this.__PreloadingStrategy_64;
+  get _NoPreloading_64():import3.NoPreloading {
+    if ((this.__NoPreloading_64 == null)) { (this.__NoPreloading_64 = new import3.NoPreloading()); }
+    return this.__NoPreloading_64;
   }
-  get _RouterPreloader_65():import3.RouterPreloader {
-    if ((this.__RouterPreloader_65 == null)) { (this.__RouterPreloader_65 = new import3.RouterPreloader(this._Router_20,this._NgModuleFactoryLoader_18,this._Compiler_17,this,this._PreloadingStrategy_64)); }
-    return this.__RouterPreloader_65;
+  get _PreloadingStrategy_65():any {
+    if ((this.__PreloadingStrategy_65 == null)) { (this.__PreloadingStrategy_65 = this._NoPreloading_64); }
+    return this.__PreloadingStrategy_65;
   }
-  get _PreloadAllModules_66():import3.PreloadAllModules {
-    if ((this.__PreloadAllModules_66 == null)) { (this.__PreloadAllModules_66 = new import3.PreloadAllModules()); }
-    return this.__PreloadAllModules_66;
+  get _RouterPreloader_66():import3.RouterPreloader {
+    if ((this.__RouterPreloader_66 == null)) { (this.__RouterPreloader_66 = new import3.RouterPreloader(this._Router_20,this._NgModuleFactoryLoader_18,this._Compiler_17,this,this._PreloadingStrategy_65)); }
+    return this.__RouterPreloader_66;
   }
-  get _ROUTER_INITIALIZER_67():any {
-    if ((this.__ROUTER_INITIALIZER_67 == null)) { (this.__ROUTER_INITIALIZER_67 = import3.ɵi(this._ɵg_3)); }
-    return this.__ROUTER_INITIALIZER_67;
+  get _PreloadAllModules_67():import3.PreloadAllModules {
+    if ((this.__PreloadAllModules_67 == null)) { (this.__PreloadAllModules_67 = new import3.PreloadAllModules()); }
+    return this.__PreloadAllModules_67;
   }
-  get _APP_BOOTSTRAP_LISTENER_68():any[] {
-    if ((this.__APP_BOOTSTRAP_LISTENER_68 == null)) { (this.__APP_BOOTSTRAP_LISTENER_68 = [this._ROUTER_INITIALIZER_67]); }
-    return this.__APP_BOOTSTRAP_LISTENER_68;
+  get _ROUTER_INITIALIZER_68():any {
+    if ((this.__ROUTER_INITIALIZER_68 == null)) { (this.__ROUTER_INITIALIZER_68 = import3.ɵi(this._ɵg_3)); }
+    return this.__ROUTER_INITIALIZER_68;
   }
-  get _PageScrollService_69():import17.PageScrollService {
-    if ((this.__PageScrollService_69 == null)) { (this.__PageScrollService_69 = new import17.PageScrollService()); }
-    return this.__PageScrollService_69;
+  get _APP_BOOTSTRAP_LISTENER_69():any[] {
+    if ((this.__APP_BOOTSTRAP_LISTENER_69 == null)) { (this.__APP_BOOTSTRAP_LISTENER_69 = [this._ROUTER_INITIALIZER_68]); }
+    return this.__APP_BOOTSTRAP_LISTENER_69;
   }
   get _AppData_70():import18.AppData {
     if ((this.__AppData_70 == null)) { (this.__AppData_70 = new import18.AppData(this._AckOffline_58,this._ErrorLog_57)); }
     return this.__AppData_70;
   }
   get _RouteWatchReporter_71():import19.RouteWatchReporter {
-    if ((this.__RouteWatchReporter_71 == null)) { (this.__RouteWatchReporter_71 = new import19.RouteWatchReporter(this._Router_20,this._ActivatedRoute_62)); }
+    if ((this.__RouteWatchReporter_71 == null)) { (this.__RouteWatchReporter_71 = new import19.RouteWatchReporter(this._Router_20,this._ActivatedRoute_63)); }
     return this.__RouteWatchReporter_71;
   }
   createInternal():import1.AppModule {
@@ -378,11 +378,11 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
     ];
     this._Router_20 = import3.ɵe(this._ApplicationRef_7,this._UrlSerializer_12,this._RouterOutletMap_13,this._Location_16,this,this._NgModuleFactoryLoader_18,this._Compiler_17,this._ROUTES_19,this._ROUTER_CONFIGURATION_14,this.parent.get(import3.UrlHandlingStrategy,(null as any)),this.parent.get(import3.RouteReuseStrategy,(null as any)));
     this._RouterModule_21 = new import3.RouterModule(this._ɵa_11,this._Router_20);
-    this._Ng2PageScrollModule_22 = new import6.Ng2PageScrollModule();
-    this._ɵba_23 = new import7.ɵba();
-    this._FormsModule_24 = new import7.FormsModule();
-    this._HttpModule_25 = new import8.HttpModule();
-    this._AckModule_26 = new import9.AckModule();
+    this._ɵba_22 = new import6.ɵba();
+    this._FormsModule_23 = new import6.FormsModule();
+    this._HttpModule_24 = new import7.HttpModule();
+    this._AckModule_25 = new import8.AckModule();
+    this._Ng2PageScrollModule_26 = new import9.Ng2PageScrollModule();
     this._RjonModule_27 = new import10.RjonModule();
     this._AppModule_28 = new import1.AppModule();
     return this._AppModule_28;
@@ -410,11 +410,11 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
     if ((token === import3.ROUTES)) { return this._ROUTES_19; }
     if ((token === import3.Router)) { return this._Router_20; }
     if ((token === import3.RouterModule)) { return this._RouterModule_21; }
-    if ((token === import6.Ng2PageScrollModule)) { return this._Ng2PageScrollModule_22; }
-    if ((token === import7.ɵba)) { return this._ɵba_23; }
-    if ((token === import7.FormsModule)) { return this._FormsModule_24; }
-    if ((token === import8.HttpModule)) { return this._HttpModule_25; }
-    if ((token === import9.AckModule)) { return this._AckModule_26; }
+    if ((token === import6.ɵba)) { return this._ɵba_22; }
+    if ((token === import6.FormsModule)) { return this._FormsModule_23; }
+    if ((token === import7.HttpModule)) { return this._HttpModule_24; }
+    if ((token === import8.AckModule)) { return this._AckModule_25; }
+    if ((token === import9.Ng2PageScrollModule)) { return this._Ng2PageScrollModule_26; }
     if ((token === import10.RjonModule)) { return this._RjonModule_27; }
     if ((token === import1.AppModule)) { return this._AppModule_28; }
     if ((token === import0.LOCALE_ID)) { return this._LOCALE_ID_29; }
@@ -437,27 +437,27 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
     if ((token === import0.Testability)) { return this._Testability_46; }
     if ((token === import4.Meta)) { return this._Meta_47; }
     if ((token === import4.Title)) { return this._Title_48; }
-    if ((token === import7.ɵi)) { return this._ɵi_49; }
-    if ((token === import8.BrowserXhr)) { return this._BrowserXhr_50; }
-    if ((token === import8.ResponseOptions)) { return this._ResponseOptions_51; }
-    if ((token === import8.XSRFStrategy)) { return this._XSRFStrategy_52; }
-    if ((token === import8.XHRBackend)) { return this._XHRBackend_53; }
-    if ((token === import8.RequestOptions)) { return this._RequestOptions_54; }
-    if ((token === import8.Http)) { return this._Http_55; }
+    if ((token === import6.ɵi)) { return this._ɵi_49; }
+    if ((token === import7.BrowserXhr)) { return this._BrowserXhr_50; }
+    if ((token === import7.ResponseOptions)) { return this._ResponseOptions_51; }
+    if ((token === import7.XSRFStrategy)) { return this._XSRFStrategy_52; }
+    if ((token === import7.XHRBackend)) { return this._XHRBackend_53; }
+    if ((token === import7.RequestOptions)) { return this._RequestOptions_54; }
+    if ((token === import7.Http)) { return this._Http_55; }
     if ((token === import11.Log)) { return this._Log_56; }
     if ((token === import12.ErrorLog)) { return this._ErrorLog_57; }
     if ((token === import13.AckOffline)) { return this._AckOffline_58; }
     if ((token === import14.AckCache)) { return this._AckCache_59; }
     if ((token === import15.AckQue)) { return this._AckQue_60; }
     if ((token === import16.AckApi)) { return this._AckApi_61; }
-    if ((token === import3.ActivatedRoute)) { return this._ActivatedRoute_62; }
-    if ((token === import3.NoPreloading)) { return this._NoPreloading_63; }
-    if ((token === import3.PreloadingStrategy)) { return this._PreloadingStrategy_64; }
-    if ((token === import3.RouterPreloader)) { return this._RouterPreloader_65; }
-    if ((token === import3.PreloadAllModules)) { return this._PreloadAllModules_66; }
-    if ((token === import3.ROUTER_INITIALIZER)) { return this._ROUTER_INITIALIZER_67; }
-    if ((token === import0.APP_BOOTSTRAP_LISTENER)) { return this._APP_BOOTSTRAP_LISTENER_68; }
-    if ((token === import17.PageScrollService)) { return this._PageScrollService_69; }
+    if ((token === import17.PageScrollService)) { return this._PageScrollService_62; }
+    if ((token === import3.ActivatedRoute)) { return this._ActivatedRoute_63; }
+    if ((token === import3.NoPreloading)) { return this._NoPreloading_64; }
+    if ((token === import3.PreloadingStrategy)) { return this._PreloadingStrategy_65; }
+    if ((token === import3.RouterPreloader)) { return this._RouterPreloader_66; }
+    if ((token === import3.PreloadAllModules)) { return this._PreloadAllModules_67; }
+    if ((token === import3.ROUTER_INITIALIZER)) { return this._ROUTER_INITIALIZER_68; }
+    if ((token === import0.APP_BOOTSTRAP_LISTENER)) { return this._APP_BOOTSTRAP_LISTENER_69; }
     if ((token === import18.AppData)) { return this._AppData_70; }
     if ((token === import19.RouteWatchReporter)) { return this._RouteWatchReporter_71; }
     return notFoundResult;
@@ -465,7 +465,7 @@ class AppModuleInjector extends import0.ɵNgModuleInjector<import1.AppModule> {
   destroyInternal():void {
     this._ɵf_6.ngOnDestroy();
     (this.__ɵDomSharedStylesHost_39 && this._ɵDomSharedStylesHost_39.ngOnDestroy());
-    (this.__RouterPreloader_65 && this._RouterPreloader_65.ngOnDestroy());
+    (this.__RouterPreloader_66 && this._RouterPreloader_66.ngOnDestroy());
   }
 }
 export const AppModuleNgFactory:import0.NgModuleFactory<import1.AppModule> = new import0.NgModuleFactory<any>(AppModuleInjector,import1.AppModule);
@@ -7775,12 +7775,12 @@ function View_RjonBuilder_7(l:any):import0.ɵViewDefinition {
         0
       ]
     ],(null as any),(null as any),(null as any),(null as any))),
-    import0.ɵdid(147456,(null as any),0,import7.NgSelectOption,[
+    import0.ɵdid(147456,(null as any),0,import6.NgSelectOption,[
       import0.ElementRef,
       import0.Renderer,
       [
         2,
-        import7.SelectControlValueAccessor
+        import6.SelectControlValueAccessor
       ]
 
     ]
@@ -7789,7 +7789,7 @@ function View_RjonBuilder_7(l:any):import0.ɵViewDefinition {
         'value'
       ]
     },(null as any)),
-    import0.ɵdid(147456,(null as any),0,import7.ɵq,[
+    import0.ɵdid(147456,(null as any),0,import6.ɵq,[
       import0.ElementRef,
       import0.Renderer,
       [
@@ -8167,8 +8167,8 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
       }
       return ad;
     },(null as any),(null as any))),
-    import0.ɵdid(16384,(null as any),0,import7.ɵbf,([] as any[]),(null as any),(null as any)),
-    import0.ɵdid(16384,(null as any),0,import7.NgForm,[
+    import0.ɵdid(16384,(null as any),0,import6.ɵbf,([] as any[]),(null as any),(null as any)),
+    import0.ɵdid(16384,(null as any),0,import6.NgForm,[
       [
         8,
         (null as any)
@@ -8181,8 +8181,8 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
 
     ]
     ,(null as any),(null as any)),
-    import0.ɵprd(2048,(null as any),import7.ControlContainer,(null as any),[import7.NgForm]),
-    import0.ɵdid(16384,(null as any),0,import7.NgControlStatusGroup,[import7.ControlContainer],(null as any),(null as any)),
+    import0.ɵprd(2048,(null as any),import6.ControlContainer,(null as any),[import6.NgForm]),
+    import0.ɵdid(16384,(null as any),0,import6.NgControlStatusGroup,[import6.ControlContainer],(null as any),(null as any)),
     import0.ɵdid(147456,(null as any),0,import23.OnFormAlter,[import0.ElementRef],(null as any),{onFormAlter: 'onFormAlter'}),
     (l()(),import0.ɵeld(0,(null as any),(null as any),5,'textarea',[
       [
@@ -8306,23 +8306,23 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
       }
       return ad;
     },(null as any),(null as any))),
-    import0.ɵdid(16384,(null as any),0,import7.DefaultValueAccessor,[
+    import0.ɵdid(16384,(null as any),0,import6.DefaultValueAccessor,[
       import0.Renderer,
       import0.ElementRef,
       [
         2,
-        import7.COMPOSITION_BUFFER_MODE
+        import6.COMPOSITION_BUFFER_MODE
       ]
 
     ]
     ,(null as any),(null as any)),
-    import0.ɵprd(1024,(null as any),import7.NG_VALUE_ACCESSOR,(p0_0:any) => {
+    import0.ɵprd(1024,(null as any),import6.NG_VALUE_ACCESSOR,(p0_0:any) => {
       return [p0_0];
-    },[import7.DefaultValueAccessor]),
-    import0.ɵdid(671744,(null as any),0,import7.NgModel,[
+    },[import6.DefaultValueAccessor]),
+    import0.ɵdid(671744,(null as any),0,import6.NgModel,[
       [
         2,
-        import7.ControlContainer
+        import6.ControlContainer
       ]
       ,
       [
@@ -8337,7 +8337,7 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
       ,
       [
         2,
-        import7.NG_VALUE_ACCESSOR
+        import6.NG_VALUE_ACCESSOR
       ]
 
     ]
@@ -8354,8 +8354,8 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
 
     }
     ,{update: 'ngModelChange'}),
-    import0.ɵprd(2048,(null as any),import7.NgControl,(null as any),[import7.NgModel]),
-    import0.ɵdid(16384,(null as any),0,import7.NgControlStatus,[import7.NgControl],(null as any),(null as any)),
+    import0.ɵprd(2048,(null as any),import6.NgControl,(null as any),[import6.NgModel]),
+    import0.ɵdid(16384,(null as any),0,import6.NgControlStatus,[import6.NgControl],(null as any),(null as any)),
     (l()(),import0.ɵand(16777216,(null as any),(null as any),1,(null as any),View_RjonBuilder_6)),
     import0.ɵdid(16384,(null as any),0,import2.NgIf,[
       import0.ViewContainerRef,
@@ -8492,20 +8492,20 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
       }
       return ad;
     },(null as any),(null as any))),
-    import0.ɵdid(16384,(null as any),0,import7.DefaultValueAccessor,[
+    import0.ɵdid(16384,(null as any),0,import6.DefaultValueAccessor,[
       import0.Renderer,
       import0.ElementRef,
       [
         2,
-        import7.COMPOSITION_BUFFER_MODE
+        import6.COMPOSITION_BUFFER_MODE
       ]
 
     ]
     ,(null as any),(null as any)),
-    import0.ɵprd(1024,(null as any),import7.NG_VALUE_ACCESSOR,(p0_0:any) => {
+    import0.ɵprd(1024,(null as any),import6.NG_VALUE_ACCESSOR,(p0_0:any) => {
       return [p0_0];
-    },[import7.DefaultValueAccessor]),
-    import0.ɵdid(671744,(null as any),0,import7.NgModel,[
+    },[import6.DefaultValueAccessor]),
+    import0.ɵdid(671744,(null as any),0,import6.NgModel,[
       [
         8,
         (null as any)
@@ -8523,7 +8523,7 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
       ,
       [
         2,
-        import7.NG_VALUE_ACCESSOR
+        import6.NG_VALUE_ACCESSOR
       ]
 
     ]
@@ -8532,8 +8532,8 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
         'model'
       ]
     },{update: 'ngModelChange'}),
-    import0.ɵprd(2048,(null as any),import7.NgControl,(null as any),[import7.NgModel]),
-    import0.ɵdid(16384,(null as any),0,import7.NgControlStatus,[import7.NgControl],(null as any),(null as any)),
+    import0.ɵprd(2048,(null as any),import6.NgControl,(null as any),[import6.NgModel]),
+    import0.ɵdid(16384,(null as any),0,import6.NgControlStatus,[import6.NgControl],(null as any),(null as any)),
     import0.ɵdid(16384,(null as any),0,import23.OnEnterKey,[import0.ElementRef],(null as any),{onEnterKey: 'onEnterKey'}),
     (l()(),import0.ɵeld(0,(null as any),(null as any),3,'div',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
     (l()(),import0.ɵeld(0,(null as any),(null as any),1,'label',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
@@ -8657,15 +8657,15 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
       }
       return ad;
     },(null as any),(null as any))),
-    import0.ɵdid(16384,(null as any),0,import7.SelectControlValueAccessor,[
+    import0.ɵdid(16384,(null as any),0,import6.SelectControlValueAccessor,[
       import0.Renderer,
       import0.ElementRef
     ]
     ,(null as any),(null as any)),
-    import0.ɵprd(1024,(null as any),import7.NG_VALUE_ACCESSOR,(p0_0:any) => {
+    import0.ɵprd(1024,(null as any),import6.NG_VALUE_ACCESSOR,(p0_0:any) => {
       return [p0_0];
-    },[import7.SelectControlValueAccessor]),
-    import0.ɵdid(671744,(null as any),0,import7.NgModel,[
+    },[import6.SelectControlValueAccessor]),
+    import0.ɵdid(671744,(null as any),0,import6.NgModel,[
       [
         8,
         (null as any)
@@ -8683,7 +8683,7 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
       ,
       [
         2,
-        import7.NG_VALUE_ACCESSOR
+        import6.NG_VALUE_ACCESSOR
       ]
 
     ]
@@ -8692,20 +8692,20 @@ export function View_RjonBuilder_0(l:any):import0.ɵViewDefinition {
         'model'
       ]
     },{update: 'ngModelChange'}),
-    import0.ɵprd(2048,(null as any),import7.NgControl,(null as any),[import7.NgModel]),
-    import0.ɵdid(16384,(null as any),0,import7.NgControlStatus,[import7.NgControl],(null as any),(null as any)),
+    import0.ɵprd(2048,(null as any),import6.NgControl,(null as any),[import6.NgModel]),
+    import0.ɵdid(16384,(null as any),0,import6.NgControlStatus,[import6.NgControl],(null as any),(null as any)),
     (l()(),import0.ɵeld(0,(null as any),(null as any),2,'option',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
-    import0.ɵdid(147456,(null as any),0,import7.NgSelectOption,[
+    import0.ɵdid(147456,(null as any),0,import6.NgSelectOption,[
       import0.ElementRef,
       import0.Renderer,
       [
         2,
-        import7.SelectControlValueAccessor
+        import6.SelectControlValueAccessor
       ]
 
     ]
     ,(null as any),(null as any)),
-    import0.ɵdid(147456,(null as any),0,import7.ɵq,[
+    import0.ɵdid(147456,(null as any),0,import6.ɵq,[
       import0.ElementRef,
       import0.Renderer,
       [
@@ -16674,7 +16674,7 @@ function View_AppComponent_8(l:any):import0.ɵViewDefinition {
     },import34.View_RjonTester_0,import34.RenderType_RjonTester)),
     import0.ɵdid(4308992,(null as any),0,import35.RjonTester,[
       import18.AppData,
-      import8.Http
+      import7.Http
     ]
       ,{ref: [
         0,
