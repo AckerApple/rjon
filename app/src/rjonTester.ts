@@ -85,8 +85,10 @@ export class Tester{
 
     const tests = []
     let onlyArray = []
-    const promises = routes.map(route=>{
-      const routeTests = route.sample.map(sample=>this.mapSample(sample,route,options))
+    routes.forEach(route=>{
+      if(!route.sample)return
+
+      const routeTests = array(route.sample).map(sample=>this.mapSample(sample,route,options))
       tests.push.apply(tests, routeTests)
     })
 
