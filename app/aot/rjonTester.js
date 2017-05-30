@@ -76,8 +76,10 @@ var Tester = (function () {
         };
         var tests = [];
         var onlyArray = [];
-        var promises = routes.map(function (route) {
-            var routeTests = route.sample.map(function (sample) { return _this.mapSample(sample, route, options); });
+        routes.forEach(function (route) {
+            if (!route.sample)
+                return;
+            var routeTests = pipes_class_1.array(route.sample).map(function (sample) { return _this.mapSample(sample, route, options); });
             tests.push.apply(tests, routeTests);
         });
         for (var x = tests.length - 1; x >= 0; --x) {
