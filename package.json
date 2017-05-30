@@ -1,6 +1,6 @@
 {
   "name": "rjon",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "route js object notation is a way to standardize route metadata for use and testing in  universal route interpreter software",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
