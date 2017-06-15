@@ -24,35 +24,35 @@ USE THE APP : [rjon app](https://ackerapple.github.io/rjon/)
 Below is a map of standarized RJON
 
 ```javascript
-{
+var x = {
   "routes": [
     {
       "path": "",
       "method": "GET",
-      "returnType: "",//expected type of response
+      "returnType: "",
       "description": "",
       "notes": [""],
-      "status": ["star"],//keyword descriptors. Often matches status icon. star=⭐
+      "status": ["star"],
       "variables":{
-        "query":{ "name":"type" },//url variable details
-        "post":{ "name":"type" },//post variable details
-        "params":{ "name":"type" }//path variable details
+        "query":{ "name":"type" },
+        "post":{ "name":"type" },
+        "params":{ "name":"type" }
       },
       "sample": [
         {
-          "path": "",//sample path substitution
-          "query": {},//url variables
-          "params": {},//path variables
-          "request": {},//request body sample
+          "path": "",
+          "query": {},
+          "params": {},
+          "request": {},
           "headers": {}
-          "post": {},//form post variables
-          "test": {//object or boolean
+          "post": {},
+          "test": {
             "timeout": 2000,
             "statusCode": 200,
             "body": [],
-            "only": false,//skip others bulk tests
-            "skip": false,//skip during bulk tests
-            "title": ""//extra details
+            "only": false,
+            "skip": false,
+            "title": ""
           }
         }
       ]
@@ -65,7 +65,7 @@ Below is a map of standarized RJON
       "port": 8080,
       "description": "",
       "notes": [""],
-      "headers": {}//global headers meant for all requests
+      "headers": {}
     }
   ],
   "name":""//save-reference
