@@ -6,24 +6,20 @@
  /* tslint:disable */
 
 
-import * as import0 from '@angular/core';
-import * as import1 from '../../src/states.object';
+import * as i0 from '@angular/core';
+import * as i1 from '../../src/states.object';
 const styles_FakeCom:any[] = ([] as any[]);
-export const RenderType_FakeCom:import0.RendererType2 = import0.ɵcrt({
-  encapsulation: 2,
-  styles: styles_FakeCom,
-  data: {}
+export const RenderType_FakeCom:i0.RendererType2 = i0.ɵcrt({encapsulation:2,styles:styles_FakeCom,
+    data:{}});
+export function View_FakeCom_0(_l:any):i0.ɵViewDefinition {
+  return i0.ɵvid(0,([] as any[]),(null as any),(null as any));
 }
-);
-export function View_FakeCom_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,([] as any[]),(null as any),(null as any));
+export function View_FakeCom_Host_0(_l:any):i0.ɵViewDefinition {
+  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'ng-component',
+      ([] as any[]),(null as any),(null as any),(null as any),View_FakeCom_0,RenderType_FakeCom)),
+      i0.ɵdid(49152,(null as any),0,i1.FakeCom,([] as any[]),(null as any),(null as any))],
+      (null as any),(null as any));
 }
-function View_FakeCom_Host_0(l:any):import0.ɵViewDefinition {
-  return import0.ɵvid(0,[
-    (l()(),import0.ɵeld(0,(null as any),(null as any),1,'ng-component',([] as any[]),(null as any),(null as any),(null as any),View_FakeCom_0,RenderType_FakeCom)),
-    import0.ɵdid(49152,(null as any),0,import1.FakeCom,([] as any[]),(null as any),(null as any))
-  ]
-  ,(null as any),(null as any));
-}
-export const FakeComNgFactory:import0.ComponentFactory<import1.FakeCom> = import0.ɵccf('ng-component',import1.FakeCom,View_FakeCom_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvc3RhdGVzLm9iamVjdC50cyIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QudHMuRmFrZUNvbV9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxuZy1jb21wb25lbnQ+PC9uZy1jb21wb25lbnQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQ0FBO2dCQUFBOzs7OyJ9
+export const FakeComNgFactory:i0.ComponentFactory<i1.FakeCom> = i0.ɵccf('ng-component',
+    i1.FakeCom,View_FakeCom_Host_0,{},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvc3RhdGVzLm9iamVjdC50cyIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3N0YXRlcy5vYmplY3QudHMuRmFrZUNvbV9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxuZy1jb21wb25lbnQ+PC9uZy1jb21wb25lbnQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDQUE7TUFBQTthQUFBOzs7OyJ9

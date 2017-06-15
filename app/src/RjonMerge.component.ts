@@ -143,6 +143,15 @@ import { array } from "ack-angular/pipes.class"
     return rjon0
   }
 
+  dropRoute(route){
+    for(let i=this.AppData.rjon.routes.length-1; i >= 0; --i){
+      let iRoute = this.AppData.rjon.routes[i]
+      if(route==iRoute){
+        return this.AppData.rjon.routes.splice(i,1)
+      }
+    }
+  }
+
   dedup(){
     this.AppData.rjon.routes.forEach((route,i)=>{
       for(let x=0; x < this.AppData.rjon.routes.length; ++x){

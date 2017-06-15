@@ -6,7 +6,7 @@ label Select Host
 select.width-full("(change)"="setHostByIndex($event.target.value)")
   option
   option("*ngFor"="let host of AppData.rjon.hosts; let i=index" "[value]"="i" "[selected]"="host.hostname==(hostModel&&hostModel.hostname)")
-    |{{ host.protocol||'http' }}://{{ host.hostname }}:{{ host.port || 80 }}
+    |{{ host.protocol || (host.port==443?'https':'http') }}://{{ host.hostname }}:{{ host.port || 80 }}
 
 br
 

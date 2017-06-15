@@ -15,19 +15,19 @@ import * as rjonHelper from "./rjonHelper"
   @Input() public hostModel
   @Output() public hostModelChange = new EventEmitter()
 
-  public rjonHelper = rjonHelper
-  public pathModel
-  public methodModel
-  public loadSample
-  public bodyModel
-  public response
-  public tryingSend
-  public sending:number=0
-  public error
-  public responseView
-  public headers={
-    'Content-Type':'application/json'
-  }
+  headers = [{name:'Content-Type', value:'application/json'}]
+  protocolModel
+  contentTypeModel = 'application/json'
+  rjonHelper = rjonHelper
+  pathModel
+  methodModel
+  loadSample
+  bodyModel
+  response
+  tryingSend
+  sending:number=0
+  error
+  responseView
 
   constructor(public AckApi:AckApi){}
 
@@ -36,10 +36,20 @@ import * as rjonHelper from "./rjonHelper"
     this.methodModel = this.route['method']
     this.bodyModel = this.getDefaultBodyModel()
     this.hostModel = this.getDefaultHostModel()
+    this.applyProtocol()
     setTimeout(()=>{
       this.route = this.route || {}
       this.hostModelChange.emit(this.hostModel)
     }, 0)
+  }
+
+  setContentType(type){
+    for(let x=this.headers.length-1; x >= 0; --x){
+      if(this.headers[x].name.toLowerCase()=='content-type'){
+        return this.headers[x].value = type
+      }
+    }
+    this.headers.push({name:'Content-Type' , value:type})
   }
 
   getDefaultHostModel(){
@@ -53,6 +63,12 @@ import * as rjonHelper from "./rjonHelper"
   setHostByIndex(index){
     this.hostModel = this.hosts[index]
     this.hostModelChange.emit(this.hostModel)
+    if(!this.protocolModel)this.applyProtocol()
+  }
+
+  applyProtocol(){
+    if( !this.hostModel || !this.hostModel.protocol )return;
+    this.protocolModel = this.hostModel.protocol
   }
 
   getDefaultBodyModel(){
@@ -76,18 +92,26 @@ import * as rjonHelper from "./rjonHelper"
     }
   }
 
+  getProtocol(){
+    if(this.hostModel.hostname.search(/^http(s)?:/)>=0)return ''
+    return (this.protocolModel || this.hostModel.protocol || (this.hostModel.port==443?'https':'http'))+'://'
+  }
+
   send(){
     const port = this.hostModel.port||80
-    const protocol = this.hostModel.hostname.search(/^http(s)?:/)>=0 ? '' : (this.hostModel.protocol||'http')+'://'
-    const host = protocol+this.hostModel.hostname
+    const protocol = this.getProtocol()
+    const host = protocol + this.hostModel.hostname
     const route = (this.pathModel.substring(0, 1)=='/' ? '' : '/') + this.pathModel
     const url = host+':' + port + route
+
+    const headers = {}
+    this.headers.forEach(item=>headers[item.name]=item.value)
 
     const config={
       method:this.methodModel,
       url:url,
       body:this.bodyModel,
-      headers:this.headers,
+      headers:headers,
       promise:'all'
     }
 

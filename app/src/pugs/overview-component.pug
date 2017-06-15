@@ -5,7 +5,7 @@ h2.margin-v-0 Route Javascript Object Notation
 p.margin-0.pad-h.text-grey-2x A superb conduit to building, testing, and reviewing API end-points
 
 h3 RJON Map
-p.margin-v-0 Below is a map to how standarized RJON is defined
+p.margin-v-0 Below is a map of standarized RJON
 pre.code-sample(ngNonBindable).
   &#123;
     "routes": [
@@ -27,6 +27,7 @@ pre.code-sample(ngNonBindable).
             "query": &#123;&#125;,#[span.text-grey-2x //url variables]
             "params": &#123;&#125;,#[span.text-grey-2x //path variables]
             "request": &#123;&#125;,#[span.text-grey-2x //request body sample]
+            "headers": &#123;&#125;
             "post": &#123;&#125;,#[span.text-grey-2x //form post variables]
             "test": &#123;#[span.text-grey-2x //object or boolean]
               "timeout": 2000,
@@ -46,7 +47,8 @@ pre.code-sample(ngNonBindable).
         "hostname": "localhost",
         "port": 8080,
         "description": "",
-        "notes": [""]
+        "notes": [""],
+        "headers": &#123;&#125;#[span.text-grey-2x //global headers meant for all requests]
       &#125;
     ],
     "name":""#[span.text-grey-2x //save-reference]

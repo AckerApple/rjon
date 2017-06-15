@@ -11,11 +11,10 @@ var TestRoute = (function () {
         this.route = {};
         this.spaceSaving = true;
         this.hostModelChange = new core_1.EventEmitter();
+        this.headers = [{ name: 'Content-Type', value: 'application/json' }];
+        this.contentTypeModel = 'application/json';
         this.rjonHelper = rjonHelper;
         this.sending = 0;
-        this.headers = {
-            'Content-Type': 'application/json'
-        };
     }
     TestRoute.prototype.ngOnInit = function () {
         var _this = this;
@@ -23,10 +22,19 @@ var TestRoute = (function () {
         this.methodModel = this.route['method'];
         this.bodyModel = this.getDefaultBodyModel();
         this.hostModel = this.getDefaultHostModel();
+        this.applyProtocol();
         setTimeout(function () {
             _this.route = _this.route || {};
             _this.hostModelChange.emit(_this.hostModel);
         }, 0);
+    };
+    TestRoute.prototype.setContentType = function (type) {
+        for (var x = this.headers.length - 1; x >= 0; --x) {
+            if (this.headers[x].name.toLowerCase() == 'content-type') {
+                return this.headers[x].value = type;
+            }
+        }
+        this.headers.push({ name: 'Content-Type', value: type });
     };
     TestRoute.prototype.getDefaultHostModel = function () {
         if (this.hostModel)
@@ -38,6 +46,13 @@ var TestRoute = (function () {
     TestRoute.prototype.setHostByIndex = function (index) {
         this.hostModel = this.hosts[index];
         this.hostModelChange.emit(this.hostModel);
+        if (!this.protocolModel)
+            this.applyProtocol();
+    };
+    TestRoute.prototype.applyProtocol = function () {
+        if (!this.hostModel || !this.hostModel.protocol)
+            return;
+        this.protocolModel = this.hostModel.protocol;
     };
     TestRoute.prototype.getDefaultBodyModel = function () {
         var firstSample = rjonHelper.defToArray(this.route['sample']);
@@ -56,18 +71,25 @@ var TestRoute = (function () {
             this.send();
         }
     };
+    TestRoute.prototype.getProtocol = function () {
+        if (this.hostModel.hostname.search(/^http(s)?:/) >= 0)
+            return '';
+        return (this.protocolModel || this.hostModel.protocol || (this.hostModel.port == 443 ? 'https' : 'http')) + '://';
+    };
     TestRoute.prototype.send = function () {
         var _this = this;
         var port = this.hostModel.port || 80;
-        var protocol = this.hostModel.hostname.search(/^http(s)?:/) >= 0 ? '' : (this.hostModel.protocol || 'http') + '://';
+        var protocol = this.getProtocol();
         var host = protocol + this.hostModel.hostname;
         var route = (this.pathModel.substring(0, 1) == '/' ? '' : '/') + this.pathModel;
         var url = host + ':' + port + route;
+        var headers = {};
+        this.headers.forEach(function (item) { return headers[item.name] = item.value; });
         var config = {
             method: this.methodModel,
             url: url,
             body: this.bodyModel,
-            headers: this.headers,
+            headers: headers,
             promise: 'all'
         };
         ++this.sending;

@@ -20,6 +20,7 @@ exports.string = "<error-well [error]=\"error\"></error-well><h2 class=\"margin-
     "\n          \"query\": &#123;&#125;,<span class=\"text-grey-2x\">//url variables</span>" +
     "\n          \"params\": &#123;&#125;,<span class=\"text-grey-2x\">//path variables</span>" +
     "\n          \"request\": &#123;&#125;,<span class=\"text-grey-2x\">//request body sample</span>" +
+    "\n          \"headers\": &#123;&#125;" +
     "\n          \"post\": &#123;&#125;,<span class=\"text-grey-2x\">//form post variables</span>" +
     "\n          \"test\": &#123;<span class=\"text-grey-2x\">//object or boolean</span>" +
     "\n            \"timeout\": 2000," +
@@ -39,7 +40,8 @@ exports.string = "<error-well [error]=\"error\"></error-well><h2 class=\"margin-
     "\n      \"hostname\": \"localhost\"," +
     "\n      \"port\": 8080," +
     "\n      \"description\": \"\"," +
-    "\n      \"notes\": [\"\"]" +
+    "\n      \"notes\": [\"\"]," +
+    "\n      \"headers\": &#123;&#125;<span class=\"text-grey-2x\">//global headers meant for all requests</span>" +
     "\n    &#125;" +
     "\n  ]," +
     "\n  \"name\":\"\"<span class=\"text-grey-2x\">//save-reference</span>" +

@@ -6,143 +6,40 @@
  /* tslint:disable */
 
 
-import * as import0 from '@angular/core';
-import * as import1 from '../../../src/rjon/RjonModule';
-import * as import2 from '@angular/common';
-import * as import3 from '@angular/forms';
-import * as import4 from '@angular/http';
-import * as import5 from 'ack-angular/AckModule';
-import * as import6 from 'ng2-page-scroll/src/ng2-page-scroll.module';
-import * as import7 from 'ack-angular/Log';
-import * as import8 from 'ack-angular/ErrorLog';
-import * as import9 from 'ack-angular/AckOffline';
-import * as import10 from 'ack-angular/AckCache';
-import * as import11 from 'ack-angular/AckQue';
-import * as import12 from 'ack-angular/AckApi';
-import * as import13 from 'ng2-page-scroll/src/ng2-page-scroll.service';
-class RjonModuleInjector extends import0.ɵNgModuleInjector<import1.RjonModule> {
-  _CommonModule_0:import2.CommonModule;
-  _ɵba_1:import3.ɵba;
-  _FormsModule_2:import3.FormsModule;
-  _HttpModule_3:import4.HttpModule;
-  _AckModule_4:import5.AckModule;
-  _Ng2PageScrollModule_5:import6.Ng2PageScrollModule;
-  _RjonModule_6:import1.RjonModule;
-  __NgLocalization_7:import2.NgLocaleLocalization;
-  __ɵi_8:import3.ɵi;
-  __BrowserXhr_9:import4.BrowserXhr;
-  __ResponseOptions_10:import4.BaseResponseOptions;
-  __XSRFStrategy_11:any;
-  __XHRBackend_12:import4.XHRBackend;
-  __RequestOptions_13:import4.BaseRequestOptions;
-  __Http_14:any;
-  __Log_15:import7.Log;
-  __ErrorLog_16:import8.ErrorLog;
-  __AckOffline_17:import9.AckOffline;
-  __AckCache_18:import10.AckCache;
-  __AckQue_19:import11.AckQue;
-  __AckApi_20:import12.AckApi;
-  __PageScrollService_21:import13.PageScrollService;
-  constructor(parent:import0.Injector) {
-    super(parent,([] as any[]),([] as any[]));
-  }
-  get _NgLocalization_7():import2.NgLocaleLocalization {
-    if ((this.__NgLocalization_7 == null)) { (this.__NgLocalization_7 = new import2.NgLocaleLocalization(this.parent.get(import0.LOCALE_ID))); }
-    return this.__NgLocalization_7;
-  }
-  get _ɵi_8():import3.ɵi {
-    if ((this.__ɵi_8 == null)) { (this.__ɵi_8 = new import3.ɵi()); }
-    return this.__ɵi_8;
-  }
-  get _BrowserXhr_9():import4.BrowserXhr {
-    if ((this.__BrowserXhr_9 == null)) { (this.__BrowserXhr_9 = new import4.BrowserXhr()); }
-    return this.__BrowserXhr_9;
-  }
-  get _ResponseOptions_10():import4.BaseResponseOptions {
-    if ((this.__ResponseOptions_10 == null)) { (this.__ResponseOptions_10 = new import4.BaseResponseOptions()); }
-    return this.__ResponseOptions_10;
-  }
-  get _XSRFStrategy_11():any {
-    if ((this.__XSRFStrategy_11 == null)) { (this.__XSRFStrategy_11 = import4.ɵb()); }
-    return this.__XSRFStrategy_11;
-  }
-  get _XHRBackend_12():import4.XHRBackend {
-    if ((this.__XHRBackend_12 == null)) { (this.__XHRBackend_12 = new import4.XHRBackend(this._BrowserXhr_9,this._ResponseOptions_10,this._XSRFStrategy_11)); }
-    return this.__XHRBackend_12;
-  }
-  get _RequestOptions_13():import4.BaseRequestOptions {
-    if ((this.__RequestOptions_13 == null)) { (this.__RequestOptions_13 = new import4.BaseRequestOptions()); }
-    return this.__RequestOptions_13;
-  }
-  get _Http_14():any {
-    if ((this.__Http_14 == null)) { (this.__Http_14 = import4.ɵc(this._XHRBackend_12,this._RequestOptions_13)); }
-    return this.__Http_14;
-  }
-  get _Log_15():import7.Log {
-    if ((this.__Log_15 == null)) { (this.__Log_15 = new import7.Log()); }
-    return this.__Log_15;
-  }
-  get _ErrorLog_16():import8.ErrorLog {
-    if ((this.__ErrorLog_16 == null)) { (this.__ErrorLog_16 = new import8.ErrorLog()); }
-    return this.__ErrorLog_16;
-  }
-  get _AckOffline_17():import9.AckOffline {
-    if ((this.__AckOffline_17 == null)) { (this.__AckOffline_17 = new import9.AckOffline()); }
-    return this.__AckOffline_17;
-  }
-  get _AckCache_18():import10.AckCache {
-    if ((this.__AckCache_18 == null)) { (this.__AckCache_18 = new import10.AckCache()); }
-    return this.__AckCache_18;
-  }
-  get _AckQue_19():import11.AckQue {
-    if ((this.__AckQue_19 == null)) { (this.__AckQue_19 = new import11.AckQue()); }
-    return this.__AckQue_19;
-  }
-  get _AckApi_20():import12.AckApi {
-    if ((this.__AckApi_20 == null)) { (this.__AckApi_20 = new import12.AckApi(this._Http_14)); }
-    return this.__AckApi_20;
-  }
-  get _PageScrollService_21():import13.PageScrollService {
-    if ((this.__PageScrollService_21 == null)) { (this.__PageScrollService_21 = new import13.PageScrollService()); }
-    return this.__PageScrollService_21;
-  }
-  createInternal():import1.RjonModule {
-    this._CommonModule_0 = new import2.CommonModule();
-    this._ɵba_1 = new import3.ɵba();
-    this._FormsModule_2 = new import3.FormsModule();
-    this._HttpModule_3 = new import4.HttpModule();
-    this._AckModule_4 = new import5.AckModule();
-    this._Ng2PageScrollModule_5 = new import6.Ng2PageScrollModule();
-    this._RjonModule_6 = new import1.RjonModule();
-    return this._RjonModule_6;
-  }
-  getInternal(token:any,notFoundResult:any):any {
-    if ((token === import2.CommonModule)) { return this._CommonModule_0; }
-    if ((token === import3.ɵba)) { return this._ɵba_1; }
-    if ((token === import3.FormsModule)) { return this._FormsModule_2; }
-    if ((token === import4.HttpModule)) { return this._HttpModule_3; }
-    if ((token === import5.AckModule)) { return this._AckModule_4; }
-    if ((token === import6.Ng2PageScrollModule)) { return this._Ng2PageScrollModule_5; }
-    if ((token === import1.RjonModule)) { return this._RjonModule_6; }
-    if ((token === import2.NgLocalization)) { return this._NgLocalization_7; }
-    if ((token === import3.ɵi)) { return this._ɵi_8; }
-    if ((token === import4.BrowserXhr)) { return this._BrowserXhr_9; }
-    if ((token === import4.ResponseOptions)) { return this._ResponseOptions_10; }
-    if ((token === import4.XSRFStrategy)) { return this._XSRFStrategy_11; }
-    if ((token === import4.XHRBackend)) { return this._XHRBackend_12; }
-    if ((token === import4.RequestOptions)) { return this._RequestOptions_13; }
-    if ((token === import4.Http)) { return this._Http_14; }
-    if ((token === import7.Log)) { return this._Log_15; }
-    if ((token === import8.ErrorLog)) { return this._ErrorLog_16; }
-    if ((token === import9.AckOffline)) { return this._AckOffline_17; }
-    if ((token === import10.AckCache)) { return this._AckCache_18; }
-    if ((token === import11.AckQue)) { return this._AckQue_19; }
-    if ((token === import12.AckApi)) { return this._AckApi_20; }
-    if ((token === import13.PageScrollService)) { return this._PageScrollService_21; }
-    return notFoundResult;
-  }
-  destroyInternal():void {
-  }
-}
-export const RjonModuleNgFactory:import0.NgModuleFactory<import1.RjonModule> = new import0.NgModuleFactory<any>(RjonModuleInjector,import1.RjonModule);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vUmpvbk1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL1Jqb25Nb2R1bGUuZC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+import * as i0 from '@angular/core';
+import * as i1 from '../../../src/rjon/RjonModule';
+import * as i2 from '@angular/common';
+import * as i3 from '@angular/forms';
+import * as i4 from '@angular/http';
+import * as i5 from 'ack-angular/Log';
+import * as i6 from 'ack-angular/ErrorLog';
+import * as i7 from 'ack-angular/AckOffline';
+import * as i8 from 'ack-angular/AckCache';
+import * as i9 from 'ack-angular/AckQue';
+import * as i10 from 'ack-angular/AckApi';
+import * as i11 from 'ng2-page-scroll/src/ng2-page-scroll.service';
+import * as i12 from 'ack-angular/AckModule';
+import * as i13 from 'ng2-page-scroll/src/ng2-page-scroll.module';
+export const RjonModuleNgFactory:i0.NgModuleFactory<i1.RjonModule> = i0.ɵcmf(i1.RjonModule,
+    ([] as any[]),(_l:any) => {
+      return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
+          [[8,([] as any[])],[3,i0.ComponentFactoryResolver],i0.NgModuleRef]),i0.ɵmpd(4608,
+          i2.NgLocalization,i2.NgLocaleLocalization,[i0.LOCALE_ID]),i0.ɵmpd(4608,i3.ɵi,
+          i3.ɵi,([] as any[])),i0.ɵmpd(4608,i4.BrowserXhr,i4.BrowserXhr,([] as any[])),
+          i0.ɵmpd(4608,i4.ResponseOptions,i4.BaseResponseOptions,([] as any[])),i0.ɵmpd(5120,
+              i4.XSRFStrategy,i4.ɵb,([] as any[])),i0.ɵmpd(4608,i4.XHRBackend,i4.XHRBackend,
+              [i4.BrowserXhr,i4.ResponseOptions,i4.XSRFStrategy]),i0.ɵmpd(4608,i4.RequestOptions,
+              i4.BaseRequestOptions,([] as any[])),i0.ɵmpd(5120,i4.Http,i4.ɵc,[i4.XHRBackend,
+              i4.RequestOptions]),i0.ɵmpd(4608,i5.Log,i5.Log,([] as any[])),i0.ɵmpd(4608,
+              i6.ErrorLog,i6.ErrorLog,([] as any[])),i0.ɵmpd(4608,i7.AckOffline,i7.AckOffline,
+              ([] as any[])),i0.ɵmpd(4608,i8.AckCache,i8.AckCache,([] as any[])),i0.ɵmpd(4608,
+              i9.AckQue,i9.AckQue,([] as any[])),i0.ɵmpd(4608,i10.AckApi,i10.AckApi,
+              [i4.Http]),i0.ɵmpd(4608,i11.PageScrollService,i11.PageScrollService,
+              ([] as any[])),i0.ɵmpd(512,i2.CommonModule,i2.CommonModule,([] as any[])),
+          i0.ɵmpd(512,i3.ɵbc,i3.ɵbc,([] as any[])),i0.ɵmpd(512,i3.FormsModule,i3.FormsModule,
+              ([] as any[])),i0.ɵmpd(512,i4.HttpModule,i4.HttpModule,([] as any[])),
+          i0.ɵmpd(512,i12.AckModule,i12.AckModule,([] as any[])),i0.ɵmpd(512,i13.Ng2PageScrollModule,
+              i13.Ng2PageScrollModule,([] as any[])),i0.ɵmpd(512,i1.RjonModule,i1.RjonModule,
+              ([] as any[]))]);
+    });
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vUmpvbk1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL1Jqb25Nb2R1bGUuZC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==

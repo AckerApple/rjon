@@ -133,6 +133,14 @@ var RjonMerge = (function () {
         });
         return rjon0;
     };
+    RjonMerge.prototype.dropRoute = function (route) {
+        for (var i = this.AppData.rjon.routes.length - 1; i >= 0; --i) {
+            var iRoute = this.AppData.rjon.routes[i];
+            if (route == iRoute) {
+                return this.AppData.rjon.routes.splice(i, 1);
+            }
+        }
+    };
     RjonMerge.prototype.dedup = function () {
         var _this = this;
         this.AppData.rjon.routes.forEach(function (route, i) {

@@ -8,6 +8,12 @@ export declare class TestRoute {
     spaceSaving: boolean;
     hostModel: any;
     hostModelChange: EventEmitter<{}>;
+    headers: {
+        name: string;
+        value: string;
+    }[];
+    protocolModel: any;
+    contentTypeModel: string;
     rjonHelper: typeof rjonHelper;
     pathModel: any;
     methodModel: any;
@@ -18,15 +24,15 @@ export declare class TestRoute {
     sending: number;
     error: any;
     responseView: any;
-    headers: {
-        'Content-Type': string;
-    };
     constructor(AckApi: AckApi);
     ngOnInit(): void;
+    setContentType(type: any): any;
     getDefaultHostModel(): any;
     setHostByIndex(index: any): void;
+    applyProtocol(): void;
     getDefaultBodyModel(): string;
     setBodyObject(ob: any): void;
     trySend(): void;
+    getProtocol(): string;
     send(): void;
 }

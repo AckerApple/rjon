@@ -53,4 +53,6 @@ div("*ngIf"="viewRjonMergeResults" "[@500]"="'fadeInUp'")
       div(*ngFor="let route of compareResults.drop.routes;let i=index")
         div(*ngIf="i==viewDropRoute" "[@500]"="'fadeInUp'")
           absolute-overflow-x
-            pre.code-sample {{ route | json }}
+            pre.code-sample.max-height-500 {{ route | json }}
+          .pad.text-center
+            a.bg-danger.border.border.danger("(click)"="compareResults.drop.routes.splice(i,1);dropRoute(route)") drop

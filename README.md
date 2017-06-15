@@ -19,3 +19,55 @@ USE THE APP : [rjon app](https://ackerapple.github.io/rjon/)
     - edit
       - description
       - status
+
+## RJON Map
+Below is a map of standarized RJON
+
+```javascript
+{
+  "routes": [
+    {
+      "path": "",
+      "method": "GET",
+      "returnType: "",//expected type of response
+      "description": "",
+      "notes": [""],
+      "status": ["star"],//keyword descriptors. Often matches status icon. star=⭐
+      "variables":{
+        "query":{ "name":"type" },//url variable details
+        "post":{ "name":"type" },//post variable details
+        "params":{ "name":"type" }//path variable details
+      },
+      "sample": [
+        {
+          "path": "",//sample path substitution
+          "query": {},//url variables
+          "params": {},//path variables
+          "request": {},//request body sample
+          "headers": {}
+          "post": {},//form post variables
+          "test": {//object or boolean
+            "timeout": 2000,
+            "statusCode": 200,
+            "body": [],
+            "only": false,//skip others bulk tests
+            "skip": false,//skip during bulk tests
+            "title": ""//extra details
+          }
+        }
+      ]
+    }
+  ],
+  "hosts": [
+    {
+      "protocol": "https",
+      "hostname": "localhost",
+      "port": 8080,
+      "description": "",
+      "notes": [""],
+      "headers": {}//global headers meant for all requests
+    }
+  ],
+  "name":""//save-reference
+}
+```
