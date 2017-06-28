@@ -27,7 +27,7 @@ pre.code-sample(ngNonBindable).
             "query": &#123;&#125;,#[span.text-grey-2x //url variables]
             "params": &#123;&#125;,#[span.text-grey-2x //path variables]
             "request": &#123;&#125;,#[span.text-grey-2x //request body sample]
-            "headers": &#123;&#125;
+            "headers": &#123;"name": "value"&#125;
             "post": &#123;&#125;,#[span.text-grey-2x //form post variables]
             "test": &#123;#[span.text-grey-2x //object or boolean]
               "timeout": 2000,
@@ -48,9 +48,11 @@ pre.code-sample(ngNonBindable).
         "port": 8080,
         "description": "",
         "notes": [""],
-        "headers": &#123;&#125;#[span.text-grey-2x //global headers meant for all requests]
+        "headers": &#123;"name": "value"&#125;,#[span.text-grey-2x //headers meant for all requests to this host]
+        "routes": &#123;&#125;#[span.text-grey-2x //routes limited to only this host]
       &#125;
     ],
+    "headers": &#123;"name": "value"&#125;,#[span.text-grey-2x //global headers meant for all requests]
     "name":""#[span.text-grey-2x //save-reference]
   &#125;
 

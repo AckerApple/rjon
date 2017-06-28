@@ -26,6 +26,15 @@ var RjonMarkdown = (function () {
             }
         }
     };
+    RjonMarkdown.prototype.deleteHost = function (host) {
+        for (var x = this.rjon.hosts.length - 1; x >= 0; --x) {
+            if (this.rjon.hosts[x] == host) {
+                this.rjon.hosts.splice(x, 1);
+                this.onChange.emit();
+                return;
+            }
+        }
+    };
     return RjonMarkdown;
 }());
 RjonMarkdown.decorators = [

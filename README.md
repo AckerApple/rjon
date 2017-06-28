@@ -44,7 +44,7 @@ Below is a map of standarized RJON
           "query": {},//url variables
           "params": {},//path variables
           "request": {},//request body sample
-          "headers": {}
+          "headers": {"name": "value"}
           "post": {},//form post variables
           "test": {//object or boolean
             "timeout": 2000,
@@ -65,9 +65,11 @@ Below is a map of standarized RJON
       "port": 8080,
       "description": "",
       "notes": [""],
-      "headers": {}//global headers meant for all requests
+      "headers": {"name": "value"},//headers meant for all requests to this host
+      "routes": {}//routes limited to only this host
     }
   ],
+  "headers": {"name": "value"},//global headers meant for all requests
   "name":""//save-reference
 }
 ```

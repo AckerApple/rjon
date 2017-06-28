@@ -1,7 +1,6 @@
 import { Input, Output, Component, EventEmitter } from '@angular/core'
 import { fxArray } from "./prefx"
 import { string as editRoute } from "./templates/edit-route.pug"
-import { AckApi } from "ack-angular"
 import { pipes } from "ack-angular/pipes.class"
 import * as rjonHelper from "./rjonHelper"
 import { statIconMap } from "./statIconMap"
@@ -11,15 +10,13 @@ import { statIconMap } from "./statIconMap"
   template:editRoute,
   animations:fxArray
 }) export class EditRoute{
-  public statIconMap = statIconMap
+  statIconMap = statIconMap
   
-  @Input() public route
-  @Input() public hosts
-  @Input() public hostModel
-  @Output() public onChange = new EventEmitter()
-  @Output() public onClose = new EventEmitter()
-
-  constructor(public AckApi:AckApi){}
+  @Input() route
+  @Input() hosts
+  @Input() hostModel
+  @Output() onChange = new EventEmitter()
+  @Output() onClose = new EventEmitter()
 
   toggleRouteStatus(status){
     this.route.status = this.route.status || []
@@ -57,5 +54,4 @@ import { statIconMap } from "./statIconMap"
   setTestBody(test,value){
     test.body = JSON.parse(value)
   }
-
 }

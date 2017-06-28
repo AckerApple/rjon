@@ -65,11 +65,7 @@ div("*ngIf"="!(spaceSaving|boolean) || !tryingSend" "[@500]"="'fadeInUp'")
     .flex
       strong.flex-1
         |Headers
-      a.text-sm.text-blue.underline("(click)"="headers.push({})") add
-    .flex.child-pad-xxs(*ngFor="let item of headers")
-      input.flex-1("[(ngModel)]"="item.name" placeholder="header name")
-      span =
-      input.flex-1("[(ngModel)]"="item.value" placeholder="header value")
+    rjon-header-editor("[(data)]"="headersModel")
 
 .flex-wrap.text-center.child-pad-xs.child-margin-left-1.child-first-margin-left-0
   a.flex-1.text-info.bg-info("*ngIf"="tryingSend" "(click)"="tryingSend=null" "[@500]"="'fadeInUp'")
@@ -113,3 +109,5 @@ div("*ngIf"="!(spaceSaving|boolean) || !tryingSend" "[@500]"="'fadeInUp'")
 
   div(*ngIf="response && responseView=='body'" "[@500]"="'fadeInUp'")
     textarea.code-sample.height-400.width-full(wrap="off") {{ response.data ? (response.data|json) : response._body }}
+
+pre.code-sample {{headersModel|json}}

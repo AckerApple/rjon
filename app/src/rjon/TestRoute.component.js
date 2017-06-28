@@ -11,7 +11,7 @@ var TestRoute = (function () {
         this.route = {};
         this.spaceSaving = true;
         this.hostModelChange = new core_1.EventEmitter();
-        this.headers = [{ name: 'Content-Type', value: 'application/json' }];
+        this.headersModel = { 'Content-Type': 'application/json' };
         this.contentTypeModel = 'application/json';
         this.rjonHelper = rjonHelper;
         this.sending = 0;
@@ -22,19 +22,22 @@ var TestRoute = (function () {
         this.methodModel = this.route['method'];
         this.bodyModel = this.getDefaultBodyModel();
         this.hostModel = this.getDefaultHostModel();
+        this.applyHostHeaders(this.hostModel);
         this.applyProtocol();
+        if (this.headers)
+            Object.assign(this.headersModel, this.headers);
         setTimeout(function () {
             _this.route = _this.route || {};
             _this.hostModelChange.emit(_this.hostModel);
         }, 0);
     };
     TestRoute.prototype.setContentType = function (type) {
-        for (var x = this.headers.length - 1; x >= 0; --x) {
-            if (this.headers[x].name.toLowerCase() == 'content-type') {
-                return this.headers[x].value = type;
+        for (var x in this.headersModel) {
+            if (this.headersModel[x].name.toLowerCase() == 'content-type') {
+                return this.headersModel[x] = type;
             }
         }
-        this.headers.push({ name: 'Content-Type', value: type });
+        this.headersModel['Content-Type'] = type;
     };
     TestRoute.prototype.getDefaultHostModel = function () {
         if (this.hostModel)
@@ -46,8 +49,13 @@ var TestRoute = (function () {
     TestRoute.prototype.setHostByIndex = function (index) {
         this.hostModel = this.hosts[index];
         this.hostModelChange.emit(this.hostModel);
+        this.applyHostHeaders(this.hostModel);
         if (!this.protocolModel)
             this.applyProtocol();
+    };
+    TestRoute.prototype.applyHostHeaders = function (host) {
+        if (host.headers)
+            Object.assign(this.headersModel, host.headers);
     };
     TestRoute.prototype.applyProtocol = function () {
         if (!this.hostModel || !this.hostModel.protocol)
@@ -83,13 +91,11 @@ var TestRoute = (function () {
         var host = protocol + this.hostModel.hostname;
         var route = (this.pathModel.substring(0, 1) == '/' ? '' : '/') + this.pathModel;
         var url = host + ':' + port + route;
-        var headers = {};
-        this.headers.forEach(function (item) { return headers[item.name] = item.value; });
         var config = {
             method: this.methodModel,
             url: url,
             body: this.bodyModel,
-            headers: headers,
+            headers: this.headersModel,
             promise: 'all'
         };
         ++this.sending;
@@ -114,6 +120,7 @@ TestRoute.ctorParameters = function () { return [
 ]; };
 TestRoute.propDecorators = {
     'route': [{ type: core_1.Input },],
+    'headers': [{ type: core_1.Input },],
     'hosts': [{ type: core_1.Input },],
     'spaceSaving': [{ type: core_1.Input },],
     'hostModel': [{ type: core_1.Input },],

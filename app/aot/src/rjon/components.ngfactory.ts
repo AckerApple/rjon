@@ -7,280 +7,15 @@
 
 
 import * as i0 from '@angular/core';
-import * as i1 from 'ng2-page-scroll/src/ng2-page-scroll.directive';
-import * as i2 from 'ng2-page-scroll/src/ng2-page-scroll.service';
-import * as i3 from '@angular/router';
-import * as i4 from '@angular/platform-browser';
-import * as i5 from '@angular/common';
-import * as i6 from 'ack-angular/pipes';
-import * as i7 from '../../../src/rjon/components';
-import * as i8 from './components.ngfactory';
-const styles_TableOfRoutes:any[] = ([] as any[]);
-export const RenderType_TableOfRoutes:i0.RendererType2 = i0.ɵcrt({encapsulation:2,
-    styles:styles_TableOfRoutes,data:{}});
-function View_TableOfRoutes_2(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),5,'div',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵeld(0,(null as any),(null as any),4,'a',[['pageScroll','pageScroll']],[[1,
-          'replaceref',0]],[[(null as any),'click']],(_v,en,$event) => {
-        var ad:boolean = true;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>i0.ɵnov(_v,2).handleClick($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),i0.ɵdid(671744,(null as any),0,i1.PageScroll,
-      [i2.PageScrollService,[2,i3.Router],i4.DOCUMENT],{href:[0,'href'],pageScroll:[1,
-          'pageScroll']},(null as any)),i0.ɵppd(1),i0.ɵppd(1),(_l()(),i0.ɵted((null as any),
-      ['','']))],(_ck,_v) => {
-    const currVal_1:any = i0.ɵinlineInterpolate(1,'#',i0.ɵunv(_v,2,0,_ck(_v,3,0,i0.ɵnov((<any>(<any>_v.parent).parent),
-        1),(((<any>_v.parent).context.$implicit.method + ':') + (<any>_v.parent).context.$implicit.path))),
-        '');
-    const currVal_2:any = 'pageScroll';
-    _ck(_v,2,0,currVal_1,currVal_2);
-  },(_ck,_v) => {
-    const currVal_0:any = i0.ɵinlineInterpolate(1,'#',i0.ɵunv(_v,1,0,_ck(_v,4,0,i0.ɵnov((<any>(<any>_v.parent).parent),
-        1),(((<any>_v.parent).context.$implicit.method + ':') + (<any>_v.parent).context.$implicit.path))),
-        '');
-    _ck(_v,1,0,currVal_0);
-    const currVal_3:any = (<any>_v.parent).context.$implicit.path;
-    _ck(_v,5,0,currVal_3);
-  });
-}
-function View_TableOfRoutes_3(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'div',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵted((null as any),['','']))],(null as any),(_ck,_v) => {
-    const currVal_0:any = (<any>_v.parent).context.$implicit.path;
-    _ck(_v,1,0,currVal_0);
-  });
-}
-function View_TableOfRoutes_5(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'span',([] as any[]),
-      [[1,'title',0]],(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵted((null as any),['','']))],(null as any),(_ck,_v) => {
-    var _co:any = _v.component;
-    const currVal_0:any = (_co.statIconMap[_v.context.$implicit]? _co.statIconMap[_v.context.$implicit].details: _v.context.$implicit);
-    _ck(_v,0,0,currVal_0);
-    const currVal_1:any = (_co.statIconMap[_v.context.$implicit].icon? _co.statIconMap[_v.context.$implicit].icon: _v.context.$implicit);
-    _ck(_v,1,0,currVal_1);
-  });
-}
-function View_TableOfRoutes_4(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),3,'div',[['class',
-      'child-margin-xxs']],(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i0.ɵand(16777216,(null as any),(null as any),2,(null as any),
-      View_TableOfRoutes_5)),i0.ɵdid(802816,(null as any),0,i5.NgForOf,[i0.ViewContainerRef,
-      i0.TemplateRef,i0.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),i0.ɵppd(1)],
-      (_ck,_v) => {
-        const currVal_0:any = i0.ɵunv(_v,2,0,_ck(_v,3,0,i0.ɵnov((<any>(<any>_v.parent).parent),
-            0),(<any>_v.parent).context.$implicit.status));
-        _ck(_v,2,0,currVal_0);
-      },(null as any));
-}
-function View_TableOfRoutes_1(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),12,'tr',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i0.ɵted((null as any),
-      ['',''])),(_l()(),i0.ɵeld(0,(null as any),(null as any),4,'td',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableOfRoutes_2)),
-      i0.ɵdid(16384,(null as any),0,i5.NgIf,[i0.ViewContainerRef,i0.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i0.ɵand(16777216,(null as any),(null as any),
-          1,(null as any),View_TableOfRoutes_3)),i0.ɵdid(16384,(null as any),0,i5.NgIf,
-          [i0.ViewContainerRef,i0.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),
-          i0.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),(null as any),
-              (null as any),(null as any),(null as any),(null as any))),(_l()(),i0.ɵted((null as any),
-          ['',''])),(_l()(),i0.ɵeld(0,(null as any),(null as any),2,'td',[['class',
-          'text-3x']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i0.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableOfRoutes_4)),
-      i0.ɵdid(16384,(null as any),0,i5.NgIf,[i0.ViewContainerRef,i0.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any))],(_ck,_v) => {
-    var _co:any = _v.component;
-    const currVal_1:any = _co.links;
-    _ck(_v,5,0,currVal_1);
-    const currVal_2:boolean = !_co.links;
-    _ck(_v,7,0,currVal_2);
-    const currVal_4:any = _v.context.$implicit.status;
-    _ck(_v,12,0,currVal_4);
-  },(_ck,_v) => {
-    const currVal_0:any = _v.context.$implicit.method;
-    _ck(_v,2,0,currVal_0);
-    const currVal_3:any = _v.context.$implicit.returnType;
-    _ck(_v,9,0,currVal_3);
-  });
-}
-export function View_TableOfRoutes_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[i0.ɵpid(0,i6.ForceArray,([] as any[])),i0.ɵpid(0,i6.MarkdownAnchor,
-      ([] as any[])),(_l()(),i0.ɵeld(0,(null as any),(null as any),15,'div',[['class',
-      'markdown-body']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i0.ɵeld(0,(null as any),(null as any),14,'table',([] as any[]),(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i0.ɵeld(0,
-          (null as any),(null as any),9,'thead',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i0.ɵeld(0,(null as any),
-          (null as any),8,'tr',([] as any[]),(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i0.ɵeld(0,(null as any),(null as any),
-          1,'th',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i0.ɵted((null as any),['METHOD'])),(_l()(),i0.ɵeld(0,
-          (null as any),(null as any),1,'th',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i0.ɵted((null as any),
-          ['ROUTE'])),(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'th',([] as any[]),
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i0.ɵted((null as any),['RETURNS'])),(_l()(),i0.ɵeld(0,(null as any),
-          (null as any),1,'th',([] as any[]),(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i0.ɵted((null as any),['STAT'])),(_l()(),
-          i0.ɵeld(0,(null as any),(null as any),3,'tbody',([] as any[]),(null as any),
-              (null as any),(null as any),(null as any),(null as any))),(_l()(),i0.ɵand(16777216,
-          (null as any),(null as any),2,(null as any),View_TableOfRoutes_1)),i0.ɵdid(802816,
-          (null as any),0,i5.NgForOf,[i0.ViewContainerRef,i0.TemplateRef,i0.IterableDiffers],
-          {ngForOf:[0,'ngForOf']},(null as any)),i0.ɵppd(1)],(_ck,_v) => {
-    var _co:i7.TableOfRoutes = _v.component;
-    const currVal_0:any = i0.ɵunv(_v,16,0,_ck(_v,17,0,i0.ɵnov(_v,0),_co.routes));
-    _ck(_v,16,0,currVal_0);
-  },(null as any));
-}
-export function View_TableOfRoutes_Host_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'table-of-routes',
-      ([] as any[]),(null as any),(null as any),(null as any),i8.View_TableOfRoutes_0,
-      i8.RenderType_TableOfRoutes)),i0.ɵdid(49152,(null as any),0,i7.TableOfRoutes,
-      ([] as any[]),(null as any),(null as any))],(null as any),(null as any));
-}
-export const TableOfRoutesNgFactory:i0.ComponentFactory<i7.TableOfRoutes> = i0.ɵccf('table-of-routes',
-    i7.TableOfRoutes,View_TableOfRoutes_Host_0,{routes:'routes',links:'links'},{},
-    ([] as any[]));
-const styles_IconTable:any[] = ([] as any[]);
-export const RenderType_IconTable:i0.RendererType2 = i0.ɵcrt({encapsulation:2,styles:styles_IconTable,
-    data:{}});
-function View_IconTable_1(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),9,'tr',[['class',
-      'cursor-pointer']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
-    var ad:boolean = true;
-    var _co:any = _v.component;
-    if (('click' === en)) {
-      const pd_0:any = ((<any>_co.onClick.emit(_v.context.$implicit)) !== false);
-      ad = (pd_0 && ad);
-    }
-    return ad;
-  },(null as any),(null as any))),i0.ɵdid(278528,(null as any),0,i5.NgClass,[i0.IterableDiffers,
-      i0.KeyValueDiffers,i0.ElementRef,i0.Renderer],{klass:[0,'klass'],ngClass:[1,
-      'ngClass']},(null as any)),i0.ɵppd(1),(_l()(),i0.ɵeld(0,(null as any),(null as any),
-      1,'td',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i0.ɵted((null as any),['',''])),(_l()(),i0.ɵeld(0,(null as any),
-      (null as any),2,'td',([] as any[]),(null as any),(null as any),(null as any),
-      (null as any),(null as any))),(_l()(),i0.ɵted((null as any),['',''])),i0.ɵppd(1),
-      (_l()(),i0.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i0.ɵted((null as any),
-          ['','']))],(_ck,_v) => {
-    var _co:any = _v.component;
-    const currVal_0:any = 'cursor-pointer';
-    const currVal_1:any = ((i0.ɵunv(_v,1,1,_ck(_v,2,0,i0.ɵnov((<any>_v.parent),1),
-        _co.activeIcons)).indexOf(_v.context.$implicit) >= 0)? 'bg-success': (null as any));
-    _ck(_v,1,0,currVal_0,currVal_1);
-  },(_ck,_v) => {
-    var _co:any = _v.component;
-    const currVal_2:any = _co.statIconMap[_v.context.$implicit].icon;
-    _ck(_v,4,0,currVal_2);
-    const currVal_3:any = i0.ɵunv(_v,6,0,_ck(_v,7,0,i0.ɵnov((<any>_v.parent),2),_v.context.$implicit));
-    _ck(_v,6,0,currVal_3);
-    const currVal_4:any = _co.statIconMap[_v.context.$implicit].details;
-    _ck(_v,9,0,currVal_4);
-  });
-}
-export function View_IconTable_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[i0.ɵpid(0,i6.Keys,([] as any[])),i0.ɵpid(0,i6.ForceArray,([] as any[])),
-      i0.ɵpid(0,i5.UpperCasePipe,([] as any[])),(_l()(),i0.ɵeld(0,(null as any),(null as any),
-          11,'table',[['class','table-hover-energized width-full table-pad-xs border-collapse table-striped']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i0.ɵeld(0,(null as any),(null as any),10,'tbody',([] as any[]),(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i0.ɵeld(0,
-          (null as any),(null as any),6,'tr',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i0.ɵeld(0,(null as any),
-          (null as any),1,'td',([] as any[]),(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i0.ɵted((null as any),['icon'])),(_l()(),
-          i0.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),(null as any),
-              (null as any),(null as any),(null as any),(null as any))),(_l()(),i0.ɵted((null as any),
-          ['name'])),(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i0.ɵted((null as any),['details'])),(_l()(),i0.ɵand(16777216,(null as any),
-          (null as any),2,(null as any),View_IconTable_1)),i0.ɵdid(802816,(null as any),
-          0,i5.NgForOf,[i0.ViewContainerRef,i0.TemplateRef,i0.IterableDiffers],{ngForOf:[0,
-              'ngForOf']},(null as any)),i0.ɵppd(1)],(_ck,_v) => {
-    var _co:i7.IconTable = _v.component;
-    const currVal_0:any = i0.ɵunv(_v,13,0,_ck(_v,14,0,i0.ɵnov(_v,0),_co.statIconMap));
-    _ck(_v,13,0,currVal_0);
-  },(null as any));
-}
-export function View_IconTable_Host_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'icon-table',([] as any[]),
-      (null as any),(null as any),(null as any),i8.View_IconTable_0,i8.RenderType_IconTable)),
-      i0.ɵdid(49152,(null as any),0,i7.IconTable,([] as any[]),(null as any),(null as any))],
-      (null as any),(null as any));
-}
-export const IconTableNgFactory:i0.ComponentFactory<i7.IconTable> = i0.ɵccf('icon-table',
-    i7.IconTable,View_IconTable_Host_0,{activeIcons:'activeIcons'},{onClick:'onClick'},
-    ([] as any[]));
-const styles_TableOfHosts:any[] = ([] as any[]);
-export const RenderType_TableOfHosts:i0.RendererType2 = i0.ɵcrt({encapsulation:2,styles:styles_TableOfHosts,
-    data:{}});
-function View_TableOfHosts_1(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),6,'tr',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i0.ɵted((null as any),
-      ['',''])),(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵted((null as any),['',''])),(_l()(),i0.ɵeld(0,(null as any),(null as any),
-      1,'td',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i0.ɵted((null as any),['','']))],(null as any),(_ck,
-      _v) => {
-    const currVal_0:any = (_v.context.$implicit.protocol || 'http');
-    _ck(_v,2,0,currVal_0);
-    const currVal_1:any = _v.context.$implicit.hostname;
-    _ck(_v,4,0,currVal_1);
-    const currVal_2:any = _v.context.$implicit.port;
-    _ck(_v,6,0,currVal_2);
-  });
-}
-export function View_TableOfHosts_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[i0.ɵpid(0,i6.ForceArray,([] as any[])),(_l()(),i0.ɵeld(0,(null as any),
-      (null as any),13,'div',[['class','markdown-body']],(null as any),(null as any),
-      (null as any),(null as any),(null as any))),(_l()(),i0.ɵeld(0,(null as any),
-      (null as any),12,'table',([] as any[]),(null as any),(null as any),(null as any),
-      (null as any),(null as any))),(_l()(),i0.ɵeld(0,(null as any),(null as any),
-      7,'thead',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i0.ɵeld(0,(null as any),(null as any),6,'tr',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵeld(0,(null as any),(null as any),1,'th',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i0.ɵted((null as any),
-      ['PROTOCOL'])),(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'th',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i0.ɵted((null as any),['HOSTNAME'])),(_l()(),i0.ɵeld(0,(null as any),(null as any),
-      1,'th',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i0.ɵted((null as any),['PORT'])),(_l()(),i0.ɵeld(0,(null as any),
-      (null as any),3,'tbody',([] as any[]),(null as any),(null as any),(null as any),
-      (null as any),(null as any))),(_l()(),i0.ɵand(16777216,(null as any),(null as any),
-      2,(null as any),View_TableOfHosts_1)),i0.ɵdid(802816,(null as any),0,i5.NgForOf,
-      [i0.ViewContainerRef,i0.TemplateRef,i0.IterableDiffers],{ngForOf:[0,'ngForOf']},
-      (null as any)),i0.ɵppd(1)],(_ck,_v) => {
-    var _co:i7.TableOfHosts = _v.component;
-    const currVal_0:any = i0.ɵunv(_v,13,0,_ck(_v,14,0,i0.ɵnov(_v,0),_co.hosts));
-    _ck(_v,13,0,currVal_0);
-  },(null as any));
-}
-export function View_TableOfHosts_Host_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'table-of-hosts',
-      ([] as any[]),(null as any),(null as any),(null as any),i8.View_TableOfHosts_0,
-      i8.RenderType_TableOfHosts)),i0.ɵdid(49152,(null as any),0,i7.TableOfHosts,([] as any[]),
-      (null as any),(null as any))],(null as any),(null as any));
-}
-export const TableOfHostsNgFactory:i0.ComponentFactory<i7.TableOfHosts> = i0.ɵccf('table-of-hosts',
-    i7.TableOfHosts,View_TableOfHosts_Host_0,{hosts:'hosts'},{},([] as any[]));
+import * as i1 from 'ack-angular/pipes';
+import * as i2 from '@angular/platform-browser';
+import * as i3 from '../../../src/rjon/components';
+import * as i4 from './components.ngfactory';
 const styles_RjonLinks:any[] = ([] as any[]);
 export const RenderType_RjonLinks:i0.RendererType2 = i0.ɵcrt({encapsulation:2,styles:styles_RjonLinks,
     data:{}});
 export function View_RjonLinks_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[i0.ɵpid(0,i6.SafeUrl,[i4.DomSanitizer]),i0.ɵpid(0,i6.TextDownload,
+  return i0.ɵvid(0,[i0.ɵpid(0,i1.SafeUrl,[i2.DomSanitizer]),i0.ɵpid(0,i1.TextDownload,
       ([] as any[])),(_l()(),i0.ɵeld(0,(null as any),(null as any),11,'div',[['class',
       'pad-v child-margin-xs']],(null as any),(null as any),(null as any),(null as any),
       (null as any))),(_l()(),i0.ɵeld(0,(null as any),(null as any),2,'a',([] as any[]),
@@ -292,7 +27,7 @@ export function View_RjonLinks_0(_l:any):i0.ɵViewDefinition {
           (null as any),3,'a',[['download','rjon.md']],[[8,'href',4]],(null as any),
           (null as any),(null as any),(null as any))),i0.ɵppd(1),i0.ɵppd(1),(_l()(),
           i0.ɵted((null as any),['download markdown']))],(null as any),(_ck,_v) => {
-    var _co:i7.RjonLinks = _v.component;
+    var _co:i3.RjonLinks = _v.component;
     const currVal_0:any = i0.ɵunv(_v,3,0,_ck(_v,4,0,i0.ɵnov(_v,0),_co.getEmailString()));
     _ck(_v,3,0,currVal_0);
     const currVal_1:any = i0.ɵunv(_v,6,0,_ck(_v,8,0,i0.ɵnov(_v,0),i0.ɵunv(_v,6,0,_ck(_v,
@@ -305,10 +40,10 @@ export function View_RjonLinks_0(_l:any):i0.ɵViewDefinition {
 }
 export function View_RjonLinks_Host_0(_l:any):i0.ɵViewDefinition {
   return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,(null as any),(null as any),1,'rjon-links',([] as any[]),
-      (null as any),(null as any),(null as any),i8.View_RjonLinks_0,i8.RenderType_RjonLinks)),
-      i0.ɵdid(49152,(null as any),0,i7.RjonLinks,([] as any[]),(null as any),(null as any))],
+      (null as any),(null as any),(null as any),i4.View_RjonLinks_0,i4.RenderType_RjonLinks)),
+      i0.ɵdid(49152,(null as any),0,i3.RjonLinks,([] as any[]),(null as any),(null as any))],
       (null as any),(null as any));
 }
-export const RjonLinksNgFactory:i0.ComponentFactory<i7.RjonLinks> = i0.ɵccf('rjon-links',
-    i7.RjonLinks,View_RjonLinks_Host_0,{rjon:'rjon'},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vY29tcG9uZW50cy5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL2NvbXBvbmVudHMuZC50cyIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vY29tcG9uZW50cy5kLnRzLlRhYmxlT2ZSb3V0ZXMuaHRtbCIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vY29tcG9uZW50cy5kLnRzLlRhYmxlT2ZSb3V0ZXNfSG9zdC5odG1sIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvcmpvbi9jb21wb25lbnRzLmQudHMuSWNvblRhYmxlLmh0bWwiLCJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL2NvbXBvbmVudHMuZC50cy5JY29uVGFibGVfSG9zdC5odG1sIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvcmpvbi9jb21wb25lbnRzLmQudHMuVGFibGVPZkhvc3RzLmh0bWwiLCJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL2NvbXBvbmVudHMuZC50cy5UYWJsZU9mSG9zdHNfSG9zdC5odG1sIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvcmpvbi9jb21wb25lbnRzLmQudHMuUmpvbkxpbmtzLmh0bWwiLCJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL2NvbXBvbmVudHMuZC50cy5Sam9uTGlua3NfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwibWFya2Rvd24tYm9keVwiPjx0YWJsZT48dGhlYWQ+PHRyPjx0aD5NRVRIT0Q8L3RoPjx0aD5ST1VURTwvdGg+PHRoPlJFVFVSTlM8L3RoPjx0aD5TVEFUPC90aD48L3RyPjwvdGhlYWQ+PHRib2R5Pjx0ciAqbmdGb3I9XCJsZXQgcm91dGUgb2Ygcm91dGVzfGFycmF5XCI+PHRkPnt7IHJvdXRlLm1ldGhvZCB9fTwvdGQ+PHRkPjxkaXYgKm5nSWY9XCJsaW5rc1wiPjxhIGhyZWY9XCIje3tyb3V0ZS5tZXRob2QrJzonK3JvdXRlLnBhdGggfCBtYXJrZG93bkFuY2hvcn19XCIgYXR0ci5yZXBsYWNlcmVmPVwiI3t7cm91dGUubWV0aG9kKyc6Jytyb3V0ZS5wYXRoIHwgbWFya2Rvd25BbmNob3J9fVwiIHBhZ2VTY3JvbGw9XCJwYWdlU2Nyb2xsXCI+e3sgcm91dGUucGF0aCB9fTwvYT48L2Rpdj48ZGl2ICpuZ0lmPVwiIWxpbmtzXCI+e3sgcm91dGUucGF0aCB9fTwvZGl2PjwvdGQ+PHRkPnt7IHJvdXRlLnJldHVyblR5cGUgfX08L3RkPjx0ZCBjbGFzcz1cInRleHQtM3hcIj48ZGl2IGNsYXNzPVwiY2hpbGQtbWFyZ2luLXh4c1wiICpuZ0lmPVwicm91dGUuc3RhdHVzXCI+PHNwYW4gKm5nRm9yPVwibGV0IHN0YXR1cyBvZiByb3V0ZS5zdGF0dXN8YXJyYXlcIiBbYXR0ci50aXRsZV09XCJzdGF0SWNvbk1hcFtzdGF0dXNdID8gc3RhdEljb25NYXBbc3RhdHVzXS5kZXRhaWxzIDogc3RhdHVzXCI+e3sgc3RhdEljb25NYXBbc3RhdHVzXS5pY29uID8gc3RhdEljb25NYXBbc3RhdHVzXS5pY29uIDogc3RhdHVzIH19PC9zcGFuPjwvZGl2PjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC9kaXY+IiwiPHRhYmxlLW9mLXJvdXRlcz48L3RhYmxlLW9mLXJvdXRlcz4iLCI8dGFibGUgY2xhc3M9XCJ0YWJsZS1ob3Zlci1lbmVyZ2l6ZWQgd2lkdGgtZnVsbCB0YWJsZS1wYWQteHMgYm9yZGVyLWNvbGxhcHNlIHRhYmxlLXN0cmlwZWRcIj48dHI+PHRkPmljb248L3RkPjx0ZD5uYW1lPC90ZD48dGQ+ZGV0YWlsczwvdGQ+PC90cj48dHIgY2xhc3M9XCJjdXJzb3ItcG9pbnRlclwiICpuZ0Zvcj1cImxldCBrZXkgb2Ygc3RhdEljb25NYXB8a2V5c1wiIFtuZ0NsYXNzXT1cIihhY3RpdmVJY29uc3xhcnJheSkuaW5kZXhPZihrZXkpJmd0Oz0wPydiZy1zdWNjZXNzJzpudWxsXCIgKGNsaWNrKT1cIm9uQ2xpY2suZW1pdChrZXkpXCI+PHRkPnt7IHN0YXRJY29uTWFwW2tleV0uaWNvbiB9fTwvdGQ+PHRkPnt7IGtleSB8IHVwcGVyY2FzZSB9fTwvdGQ+PHRkPnt7IHN0YXRJY29uTWFwW2tleV0uZGV0YWlscyB9fTwvdGQ+PC90cj48L3RhYmxlPiIsIjxpY29uLXRhYmxlPjwvaWNvbi10YWJsZT4iLCI8ZGl2IGNsYXNzPVwibWFya2Rvd24tYm9keVwiPjx0YWJsZT48dGhlYWQ+PHRyPjx0aD5QUk9UT0NPTDwvdGg+PHRoPkhPU1ROQU1FPC90aD48dGg+UE9SVDwvdGg+PC90cj48L3RoZWFkPjx0Ym9keT48dHIgKm5nRm9yPVwibGV0IGhvc3Qgb2YgaG9zdHN8YXJyYXlcIj48dGQ+e3sgaG9zdC5wcm90b2NvbCB8fCAnaHR0cCcgfX08L3RkPjx0ZD57eyBob3N0Lmhvc3RuYW1lIH19PC90ZD48dGQ+e3sgaG9zdC5wb3J0IH19PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48L2Rpdj4iLCI8dGFibGUtb2YtaG9zdHM+PC90YWJsZS1vZi1ob3N0cz4iLCI8ZGl2IGNsYXNzPVwicGFkLXYgY2hpbGQtbWFyZ2luLXhzXCI+PGEgW2hyZWZdPVwiZ2V0RW1haWxTdHJpbmcoKSB8IHNhZmVVcmxcIj5lbWFpbCBqc29uPC9hPjxhIFtocmVmXT1cImdldERvd25sb2FkU3RyaW5nKCkgfCB0ZXh0RG93bmxvYWQgfCBzYWZlVXJsXCIgZG93bmxvYWQ9XCJyam9uLmpzb25cIj5kb3dubG9hZCBqc29uPC9hPjxhIFtocmVmXT1cImdldE1hcmtkb3duU3RyaW5nKCkgfCB0ZXh0RG93bmxvYWQgfCBzYWZlVXJsXCIgZG93bmxvYWQ9XCJyam9uLm1kXCI+ZG93bmxvYWQgbWFya2Rvd248L2E+PC9kaXY+IiwiPHJqb24tbGlua3M+PC9yam9uLWxpbmtzPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNBaU07TUFBQSx3RUFBbUI7YUFBQTtVQUFBO1FBQUE7UUFBQTtVQUFBO1VBQUE7UUFBQTtRQUFBO01BQUEsdUNBQUE7TUFBQTtVQUFBLHFDQUFHLFdBQXlELElBQTRGO01BQUE7SUFBcko7UUFBQTtRQUFBO0lBQTZIO0lBQWhJLFdBQUcsVUFBNkgsU0FBaEk7O0lBQTREO1FBQUE7UUFBQTtJQUE1RCxXQUE0RCxTQUE1RDtJQUF3SjtJQUFBOzs7O29CQUEwQjtNQUFBLHdFQUFvQjthQUFBO0lBQUE7SUFBQTs7OztvQkFBaUk7TUFBQSwwRUFBMEg7YUFBQTs7SUFBMUU7SUFBaEQsV0FBZ0QsU0FBaEQ7SUFBMEg7SUFBQTs7OztvQkFBN0s7TUFBQTtNQUFBLGdCQUFtRDtNQUFBLDhCQUFBO3VDQUFBLGdEQUFNOztRQUFBO1lBQUE7UUFBTixXQUFNLFNBQU47Ozs7b0JBQWhhO01BQUEsd0VBQXVDO2FBQUE7VUFBQSw0Q0FBSTtNQUFBLFVBQXVCO01BQUEsd0VBQUk7YUFBQTthQUFBO1VBQUEsd0JBQXFNO1VBQUEsOENBQUE7VUFBQSxzRUFBK0M7aUJBQUE7Y0FBQSwwREFBSTtVQUFBLFVBQTJCO1VBQUE7TUFBb0I7YUFBQTtVQUFBOztJQUFsUztJQUFMLFdBQUssU0FBTDtJQUEwTTtJQUFMLFdBQUssU0FBTDtJQUFnSTtJQUE5QixZQUE4QixTQUE5Qjs7SUFBbFU7SUFBQTtJQUFtUjtJQUFBOzs7OztxQkFBemI7TUFBQTtNQUEyQjtVQUFBLDBEQUFPO1VBQUE7VUFBQSw0Q0FBTztVQUFBO1VBQUEsOEJBQUk7VUFBQTtVQUFBLGdCQUFJLDJDQUFXO1VBQUE7VUFBQSw0Q0FBSTtVQUFBLFlBQVU7VUFBQTtNQUFJLDRDQUFZO1VBQUE7VUFBQSw4QkFBSSx5Q0FBc0I7aUJBQUE7Y0FBQSwwREFBTztVQUFBLDBFQUFBO1VBQUE7VUFBQSw4Q0FBSTs7SUFBQTtJQUFKLFlBQUksU0FBSjs7OztvQkNBM0g7TUFBQTtpQ0FBQSxVQUFBO01BQUE7Ozs7Ozs7OztvQkNBOEk7TUFBQTtJQUFBO0lBQUE7SUFBcUk7TUFBQTtNQUFBO0lBQUE7SUFBckk7RUFBQSx1Q0FBQTtrREFBQTtNQUFBLGtDQUFnRSxJQUFpRztNQUFBO01BQUEsZ0JBQUksd0NBQWdDO01BQUE7TUFBQSw4QkFBSTtNQUEwQjtVQUFBLDBEQUFJO1VBQUE7O0lBQW5PO0lBQTREO1FBQUE7SUFBaEUsV0FBSSxVQUE0RCxTQUFoRTs7O0lBQXFLO0lBQUE7SUFBb0M7SUFBQTtJQUE4QjtJQUFBOzs7OztnREFBclg7VUFBQTtVQUFBO01BQTJGO1VBQUE7VUFBQTtVQUFBLDRDQUFJO1VBQUE7VUFBQSw4QkFBSSx5Q0FBUztpQkFBQTtjQUFBLDBEQUFJO1VBQUEsV0FBUztVQUFBO01BQUksNENBQWlCO1VBQUEsd0RBQUE7VUFBQTtjQUFBLGtDQUEyQjs7SUFBQTtJQUEzQixZQUEyQixTQUEzQjs7OztvQkNBOUk7TUFBQTthQUFBOzs7Ozs7Ozs7O29CQ0FnSDtNQUFBLHdFQUFxQzthQUFBO1VBQUEsNENBQUk7TUFBQSxVQUFrQztNQUFBLHdFQUFJO2FBQUEseUJBQXdCO01BQUE7TUFBQSxnQkFBSTs7SUFBbEU7SUFBQTtJQUFzQztJQUFBO0lBQTRCO0lBQUE7Ozs7MkRBQTNOO01BQUE7TUFBQSw0Q0FBMkI7TUFBQTtNQUFBLDhCQUFPO01BQUE7TUFBQSxnQkFBTztNQUFBLHdFQUFJO2FBQUE7VUFBQSw0Q0FBSTtNQUFBLGVBQWE7TUFBQSx3RUFBSTthQUFBLDhCQUFhO01BQUE7TUFBQSxnQkFBSSx5Q0FBc0I7TUFBQTtNQUFBLDhCQUFPO01BQUEsNkNBQUE7TUFBQTtNQUFBLHNCQUFJOztJQUFBO0lBQUosWUFBSSxTQUFKOzs7O29CQ0FoSDtNQUFBO2dDQUFBLFVBQUE7TUFBQTs7Ozs7Ozs7O3FCQ0FBO01BQUE7TUFBQSxnQkFBbUM7TUFBQSxnRkFBRztNQUFvQywrQ0FBYztVQUFBO1VBQUEsbURBQUcsZUFBMkU7aUJBQUEsbUNBQWlCO1VBQUE7VUFBQSxtREFBRyxlQUF5RTtpQkFBQTs7SUFBN047SUFBSCxXQUFHLFNBQUg7SUFBd0Q7UUFBQTtJQUFILFdBQUcsU0FBSDtJQUFrRztRQUFBO0lBQUgsWUFBRyxTQUFIOzs7O29CQ0F2TDtNQUFBO2FBQUE7Ozs7In0=
+export const RjonLinksNgFactory:i0.ComponentFactory<i3.RjonLinks> = i0.ɵccf('rjon-links',
+    i3.RjonLinks,View_RjonLinks_Host_0,{rjon:'rjon'},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vY29tcG9uZW50cy5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL2NvbXBvbmVudHMuZC50cyIsIm5nOi8vL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vY29tcG9uZW50cy5kLnRzLlJqb25MaW5rcy5odG1sIiwibmc6Ly8vVXNlcnMvYWNrZXJhcHBsZS9wcm9qZWN0cy9BY2svYnJvd3Nlci9yam9uL2FwcC9zcmMvcmpvbi9jb21wb25lbnRzLmQudHMuUmpvbkxpbmtzX0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiBjbGFzcz1cInBhZC12IGNoaWxkLW1hcmdpbi14c1wiPjxhIFtocmVmXT1cImdldEVtYWlsU3RyaW5nKCkgfCBzYWZlVXJsXCI+ZW1haWwganNvbjwvYT48YSBbaHJlZl09XCJnZXREb3dubG9hZFN0cmluZygpIHwgdGV4dERvd25sb2FkIHwgc2FmZVVybFwiIGRvd25sb2FkPVwicmpvbi5qc29uXCI+ZG93bmxvYWQganNvbjwvYT48YSBbaHJlZl09XCJnZXRNYXJrZG93blN0cmluZygpIHwgdGV4dERvd25sb2FkIHwgc2FmZVVybFwiIGRvd25sb2FkPVwicmpvbi5tZFwiPmRvd25sb2FkIG1hcmtkb3duPC9hPjwvZGl2PiIsIjxyam9uLWxpbmtzPjwvcmpvbi1saW5rcz4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7cUJDQUE7TUFBQTtNQUFBLGdCQUFtQztNQUFBLGdGQUFHO01BQW9DLCtDQUFjO1VBQUE7VUFBQSxtREFBRyxlQUEyRTtpQkFBQSxtQ0FBaUI7VUFBQTtVQUFBLG1EQUFHLGVBQXlFO2lCQUFBOztJQUE3TjtJQUFILFdBQUcsU0FBSDtJQUF3RDtRQUFBO0lBQUgsV0FBRyxTQUFIO0lBQWtHO1FBQUE7SUFBSCxZQUFHLFNBQUg7Ozs7b0JDQXZMO01BQUE7YUFBQTs7OzsifQ==

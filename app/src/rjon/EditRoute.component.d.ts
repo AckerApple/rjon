@@ -1,7 +1,5 @@
 import { EventEmitter } from '@angular/core';
-import { AckApi } from "ack-angular";
 export declare class EditRoute {
-    AckApi: AckApi;
     statIconMap: {
         'baby': {
             icon: string;
@@ -139,7 +137,6 @@ export declare class EditRoute {
     hostModel: any;
     onChange: EventEmitter<{}>;
     onClose: EventEmitter<{}>;
-    constructor(AckApi: AckApi);
     toggleRouteStatus(status: any): void;
     addNote(): void;
     addSample(): void;

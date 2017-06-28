@@ -1,4 +1,4 @@
-h3 Edit : {{ route.path }}
+h3 Edit Route : {{ route.path }}
 
 form("(onFormChanged)"="onChange.emit(route)")
   .flex-wrap.child-margin-xxs.child-margin-bottom
@@ -16,10 +16,9 @@ form("(onFormChanged)"="onChange.emit(route)")
       label Description
       input.width-full("[(ngModel)]"="route.description" name="route.description")
   
-  .margin-xxs(*ngIf="(route.notes|array).length" "[@500]"="'fadeInUp'")
+  .margin-xxs
     label Notes
-    div(*ngFor="let note of route.notes|array; let i=index; trackBy:0|indexTrack")
-      input.width-full("[(ngModel)]"="route.notes[i]" "[name]"="'route.notes'+i")
+    rjon-notes-editor([data]="route.notes")
   
   .margin-xxs(*ngIf="(route.sample|array).length" "[@500]"="'fadeInUp'")
     h4 Samples
@@ -66,9 +65,6 @@ form("(onFormChanged)"="onChange.emit(route)")
               |remove test
       
   .flex.child-pad-xxs.child-margin-xxs.text-center.text-xs.text-positive
-    a.flex-1.border-positive.border("(click)"="addNote()")
-      |add note
-        
     a.flex-1.border-positive.border("(click)"="addSample()")
       |add sample
 

@@ -1,23 +1,40 @@
 ack-modal(*ngIf="testRoute" "(onClose)"="testRoute=null" "[@500]"="'fadeInUp'" "[wrapStyle]"="{width:'100%', 'max-width':'900px'}")
   .bg-white.border.border-grey-4x.pad.radius-5
-    test-route("[(hostModel)]"="hostModel" "[route]"="testRoute" "[hosts]"="rjon.hosts")
+    test-route("[(hostModel)]"="hostModel" "[route]"="testRoute" "[hosts]"="rjon.hosts" "[headers]"="rjon.headers")
 
 ack-modal(*ngIf="editRoute" "(onClose)"="editRoute=null" "[@500]"="'fadeInUp'" "[wrapStyle]"="{width:'100%', 'max-width':'900px'}")
   .bg-white.border.border-grey-4x.pad.radius-5
     edit-route("[(hostModel)]"="hostModel" "[route]"="editRoute" "[hosts]"="rjon.hosts" "(onChange)"="onChange.emit(rjon)")
     br
     .text-center.flex.child-pad
-      a.flex-1.text-danger.bg-danger.hover-bg-energized.hover-text-grey-3x("(click)"="deleteRoute(editRoute);editRoute=null") delete
-      a.flex-1.bg-grey-5x.hover-bg-grey-6x.hover-text-grey-3x("(click)"="editRoute=null") close
+      a.flex-1.text-danger.bg-danger.hover-bg-energized.hover-text-grey-3x("(click)"="deleteRoute(editRoute);editRoute=null")
+        |delete
+      a.flex-1.bg-grey-5x.hover-bg-grey-6x.hover-text-grey-3x("(click)"="editRoute=null")
+        |close
+
+ack-modal(*ngIf="editHost" "(onClose)"="editHost=null" "[@500]"="'fadeInUp'" "[wrapStyle]"="{width:'100%', 'max-width':'900px'}")
+  .bg-white.border.border-grey-4x.pad.radius-5
+    edit-host("[(hostModel)]"="editHost" "(onChange)"="onChange.emit(rjon)")
+    br
+    .text-center.flex.child-pad
+      a.flex-1.text-danger.bg-danger.hover-bg-energized.hover-text-grey-3x("(click)"="deleteHost(editHost);editHost=null")
+        |delete
+      a.flex-1.bg-grey-5x.hover-bg-grey-6x.hover-text-grey-3x("(click)"="editHost=null")
+        |close
 
 rjon-links.text-right.text-sm("[rjon]"="rjon")
 
 .markdown-body
+  h3 Table of Headers
+  rjon-header-editor([data]="rjon.headers")
+
   h3 Table of Hosts
-  table-of-hosts([hosts]="rjon.hosts")
+  table-of-hosts([hosts]="rjon.hosts" "(select)"="editHost=$event" selectable=1)
+  .pad-xs.text-right
+    a("(click)"="host={};rjon.hosts.push(host);editHost=host") add host
 
   h3 Table of Routes
-  table-of-routes([routes]="rjon.routes" links="1")
+  table-of-routes([routes]="rjon.routes" links="1" "(select)"="editRoute=$event" selectable=1)
   .pad-xs.text-right
     a("(click)"="route={};rjon.routes.push(route);editRoute=route") add route
 

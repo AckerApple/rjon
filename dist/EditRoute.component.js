@@ -3,12 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var prefx_1 = require("./prefx");
 var edit_route_pug_1 = require("./templates/edit-route.pug");
-var ack_angular_1 = require("ack-angular");
 var pipes_class_1 = require("ack-angular/pipes.class");
 var statIconMap_1 = require("./statIconMap");
 var EditRoute = (function () {
-    function EditRoute(AckApi) {
-        this.AckApi = AckApi;
+    function EditRoute() {
         this.statIconMap = statIconMap_1.statIconMap;
         this.onChange = new core_1.EventEmitter();
         this.onClose = new core_1.EventEmitter();
@@ -53,9 +51,7 @@ EditRoute.decorators = [
             },] },
 ];
 /** @nocollapse */
-EditRoute.ctorParameters = function () { return [
-    { type: ack_angular_1.AckApi, },
-]; };
+EditRoute.ctorParameters = function () { return []; };
 EditRoute.propDecorators = {
     'route': [{ type: core_1.Input },],
     'hosts': [{ type: core_1.Input },],

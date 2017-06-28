@@ -4,14 +4,14 @@ import * as rjonHelper from "./rjonHelper";
 export declare class TestRoute {
     AckApi: AckApi;
     route: {};
+    headers: any;
     hosts: any;
     spaceSaving: boolean;
     hostModel: any;
     hostModelChange: EventEmitter<{}>;
-    headers: {
-        name: string;
-        value: string;
-    }[];
+    headersModel: {
+        'Content-Type': string;
+    };
     protocolModel: any;
     contentTypeModel: string;
     rjonHelper: typeof rjonHelper;
@@ -29,6 +29,7 @@ export declare class TestRoute {
     setContentType(type: any): any;
     getDefaultHostModel(): any;
     setHostByIndex(index: any): void;
+    applyHostHeaders(host: any): void;
     applyProtocol(): void;
     getDefaultBodyModel(): string;
     setBodyObject(ob: any): void;

@@ -62,7 +62,7 @@ reader-header-body.font-helvetica
 
         .pad-md(*ngIf="stateName=='http'" "[@absoluteSwap]"="panelAnim" "(@absoluteSwap.start)"="isSwaping=1" "(@absoluteSwap.done)"="isSwaping=0")
           //-"[(hostModel)]"="hostModel" 
-          test-route("[hosts]"="AppData.rjon.hosts" spaceSaving="0")
+          test-route("[hosts]"="AppData.rjon.hosts" spaceSaving="0" "[headers]"="rjon.headers")
         
         .pad-md(*ngIf="stateName=='testing'" "[@absoluteSwap]"="panelAnim" "(@absoluteSwap.start)"="isSwaping=1" "(@absoluteSwap.done)"="isSwaping=0")
           .flex.child-pad-xs.child-margin-xxs

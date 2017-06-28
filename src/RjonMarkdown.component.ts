@@ -32,4 +32,14 @@ import { EventEmitter, Output, Input, Component } from '@angular/core'
       }
     }
   }
+
+  deleteHost(host){
+    for(let x=this.rjon.hosts.length-1; x >= 0; --x){
+      if(this.rjon.hosts[x]==host){
+        this.rjon.hosts.splice(x,1)
+        this.onChange.emit()
+        return
+      }
+    }
+  }
 }

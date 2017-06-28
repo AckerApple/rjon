@@ -137,4 +137,5 @@ export declare class RjonMarkdown {
     serverUrlByRoute(host: any, route: any, sample: any): string;
     defToArray(sample: any): any;
     deleteRoute(route: any): void;
+    deleteHost(host: any): void;
 }

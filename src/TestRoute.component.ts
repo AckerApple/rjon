@@ -9,13 +9,14 @@ import * as rjonHelper from "./rjonHelper"
   template:testRoute,
   animations:fxArray
 }) export class TestRoute{
-  @Input() public route = {}
-  @Input() public hosts
-  @Input() public spaceSaving:boolean=true
-  @Input() public hostModel
-  @Output() public hostModelChange = new EventEmitter()
+  @Input() route = {}
+  @Input() headers
+  @Input() hosts
+  @Input() spaceSaving:boolean=true
+  @Input() hostModel
+  @Output() hostModelChange = new EventEmitter()
 
-  headers = [{name:'Content-Type', value:'application/json'}]
+  headersModel = {'Content-Type':'application/json'}
   protocolModel
   contentTypeModel = 'application/json'
   rjonHelper = rjonHelper
@@ -36,7 +37,11 @@ import * as rjonHelper from "./rjonHelper"
     this.methodModel = this.route['method']
     this.bodyModel = this.getDefaultBodyModel()
     this.hostModel = this.getDefaultHostModel()
+    this.applyHostHeaders(this.hostModel)
     this.applyProtocol()
+
+    if(this.headers)Object.assign(this.headersModel, this.headers)
+    
     setTimeout(()=>{
       this.route = this.route || {}
       this.hostModelChange.emit(this.hostModel)
@@ -44,12 +49,12 @@ import * as rjonHelper from "./rjonHelper"
   }
 
   setContentType(type){
-    for(let x=this.headers.length-1; x >= 0; --x){
-      if(this.headers[x].name.toLowerCase()=='content-type'){
-        return this.headers[x].value = type
-      }
+    for(let x in this.headersModel){
+      if(this.headersModel[x].name.toLowerCase()=='content-type'){
+        return this.headersModel[x] = type
+      }      
     }
-    this.headers.push({name:'Content-Type' , value:type})
+    this.headersModel['Content-Type'] = type
   }
 
   getDefaultHostModel(){
@@ -63,7 +68,12 @@ import * as rjonHelper from "./rjonHelper"
   setHostByIndex(index){
     this.hostModel = this.hosts[index]
     this.hostModelChange.emit(this.hostModel)
+    this.applyHostHeaders(this.hostModel)
     if(!this.protocolModel)this.applyProtocol()
+  }
+
+  applyHostHeaders(host){
+    if(host.headers)Object.assign(this.headersModel, host.headers)
   }
 
   applyProtocol(){
@@ -104,14 +114,11 @@ import * as rjonHelper from "./rjonHelper"
     const route = (this.pathModel.substring(0, 1)=='/' ? '' : '/') + this.pathModel
     const url = host+':' + port + route
 
-    const headers = {}
-    this.headers.forEach(item=>headers[item.name]=item.value)
-
     const config={
       method:this.methodModel,
       url:url,
       body:this.bodyModel,
-      headers:headers,
+      headers:this.headersModel,
       promise:'all'
     }
 
