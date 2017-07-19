@@ -1,4 +1,4 @@
-import { Ng2PageScrollModule, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
