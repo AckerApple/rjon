@@ -2,7 +2,7 @@
 //import * as marked from "marked"
 import { FormsModule }   from '@angular/forms'
 import {
-  Pipe,
+  //Pipe,
   EventEmitter,
   Input,
   Output,

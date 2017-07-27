@@ -6,6 +6,7 @@ export const string = "<error-well [error]=\"error\"></error-well><h2 class=\"ma
 "\n      \"returnType\": \"\",<span class=\"text-grey-2x\">//expected type of response</span>"+
 "\n      \"description\": \"\","+
 "\n      \"notes\": [\"\"],"+
+"\n      \"groupNames\": [\"\"]<span class=\"text-grey-2x\">//mostly used to create groups of testing</span>"+
 "\n      \"status\": [\"star\"],<span class=\"text-grey-2x\">//keyword descriptors. Often matches status icon. star=⭐</span>"+
 "\n      \"variables\":&#123;"+
 "\n        \"query\":&#123; \"name\":\"type\" &#125;,<span class=\"text-grey-2x\">//url variable details</span>"+

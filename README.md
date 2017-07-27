@@ -32,6 +32,7 @@ Below is a map of standarized RJON
       "returnType": "",//expected type of response
       "description": "",
       "notes": [""],
+      "groupNames": [""]//mostly used to create groups of testing
       "status": ["star"],//keyword descriptors. Often matches status icon. star=⭐
       "variables":{
         "query":{ "name":"type" },//url variable details

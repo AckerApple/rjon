@@ -11,11 +11,11 @@ var core_1 = require("@angular/core");
 var FakeCom = (function () {
     function FakeCom() {
     }
+    FakeCom = __decorate([
+        core_1.Component({ template: '' })
+    ], FakeCom);
     return FakeCom;
 }());
-FakeCom = __decorate([
-    core_1.Component({ template: '' })
-], FakeCom);
 exports.FakeCom = FakeCom;
 exports.declarations = [FakeCom];
 exports.routes = [

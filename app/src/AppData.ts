@@ -9,19 +9,19 @@ import {
 } from '@angular/core'
 
 @Injectable() export class AppData{
-  public invalidRjon:boolean = true
-  public invalidJson:boolean = true
-  public saving:boolean = false
-  public error
-  public data = {}
-  public load
-  public lastSaveAt
-  public rjonSaves = {}
+  invalidRjon:boolean = true
+  invalidJson:boolean = true
+  saving:boolean = false
+  error
+  data = {}
+  load
+  lastSaveAt
+  rjonSaves = {}
 
-  @Input() public rjon = {routes:[], hosts:[]}
-  @Output() public rjonChange = new EventEmitter()
-  @Input() public rjonString = '{"routes":[], "hosts":[]}'
-  @Output() public rjonStringChange = new EventEmitter()
+  @Input() rjon = {routes:[], hosts:[]}
+  @Output() rjonChange = new EventEmitter()
+  @Input() rjonString = '{"routes":[], "hosts":[]}'
+  @Output() rjonStringChange = new EventEmitter()
 
   constructor(public AckOffline:AckOffline, public ErrorLog:ErrorLog){
     this.load = this.AckOffline.get('rjon')

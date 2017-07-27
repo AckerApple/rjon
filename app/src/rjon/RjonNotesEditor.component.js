@@ -12,20 +12,20 @@ var RjonNotesEditor = (function () {
         this.data.push('');
         this.dataChange.emit(this.data);
     };
+    RjonNotesEditor.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'rjon-notes-editor',
+                    template: rjon_notes_editor_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
+    /** @nocollapse */
+    RjonNotesEditor.ctorParameters = function () { return []; };
+    RjonNotesEditor.propDecorators = {
+        'data': [{ type: core_1.Input },],
+        'dataChange': [{ type: core_1.Output },],
+    };
     return RjonNotesEditor;
 }());
-RjonNotesEditor.decorators = [
-    { type: core_1.Component, args: [{
-                selector: 'rjon-notes-editor',
-                template: rjon_notes_editor_pug_1.string,
-                animations: prefx_1.fxArray
-            },] },
-];
-/** @nocollapse */
-RjonNotesEditor.ctorParameters = function () { return []; };
-RjonNotesEditor.propDecorators = {
-    'data': [{ type: core_1.Input },],
-    'dataChange': [{ type: core_1.Output },],
-};
 exports.RjonNotesEditor = RjonNotesEditor;
 //# sourceMappingURL=RjonNotesEditor.component.js.map

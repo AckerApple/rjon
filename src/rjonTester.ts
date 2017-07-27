@@ -363,6 +363,24 @@ export class Tester{
     return tests
   }
 
+  public static getTestGroups(routes){
+    const groups = []
+    routes.forEach(route=>{
+      if(route.groupNames)groups.push.apply(groups,route.groupNames)
+    })
+
+    //remove duplicate groups
+    let find = -1
+    for(let x=groups.length-1; x >= 0; --x){
+      //remove duplicates that appear before current
+      while( (find=>find>=0 && find<x)( groups.indexOf(groups[x]) ) ){
+        groups.splice(x, 1)
+      }
+    }
+
+    return groups
+  }
+
   public static getRoutesWithTests(routes){
     const tests = []
     routes.forEach(route=>{

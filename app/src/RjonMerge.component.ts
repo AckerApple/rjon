@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core'
-import { fxArray } from "./prefx"
+import { fxArray } from "./rjon/prefx"
 import { AppData } from "./AppData"
 import { string as rjonMerge } from "./templates/rjon-merge.pug"
 import { array } from "ack-angular/pipes.class"

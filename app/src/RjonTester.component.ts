@@ -8,35 +8,36 @@ import {
 } from '@angular/core'
 import { AppData } from "./AppData"
 import { string as rjonTester } from "./templates/rjon-tester.pug"
-import { Tester } from "./rjonTester"
-import { fxArray } from "./prefx"
-
+import { Tester } from "./rjon/rjonTester"
+import { fxArray } from "./rjon/prefx"
 
 @Component({
   selector:'rjon-tester',
   template:rjonTester,
   animations:fxArray
 }) export class RjonTester{
-  public error
-  public testlog = []
-  public testing:boolean = false
-  //public testResults = []
-  public hostModel
-  public myTester = new Tester()
+  error
+  testlog = []
+  testing:boolean = false
+  //testResults = []
+  hostModel
+  testGroup
+  myTester = new Tester()
+  testGroups = []
   
-  @Input() public testRoutes = []
-  @Output() public testRoutesChange = new EventEmitter()
+  @Input() testRoutes = []
+  @Output() testRoutesChange = new EventEmitter()
   
-  @Input() public actualRoutes = []
-  @Output() public actualRoutesChange = new EventEmitter()
+  @Input() actualRoutes = []
+  @Output() actualRoutesChange = new EventEmitter()
   
-  @Input() public actualTestRoutes = []
-  @Output() public actualTestRoutesChange = new EventEmitter()
+  @Input() actualTestRoutes = []
+  @Output() actualTestRoutesChange = new EventEmitter()
 
-  @Input() public hostModelChange = new EventEmitter()
+  @Input() hostModelChange = new EventEmitter()
 
-  @Input() public ref
-  @Output() public refChange = new EventEmitter()
+  @Input() ref
+  @Output() refChange = new EventEmitter()
 
   constructor(public AppData:AppData, public http:Http){
     this.myTester.log = options=>this.testlog.push(options)
@@ -63,7 +64,6 @@ import { fxArray } from "./prefx"
 
   ngAfterViewInit(){
     setTimeout(()=>{
-      //this.ref = Object.assign(this.ref||this,this)&&this
       this.ref = Object.assign(this,this.ref)
       this.refChange.emit(this.ref)
     }, 0)
@@ -86,20 +86,23 @@ import { fxArray } from "./prefx"
       if(!this.AppData.rjon || !this.AppData.rjon.routes)return
       //routes with tests
       this.testRoutes = Tester.getRouteTests( this.AppData.rjon.routes )
-      
-      //unique tests
-      this.actualTestRoutes = Tester.getRouteActualTests( this.AppData.rjon.routes )
-      
-      //unique routes with ready to use tests
-      this.actualRoutes = Tester.getRoutesWithActualTests( this.AppData.rjon.routes )
+      this.testGroups = Tester.getTestGroups( this.AppData.rjon.routes )
+    
+      this.filterRoutes()
 
       this.testRoutesChange.emit(this.testRoutes)
       this.actualRoutesChange.emit(this.actualTestRoutes)
-      this.actualTestRoutesChange.emit(this.actualRoutes)
 
 
       this.hostModel = this.getDefaultHostModel()
     })
+  }
+
+  filterRoutes(){
+    const routes = Tester.getRoutesWithActualTests( this.AppData.rjon.routes )
+    this.reduceRoutesByGroup(routes, this.testGroup)
+    this.actualTestRoutesChange.emit(this.actualRoutes=routes)
+    this.actualTestRoutes = Tester.getRouteActualTests( routes )
   }
 
   getDefaultHostModel(){
@@ -121,10 +124,27 @@ import { fxArray } from "./prefx"
     this.testlog.length = 0
     this.testing = true
 
-    return this.myTester.testRoutes(this.AppData.rjon.routes, this.hostModel)
+    return this.myTester.testRoutes(this.actualRoutes, this.hostModel)
     //.then( results=>this.testResults=results )
     //.then( results=>console.log('results',results) )
     .catch( e=>console.log(this.error=e) )
     .then( ()=>this.testing=false )
+  }
+
+  reduceRoutesByGroup(routes, group){
+    if(!group)return routes
+
+    for(let x=routes.length-1; x >= 0; --x){
+      if(!routes[x].groupNames){
+        routes.splice(x,1)
+        continue
+      }
+
+      if(routes[x].groupNames.indexOf(this.testGroup)<0){
+        routes.splice(x,1)
+      }
+    }
+
+    return routes
   }
 }

@@ -17,9 +17,11 @@ import * as i7 from 'ack-angular/AckOffline';
 import * as i8 from 'ack-angular/AckCache';
 import * as i9 from 'ack-angular/AckQue';
 import * as i10 from 'ack-angular/AckApi';
-import * as i11 from 'ng2-page-scroll/src/ng2-page-scroll.service';
-import * as i12 from 'ack-angular/AckModule';
-import * as i13 from 'ng2-page-scroll/src/ng2-page-scroll.module';
+import * as i11 from 'ack-angular/WindowService';
+import * as i12 from 'ack-angular/UrlVars';
+import * as i13 from 'ng2-page-scroll/src/ng2-page-scroll.service';
+import * as i14 from 'ack-angular/AckModule';
+import * as i15 from 'ng2-page-scroll/src/ng2-page-scroll.module';
 export const RjonModuleNgFactory:i0.NgModuleFactory<i1.RjonModule> = i0.ɵcmf(i1.RjonModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -34,12 +36,13 @@ export const RjonModuleNgFactory:i0.NgModuleFactory<i1.RjonModule> = i0.ɵcmf(i1
               i6.ErrorLog,i6.ErrorLog,([] as any[])),i0.ɵmpd(4608,i7.AckOffline,i7.AckOffline,
               ([] as any[])),i0.ɵmpd(4608,i8.AckCache,i8.AckCache,([] as any[])),i0.ɵmpd(4608,
               i9.AckQue,i9.AckQue,([] as any[])),i0.ɵmpd(4608,i10.AckApi,i10.AckApi,
-              [i4.Http]),i0.ɵmpd(4608,i11.PageScrollService,i11.PageScrollService,
-              ([] as any[])),i0.ɵmpd(512,i2.CommonModule,i2.CommonModule,([] as any[])),
-          i0.ɵmpd(512,i3.ɵbc,i3.ɵbc,([] as any[])),i0.ɵmpd(512,i3.FormsModule,i3.FormsModule,
-              ([] as any[])),i0.ɵmpd(512,i4.HttpModule,i4.HttpModule,([] as any[])),
-          i0.ɵmpd(512,i12.AckModule,i12.AckModule,([] as any[])),i0.ɵmpd(512,i13.Ng2PageScrollModule,
-              i13.Ng2PageScrollModule,([] as any[])),i0.ɵmpd(512,i1.RjonModule,i1.RjonModule,
-              ([] as any[]))]);
+              [i4.Http]),i0.ɵmpd(4608,i11.WindowService,i11.WindowService,([] as any[])),
+          i0.ɵmpd(4608,i12.UrlVars,i12.UrlVars,[i11.WindowService]),i0.ɵmpd(4608,i13.PageScrollService,
+              i13.PageScrollService,([] as any[])),i0.ɵmpd(512,i2.CommonModule,i2.CommonModule,
+              ([] as any[])),i0.ɵmpd(512,i3.ɵba,i3.ɵba,([] as any[])),i0.ɵmpd(512,
+              i3.FormsModule,i3.FormsModule,([] as any[])),i0.ɵmpd(512,i4.HttpModule,
+              i4.HttpModule,([] as any[])),i0.ɵmpd(512,i14.AckModule,i14.AckModule,
+              ([] as any[])),i0.ɵmpd(512,i15.Ng2PageScrollModule,i15.Ng2PageScrollModule,
+              ([] as any[])),i0.ɵmpd(512,i1.RjonModule,i1.RjonModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vUmpvbk1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL1Jqb25Nb2R1bGUuZC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL2Fja2VyYXBwbGUvcHJvamVjdHMvQWNrL2Jyb3dzZXIvcmpvbi9hcHAvc3JjL3Jqb24vUmpvbk1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9Vc2Vycy9hY2tlcmFwcGxlL3Byb2plY3RzL0Fjay9icm93c2VyL3Jqb24vYXBwL3NyYy9yam9uL1Jqb25Nb2R1bGUuZC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==

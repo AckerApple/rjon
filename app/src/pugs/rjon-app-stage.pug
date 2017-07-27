@@ -62,15 +62,17 @@ reader-header-body.font-helvetica
 
         .pad-md(*ngIf="stateName=='http'" "[@absoluteSwap]"="panelAnim" "(@absoluteSwap.start)"="isSwaping=1" "(@absoluteSwap.done)"="isSwaping=0")
           //-"[(hostModel)]"="hostModel" 
-          test-route("[hosts]"="AppData.rjon.hosts" spaceSaving="0" "[headers]"="rjon.headers")
+          test-route("[hosts]"="AppData.rjon.hosts" spaceSaving="0" "[headers]"="AppData.rjon.headers")
         
         .pad-md(*ngIf="stateName=='testing'" "[@absoluteSwap]"="panelAnim" "(@absoluteSwap.start)"="isSwaping=1" "(@absoluteSwap.done)"="isSwaping=0")
           .flex.child-pad-xs.child-margin-xxs
             h2.flex-1.margin-top-0 Testing
-            .border.border-grey-6x.bg-grey-6x
-              |{{ rjonTester?.length }} tests
-            .border.border-grey-6x.bg-grey-6x
-              |{{ rjonTester?.length }} ready
+            .border.border-grey-6x.bg-grey-6x.text-center
+              div tests
+              |{{ rjonTester?.actualTestRoutes.length }}
+            .border.border-grey-6x.bg-grey-6x.text-center
+              div routes
+              |{{ rjonTester?.actualRoutes.length }}
 
           rjon-tester("[(ref)]"="rjonTester")
           +top

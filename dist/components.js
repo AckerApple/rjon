@@ -16,13 +16,13 @@ var Dump = (function () {
         //return nodedump(input, options)
         return nodedump.dump(input, Object.assign({ hideTypes: ['Function'] }, options));
     };
+    Dump.decorators = [
+        { type: core_1.Pipe, args: [{ name: 'dump' },] },
+    ];
+    /** @nocollapse */
+    Dump.ctorParameters = function () { return []; };
     return Dump;
 }());
-Dump.decorators = [
-    { type: core_1.Pipe, args: [{ name: 'dump' },] },
-];
-/** @nocollapse */
-Dump.ctorParameters = function () { return []; };
 exports.Dump = Dump;
 var RjonLinks_component_1 = require("./RjonLinks.component");
 var TableOfHosts_component_1 = require("./TableOfHosts.component");

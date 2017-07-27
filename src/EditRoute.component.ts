@@ -4,6 +4,7 @@ import { string as editRoute } from "./templates/edit-route.pug"
 import { pipes } from "ack-angular/pipes.class"
 import * as rjonHelper from "./rjonHelper"
 import { statIconMap } from "./statIconMap"
+import { Tester } from "./rjonTester"
 
 @Component({
   selector:'edit-route',
@@ -11,12 +12,18 @@ import { statIconMap } from "./statIconMap"
   animations:fxArray
 }) export class EditRoute{
   statIconMap = statIconMap
+  testGroups = []
   
   @Input() route
+  @Input() routes
   @Input() hosts
   @Input() hostModel
   @Output() onChange = new EventEmitter()
   @Output() onClose = new EventEmitter()
+
+  ngOnInit(){
+    if(this.routes)this.testGroups = Tester.getTestGroups( this.routes )
+  }
 
   toggleRouteStatus(status){
     this.route.status = this.route.status || []

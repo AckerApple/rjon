@@ -35,20 +35,20 @@ var RjonMarkdown = (function () {
             }
         }
     };
+    RjonMarkdown.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'rjon-markdown',
+                    template: rjon_markdown_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
+    /** @nocollapse */
+    RjonMarkdown.ctorParameters = function () { return []; };
+    RjonMarkdown.propDecorators = {
+        'rjon': [{ type: core_1.Input },],
+        'onChange': [{ type: core_1.Output },],
+    };
     return RjonMarkdown;
 }());
-RjonMarkdown.decorators = [
-    { type: core_1.Component, args: [{
-                selector: 'rjon-markdown',
-                template: rjon_markdown_pug_1.string,
-                animations: prefx_1.fxArray
-            },] },
-];
-/** @nocollapse */
-RjonMarkdown.ctorParameters = function () { return []; };
-RjonMarkdown.propDecorators = {
-    'rjon': [{ type: core_1.Input },],
-    'onChange': [{ type: core_1.Output },],
-};
 exports.RjonMarkdown = RjonMarkdown;
 //# sourceMappingURL=RjonMarkdown.component.js.map

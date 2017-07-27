@@ -54,16 +54,16 @@ var RjonBuilder = (function () {
             this.AppData.saveOffline(string);
         }
     };
+    RjonBuilder = __decorate([
+        core_1.Component({
+            selector: 'rjon-builder',
+            template: rjon_builder_pug_1.string,
+            animations: prefx_1.fxArray
+        }),
+        __metadata("design:paramtypes", [AppData_1.AppData])
+    ], RjonBuilder);
     return RjonBuilder;
 }());
-RjonBuilder = __decorate([
-    core_1.Component({
-        selector: 'rjon-builder',
-        template: rjon_builder_pug_1.string,
-        animations: prefx_1.fxArray
-    }),
-    __metadata("design:paramtypes", [AppData_1.AppData])
-], RjonBuilder);
 exports.RjonBuilder = RjonBuilder;
 var rjon_app_stage_pug_1 = require("./templates/rjon-app-stage.pug");
 var AppComponent = (function () {
@@ -72,20 +72,20 @@ var AppComponent = (function () {
         this.version = packJson['version'];
         this.panelAnim = 'slideInRight';
     }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], AppComponent.prototype, "panelAnim", void 0);
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'rjon-app-stage',
+            template: rjon_app_stage_pug_1.string,
+            animations: prefx_1.fxArray
+        }),
+        __metadata("design:paramtypes", [AppData_1.AppData])
+    ], AppComponent);
     return AppComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], AppComponent.prototype, "panelAnim", void 0);
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'rjon-app-stage',
-        template: rjon_app_stage_pug_1.string,
-        animations: prefx_1.fxArray
-    }),
-    __metadata("design:paramtypes", [AppData_1.AppData])
-], AppComponent);
 exports.AppComponent = AppComponent;
 var rjon_viewer_pug_1 = require("./templates/rjon-viewer.pug");
 var RjonViewer = (function () {
@@ -93,50 +93,50 @@ var RjonViewer = (function () {
     function RjonViewer(AppData) {
         this.AppData = AppData;
     }
+    RjonViewer = __decorate([
+        core_1.Component({
+            selector: 'rjon-viewer',
+            template: rjon_viewer_pug_1.string,
+            animations: prefx_1.fxArray
+        }),
+        __metadata("design:paramtypes", [AppData_1.AppData])
+    ], RjonViewer);
     return RjonViewer;
 }());
-RjonViewer = __decorate([
-    core_1.Component({
-        selector: 'rjon-viewer',
-        template: rjon_viewer_pug_1.string,
-        animations: prefx_1.fxArray
-    }),
-    __metadata("design:paramtypes", [AppData_1.AppData])
-], RjonViewer);
 exports.RjonViewer = RjonViewer;
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                animations_1.BrowserAnimationsModule,
+                states_object_1.routing,
+                forms_1.FormsModule,
+                ack_angular_1.AckModule,
+                index_1.RjonModule
+            ],
+            providers: [
+                AppData_1.AppData,
+                RouteWatchReporter_1.RouteWatchReporter
+            ],
+            declarations: [
+                RjonBuilder,
+                RjonTester_component_1.RjonTester,
+                RouteReporter_component_1.RouteReporter,
+                AppComponent,
+                OverviewComponent_component_1.OverviewComponent,
+                RjonMerge_component_1.RjonMerge,
+                RjonViewer
+            ].concat(states_object_1.declarations
+            //...ackDecs,
+            //...ackPipes
+            ),
+            bootstrap: [AppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            animations_1.BrowserAnimationsModule,
-            states_object_1.routing,
-            forms_1.FormsModule,
-            ack_angular_1.AckModule,
-            index_1.RjonModule
-        ],
-        providers: [
-            AppData_1.AppData,
-            RouteWatchReporter_1.RouteWatchReporter
-        ],
-        declarations: [
-            RjonBuilder,
-            RjonTester_component_1.RjonTester,
-            RouteReporter_component_1.RouteReporter,
-            AppComponent,
-            OverviewComponent_component_1.OverviewComponent,
-            RjonMerge_component_1.RjonMerge,
-            RjonViewer
-        ].concat(states_object_1.declarations
-        //...ackDecs,
-        //...ackPipes
-        ),
-        bootstrap: [AppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

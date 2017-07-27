@@ -132,11 +132,14 @@ export declare class EditRoute {
             details: string;
         };
     };
+    testGroups: any[];
     route: any;
+    routes: any;
     hosts: any;
     hostModel: any;
     onChange: EventEmitter<{}>;
     onClose: EventEmitter<{}>;
+    ngOnInit(): void;
     toggleRouteStatus(status: any): void;
     addNote(): void;
     addSample(): void;

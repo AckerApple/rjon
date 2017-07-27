@@ -13,8 +13,8 @@ var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
 var AppData_1 = require("./AppData");
 var rjon_tester_pug_1 = require("./templates/rjon-tester.pug");
-var rjonTester_1 = require("./rjonTester");
-var prefx_1 = require("./prefx");
+var rjonTester_1 = require("./rjon/rjonTester");
+var prefx_1 = require("./rjon/prefx");
 var RjonTester = (function () {
     function RjonTester(AppData, http) {
         var _this = this;
@@ -23,6 +23,7 @@ var RjonTester = (function () {
         this.testlog = [];
         this.testing = false;
         this.myTester = new rjonTester_1.Tester();
+        this.testGroups = [];
         this.testRoutes = [];
         this.testRoutesChange = new core_1.EventEmitter();
         this.actualRoutes = [];
@@ -51,7 +52,6 @@ var RjonTester = (function () {
     RjonTester.prototype.ngAfterViewInit = function () {
         var _this = this;
         setTimeout(function () {
-            //this.ref = Object.assign(this.ref||this,this)&&this
             _this.ref = Object.assign(_this, _this.ref);
             _this.refChange.emit(_this.ref);
         }, 0);
@@ -74,15 +74,18 @@ var RjonTester = (function () {
                 return;
             //routes with tests
             _this.testRoutes = rjonTester_1.Tester.getRouteTests(_this.AppData.rjon.routes);
-            //unique tests
-            _this.actualTestRoutes = rjonTester_1.Tester.getRouteActualTests(_this.AppData.rjon.routes);
-            //unique routes with ready to use tests
-            _this.actualRoutes = rjonTester_1.Tester.getRoutesWithActualTests(_this.AppData.rjon.routes);
+            _this.testGroups = rjonTester_1.Tester.getTestGroups(_this.AppData.rjon.routes);
+            _this.filterRoutes();
             _this.testRoutesChange.emit(_this.testRoutes);
             _this.actualRoutesChange.emit(_this.actualTestRoutes);
-            _this.actualTestRoutesChange.emit(_this.actualRoutes);
             _this.hostModel = _this.getDefaultHostModel();
         });
+    };
+    RjonTester.prototype.filterRoutes = function () {
+        var routes = rjonTester_1.Tester.getRoutesWithActualTests(this.AppData.rjon.routes);
+        this.reduceRoutesByGroup(routes, this.testGroup);
+        this.actualTestRoutesChange.emit(this.actualRoutes = routes);
+        this.actualTestRoutes = rjonTester_1.Tester.getRouteActualTests(routes);
     };
     RjonTester.prototype.getDefaultHostModel = function () {
         if (this.hostModel)
@@ -101,55 +104,69 @@ var RjonTester = (function () {
             return;
         this.testlog.length = 0;
         this.testing = true;
-        return this.myTester.testRoutes(this.AppData.rjon.routes, this.hostModel)
+        return this.myTester.testRoutes(this.actualRoutes, this.hostModel)
             .catch(function (e) { return console.log(_this.error = e); })
             .then(function () { return _this.testing = false; });
     };
+    RjonTester.prototype.reduceRoutesByGroup = function (routes, group) {
+        if (!group)
+            return routes;
+        for (var x = routes.length - 1; x >= 0; --x) {
+            if (!routes[x].groupNames) {
+                routes.splice(x, 1);
+                continue;
+            }
+            if (routes[x].groupNames.indexOf(this.testGroup) < 0) {
+                routes.splice(x, 1);
+            }
+        }
+        return routes;
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "testRoutes", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "testRoutesChange", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "actualRoutes", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "actualRoutesChange", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "actualTestRoutes", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "actualTestRoutesChange", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "hostModelChange", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "ref", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], RjonTester.prototype, "refChange", void 0);
+    RjonTester = __decorate([
+        core_1.Component({
+            selector: 'rjon-tester',
+            template: rjon_tester_pug_1.string,
+            animations: prefx_1.fxArray
+        }),
+        __metadata("design:paramtypes", [AppData_1.AppData, http_1.Http])
+    ], RjonTester);
     return RjonTester;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "testRoutes", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "testRoutesChange", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "actualRoutes", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "actualRoutesChange", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "actualTestRoutes", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "actualTestRoutesChange", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "hostModelChange", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "ref", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RjonTester.prototype, "refChange", void 0);
-RjonTester = __decorate([
-    core_1.Component({
-        selector: 'rjon-tester',
-        template: rjon_tester_pug_1.string,
-        animations: prefx_1.fxArray
-    }),
-    __metadata("design:paramtypes", [AppData_1.AppData, http_1.Http])
-], RjonTester);
 exports.RjonTester = RjonTester;
 //# sourceMappingURL=RjonTester.component.js.map

@@ -105,27 +105,27 @@ var AppData = (function () {
     AppData.prototype.isValidRjon = function (ob) {
         return ob.routes && ob.hosts ? true : false;
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], AppData.prototype, "rjon", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], AppData.prototype, "rjonChange", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], AppData.prototype, "rjonString", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], AppData.prototype, "rjonStringChange", void 0);
+    AppData = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [ack_angular_1.AckOffline, ack_angular_1.ErrorLog])
+    ], AppData);
     return AppData;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], AppData.prototype, "rjon", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], AppData.prototype, "rjonChange", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], AppData.prototype, "rjonString", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], AppData.prototype, "rjonStringChange", void 0);
-AppData = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [ack_angular_1.AckOffline, ack_angular_1.ErrorLog])
-], AppData);
 exports.AppData = AppData;
 //# sourceMappingURL=AppData.js.map

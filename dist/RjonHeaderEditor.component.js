@@ -19,20 +19,20 @@ var RjonHeaderEditor = (function () {
     RjonHeaderEditor.prototype.getKeys = function () {
         return this.data ? Object.keys(this.data) : [];
     };
+    RjonHeaderEditor.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'rjon-header-editor',
+                    template: rjon_header_editor_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
+    /** @nocollapse */
+    RjonHeaderEditor.ctorParameters = function () { return []; };
+    RjonHeaderEditor.propDecorators = {
+        'data': [{ type: core_1.Input },],
+        'dataChange': [{ type: core_1.Output },],
+    };
     return RjonHeaderEditor;
 }());
-RjonHeaderEditor.decorators = [
-    { type: core_1.Component, args: [{
-                selector: 'rjon-header-editor',
-                template: rjon_header_editor_pug_1.string,
-                animations: prefx_1.fxArray
-            },] },
-];
-/** @nocollapse */
-RjonHeaderEditor.ctorParameters = function () { return []; };
-RjonHeaderEditor.propDecorators = {
-    'data': [{ type: core_1.Input },],
-    'dataChange': [{ type: core_1.Output },],
-};
 exports.RjonHeaderEditor = RjonHeaderEditor;
 //# sourceMappingURL=RjonHeaderEditor.component.js.map

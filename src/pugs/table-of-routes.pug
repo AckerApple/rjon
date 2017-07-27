@@ -1,4 +1,4 @@
-.markdown-body
+.markdown-body("[@childStag50]"="routes")
   table("[class.table-hover-warning]"="selectable")
     thead
       tr
@@ -7,7 +7,7 @@
         th RETURNS
         th STAT
     tbody
-      tr(*ngFor="let route of routes|array" "[class.cursor-pointer]"="selectable")
+      tr.childFx(*ngFor="let route of routes|array" "[class.cursor-pointer]"="selectable" "[@200]"="'fadeInUp'")
         td("(click)"="select.emit(route)") {{ route.method }}
         td
           div(*ngIf="links")

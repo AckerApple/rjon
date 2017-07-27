@@ -5,6 +5,7 @@ var prefx_1 = require("./prefx");
 var test_route_pug_1 = require("./templates/test-route.pug");
 var ack_angular_1 = require("ack-angular");
 var rjonHelper = require("./rjonHelper");
+/** interface to test a single route */
 var TestRoute = (function () {
     function TestRoute(AckApi) {
         this.AckApi = AckApi;
@@ -105,26 +106,26 @@ var TestRoute = (function () {
             .then(function () { return --_this.sending; })
             .then(function () { return _this.responseView = 'map'; });
     };
+    TestRoute.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'test-route',
+                    template: test_route_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
+    /** @nocollapse */
+    TestRoute.ctorParameters = function () { return [
+        { type: ack_angular_1.AckApi, },
+    ]; };
+    TestRoute.propDecorators = {
+        'route': [{ type: core_1.Input },],
+        'headers': [{ type: core_1.Input },],
+        'hosts': [{ type: core_1.Input },],
+        'spaceSaving': [{ type: core_1.Input },],
+        'hostModel': [{ type: core_1.Input },],
+        'hostModelChange': [{ type: core_1.Output },],
+    };
     return TestRoute;
 }());
-TestRoute.decorators = [
-    { type: core_1.Component, args: [{
-                selector: 'test-route',
-                template: test_route_pug_1.string,
-                animations: prefx_1.fxArray
-            },] },
-];
-/** @nocollapse */
-TestRoute.ctorParameters = function () { return [
-    { type: ack_angular_1.AckApi, },
-]; };
-TestRoute.propDecorators = {
-    'route': [{ type: core_1.Input },],
-    'headers': [{ type: core_1.Input },],
-    'hosts': [{ type: core_1.Input },],
-    'spaceSaving': [{ type: core_1.Input },],
-    'hostModel': [{ type: core_1.Input },],
-    'hostModelChange': [{ type: core_1.Output },],
-};
 exports.TestRoute = TestRoute;
 //# sourceMappingURL=TestRoute.component.js.map

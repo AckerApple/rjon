@@ -1,6 +1,6 @@
 import { AckOffline } from "ack-angular"
 import { Component, EventEmitter } from '@angular/core'
-import { fxArray } from "./prefx"
+import { fxArray } from "./rjon/prefx"
 import { AppData } from "./AppData"
 import { string as overviewComponent } from "./templates/overview-component.pug"
 import { array } from "ack-angular/pipes.class"

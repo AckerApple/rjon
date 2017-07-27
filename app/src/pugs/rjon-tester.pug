@@ -2,11 +2,19 @@ error-well([error]="error")
 
 br
 
-label Select Host
-select.width-full("(change)"="setHostByIndex($event.target.value)")
-  option
-  option("*ngFor"="let host of AppData.rjon.hosts; let i=index" "[value]"="i" "[selected]"="host.hostname==(hostModel&&hostModel.hostname)")
-    |{{ host.protocol || (host.port==443?'https':'http') }}://{{ host.hostname }}:{{ host.port || 80 }}
+.flex-wrap.child-margin-xs
+  .flex-1
+    label Select Host
+    select.width-full("(change)"="setHostByIndex($event.target.value)")
+      option
+      option("*ngFor"="let host of AppData.rjon.hosts; let i=index" "[value]"="i" "[selected]"="host.hostname==(hostModel&&hostModel.hostname)")
+        |{{ host.protocol || (host.port==443?'https':'http') }}://{{ host.hostname }}:{{ host.port || 80 }}
+
+  .flex-1
+    label Select Test Group
+    select.width-full("[(ngModel)]"="testGroup" "(ngModelChange)"="filterRoutes()")
+      option
+      option(*ngFor="let item of testGroups" "[value]"=item) {{item}}
 
 br
 

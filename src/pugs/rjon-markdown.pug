@@ -1,10 +1,26 @@
-ack-modal(*ngIf="testRoute" "(onClose)"="testRoute=null" "[@500]"="'fadeInUp'" "[wrapStyle]"="{width:'100%', 'max-width':'900px'}")
+-attrs = {};
+-attrs["*ngIf"] = "testRoute"
+-attrs["(onClose)"] = "testRoute=null"
+-attrs["[@500]"] = "'fadeInUp'"
+-attrs["[wrapStyle]"] = "{width:'100%', 'max-width':'900px'}"
+ack-modal&attributes(attrs)
   .bg-white.border.border-grey-4x.pad.radius-5
     test-route("[(hostModel)]"="hostModel" "[route]"="testRoute" "[hosts]"="rjon.hosts" "[headers]"="rjon.headers")
 
-ack-modal(*ngIf="editRoute" "(onClose)"="editRoute=null" "[@500]"="'fadeInUp'" "[wrapStyle]"="{width:'100%', 'max-width':'900px'}")
+-attrs = {};
+-attrs["*ngIf"] = "editRoute"
+-attrs["(onClose)"] = "editRoute=null"
+-attrs["[@500]"] = "'fadeInUp'"
+-attrs["[wrapStyle]"] = "{width:'100%', 'max-width':'900px'}"
+ack-modal&attributes(attrs)
   .bg-white.border.border-grey-4x.pad.radius-5
-    edit-route("[(hostModel)]"="hostModel" "[route]"="editRoute" "[hosts]"="rjon.hosts" "(onChange)"="onChange.emit(rjon)")
+    -attrs = {};
+    -attrs["[(hostModel)]"] = "hostModel"
+    -attrs["[routes]"] = "rjon.routes"
+    -attrs["[route]"] = "editRoute"
+    -attrs["[hosts]"] = "rjon.hosts"
+    -attrs["(onChange)"] = "onChange.emit(rjon)"
+    edit-route&attributes(attrs)
     br
     .text-center.flex.child-pad
       a.flex-1.text-danger.bg-danger.hover-bg-energized.hover-text-grey-3x("(click)"="deleteRoute(editRoute);editRoute=null")

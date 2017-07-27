@@ -4,6 +4,7 @@ import { string as testRoute } from "./templates/test-route.pug"
 import { AckApi } from "ack-angular"
 import * as rjonHelper from "./rjonHelper"
 
+/** interface to test a single route */
 @Component({
   selector:'test-route',
   template:testRoute,

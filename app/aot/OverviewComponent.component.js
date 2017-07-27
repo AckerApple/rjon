@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var ack_angular_1 = require("ack-angular");
 var core_1 = require("@angular/core");
-var prefx_1 = require("./prefx");
+var prefx_1 = require("./rjon/prefx");
 var AppData_1 = require("./AppData");
 var overview_component_pug_1 = require("./templates/overview-component.pug");
 var OverviewComponent = (function () {
@@ -25,15 +25,15 @@ var OverviewComponent = (function () {
             return;
         this.AppData.setRjonString(this.AppData.rjonSaves[name]);
     };
+    OverviewComponent = __decorate([
+        core_1.Component({
+            selector: 'overview-component',
+            template: overview_component_pug_1.string,
+            animations: prefx_1.fxArray
+        }),
+        __metadata("design:paramtypes", [AppData_1.AppData, ack_angular_1.AckOffline])
+    ], OverviewComponent);
     return OverviewComponent;
 }());
-OverviewComponent = __decorate([
-    core_1.Component({
-        selector: 'overview-component',
-        template: overview_component_pug_1.string,
-        animations: prefx_1.fxArray
-    }),
-    __metadata("design:paramtypes", [AppData_1.AppData, ack_angular_1.AckOffline])
-], OverviewComponent);
 exports.OverviewComponent = OverviewComponent;
 //# sourceMappingURL=OverviewComponent.component.js.map

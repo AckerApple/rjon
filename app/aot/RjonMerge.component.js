@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var prefx_1 = require("./prefx");
+var prefx_1 = require("./rjon/prefx");
 var AppData_1 = require("./AppData");
 var rjon_merge_pug_1 = require("./templates/rjon-merge.pug");
 var pipes_class_1 = require("ack-angular/pipes.class");
@@ -165,19 +165,19 @@ var RjonMerge = (function () {
         });
         this.AppData.setSaveRjon(this.AppData.rjon);
     };
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], RjonMerge.prototype, "onMerge", void 0);
+    RjonMerge = __decorate([
+        core_1.Component({
+            selector: 'rjon-merge',
+            template: rjon_merge_pug_1.string,
+            animations: prefx_1.fxArray
+        }),
+        __metadata("design:paramtypes", [AppData_1.AppData])
+    ], RjonMerge);
     return RjonMerge;
 }());
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RjonMerge.prototype, "onMerge", void 0);
-RjonMerge = __decorate([
-    core_1.Component({
-        selector: 'rjon-merge',
-        template: rjon_merge_pug_1.string,
-        animations: prefx_1.fxArray
-    }),
-    __metadata("design:paramtypes", [AppData_1.AppData])
-], RjonMerge);
 exports.RjonMerge = RjonMerge;
 //# sourceMappingURL=RjonMerge.component.js.map

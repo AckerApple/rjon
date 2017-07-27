@@ -1,6 +1,7 @@
 import { EventEmitter } from '@angular/core';
 import { AckApi } from "ack-angular";
 import * as rjonHelper from "./rjonHelper";
+/** interface to test a single route */
 export declare class TestRoute {
     AckApi: AckApi;
     route: {};

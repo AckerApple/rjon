@@ -5,12 +5,18 @@ var prefx_1 = require("./prefx");
 var edit_route_pug_1 = require("./templates/edit-route.pug");
 var pipes_class_1 = require("ack-angular/pipes.class");
 var statIconMap_1 = require("./statIconMap");
+var rjonTester_1 = require("./rjonTester");
 var EditRoute = (function () {
     function EditRoute() {
         this.statIconMap = statIconMap_1.statIconMap;
+        this.testGroups = [];
         this.onChange = new core_1.EventEmitter();
         this.onClose = new core_1.EventEmitter();
     }
+    EditRoute.prototype.ngOnInit = function () {
+        if (this.routes)
+            this.testGroups = rjonTester_1.Tester.getTestGroups(this.routes);
+    };
     EditRoute.prototype.toggleRouteStatus = function (status) {
         this.route.status = this.route.status || [];
         this.route.status = pipes_class_1.pipes.array(this.route.status);
@@ -41,23 +47,24 @@ var EditRoute = (function () {
     EditRoute.prototype.setTestBody = function (test, value) {
         test.body = JSON.parse(value);
     };
+    EditRoute.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'edit-route',
+                    template: edit_route_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
+    /** @nocollapse */
+    EditRoute.ctorParameters = function () { return []; };
+    EditRoute.propDecorators = {
+        'route': [{ type: core_1.Input },],
+        'routes': [{ type: core_1.Input },],
+        'hosts': [{ type: core_1.Input },],
+        'hostModel': [{ type: core_1.Input },],
+        'onChange': [{ type: core_1.Output },],
+        'onClose': [{ type: core_1.Output },],
+    };
     return EditRoute;
 }());
-EditRoute.decorators = [
-    { type: core_1.Component, args: [{
-                selector: 'edit-route',
-                template: edit_route_pug_1.string,
-                animations: prefx_1.fxArray
-            },] },
-];
-/** @nocollapse */
-EditRoute.ctorParameters = function () { return []; };
-EditRoute.propDecorators = {
-    'route': [{ type: core_1.Input },],
-    'hosts': [{ type: core_1.Input },],
-    'hostModel': [{ type: core_1.Input },],
-    'onChange': [{ type: core_1.Output },],
-    'onClose': [{ type: core_1.Output },],
-};
 exports.EditRoute = EditRoute;
 //# sourceMappingURL=EditRoute.component.js.map

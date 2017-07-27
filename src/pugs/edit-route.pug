@@ -16,11 +16,29 @@ form("(onFormChanged)"="onChange.emit(route)")
       label Description
       input.width-full("[(ngModel)]"="route.description" name="route.description")
   
-  .margin-xxs
-    label Notes
-    rjon-notes-editor([data]="route.notes")
+    .width-full
+      label Notes
+      rjon-notes-editor([data]="route.notes")
   
-  .margin-xxs(*ngIf="(route.sample|array).length" "[@500]"="'fadeInUp'")
+    .width-full
+      label Groups
+      .flex-wrap.child-margin-xxs
+        ack-array("[(array)]"="route.groupNames" "[(ref)]"="GroupNames")
+        .flex(*ngFor="let item of route.groupNames|array;let i=index;trackBy:0|indexTrack")
+          input(type="text" "[(ngModel)]"="route.groupNames[i]" name="groupName{{i}}" placeholder="Testing group name")
+          a.pad-h-xs.bg-assertive.border-assertive.text-white("(click)"="GroupNames.splice(i)" "[title]"="route.groupNames[i]")
+            |-
+        div(*ngIf="testGroups.length")
+          select.width-full("(change)"="GroupNames.push($event.target.value);$event.target.selectedIndex=0")
+            option -- Add Group by Select --
+            option(*ngFor="let item of testGroups" "[value]"=item) {{item}}
+        a.pad-h-xs.bg-positive.border-positive.text-white("(click)"="GroupNames.push('')")
+          |+ Add Group
+
+      //-absolute-overflow-x
+        pre.sample-code {{route.groupNames | json}}
+
+  .margin-xs(*ngIf="(route.sample|array).length" "[@500]"="'fadeInUp'")
     h4 Samples
 
     .child-margin-xxs(*ngFor="let sample of route.sample|array; let sampleIndex=index" "[@500]"="'fadeInUp'")
