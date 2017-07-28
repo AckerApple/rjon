@@ -51,10 +51,14 @@ var RjonTester = (function () {
     }
     RjonTester.prototype.ngAfterViewInit = function () {
         var _this = this;
-        setTimeout(function () {
-            _this.ref = Object.assign(_this, _this.ref);
-            _this.refChange.emit(_this.ref);
-        }, 0);
+        setTimeout(function () { return _this.remember(); }, 0);
+    };
+    RjonTester.prototype.remember = function () {
+        var _this = this;
+        if (this.ref) {
+            ["error", "testlog", "hostModel", "testGroup", "testGroups"].forEach(function (x) { return _this[x] = _this.ref[x]; });
+        }
+        this.refChange.emit(this.ref);
     };
     RjonTester.prototype.parseResponse = function (response) {
         if (response['data'])
