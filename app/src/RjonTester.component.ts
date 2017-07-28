@@ -63,10 +63,15 @@ import { fxArray } from "./rjon/prefx"
   }
 
   ngAfterViewInit(){
-    setTimeout(()=>{
-      this.ref = Object.assign(this,this.ref)
-      this.refChange.emit(this.ref)
-    }, 0)
+    setTimeout(()=>this.remember(), 0)
+  }
+
+  remember(){
+    if(this.ref){
+      ["error","testlog","hostModel","testGroup","testGroups"].forEach(x=>this[x]=this.ref[x])
+    }
+
+    this.refChange.emit(this.ref)
   }
 
   parseResponse(response){

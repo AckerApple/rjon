@@ -4,12 +4,14 @@ import * as rjonHelper from "./rjonHelper";
 /** interface to test a single route */
 export declare class TestRoute {
     AckApi: AckApi;
-    route: {};
+    route: any;
     headers: any;
     hosts: any;
     spaceSaving: boolean;
     hostModel: any;
     hostModelChange: EventEmitter<{}>;
+    onSave: EventEmitter<{}>;
+    lastSave: number;
     headersModel: {
         'Content-Type': string;
     };
@@ -37,4 +39,5 @@ export declare class TestRoute {
     trySend(): void;
     getProtocol(): string;
     send(): void;
+    save(): void;
 }

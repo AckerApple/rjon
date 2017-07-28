@@ -62,7 +62,12 @@ reader-header-body.font-helvetica
 
         .pad-md(*ngIf="stateName=='http'" "[@absoluteSwap]"="panelAnim" "(@absoluteSwap.start)"="isSwaping=1" "(@absoluteSwap.done)"="isSwaping=0")
           //-"[(hostModel)]"="hostModel" 
-          test-route("[hosts]"="AppData.rjon.hosts" spaceSaving="0" "[headers]"="AppData.rjon.headers")
+          -attrs = {};
+          -attrs["[hosts]"] = "AppData.rjon.hosts"
+          -attrs.spaceSaving = 0
+          -attrs["[headers]"] = "AppData.rjon.headers"
+          -attrs["(onSave)"] = "AppData.rjon.routes.push($event)"
+          test-route&attributes(attrs)
         
         .pad-md(*ngIf="stateName=='testing'" "[@absoluteSwap]"="panelAnim" "(@absoluteSwap.start)"="isSwaping=1" "(@absoluteSwap.done)"="isSwaping=0")
           .flex.child-pad-xs.child-margin-xxs

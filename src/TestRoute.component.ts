@@ -10,13 +10,15 @@ import * as rjonHelper from "./rjonHelper"
   template:testRoute,
   animations:fxArray
 }) export class TestRoute{
-  @Input() route = {}
+  @Input() route:any = {}
   @Input() headers
   @Input() hosts
   @Input() spaceSaving:boolean=true
   @Input() hostModel
   @Output() hostModelChange = new EventEmitter()
+  @Output() onSave = new EventEmitter()
 
+  lastSave:number
   headersModel = {'Content-Type':'application/json'}
   protocolModel
   contentTypeModel = 'application/json'
@@ -74,7 +76,9 @@ import * as rjonHelper from "./rjonHelper"
   }
 
   applyHostHeaders(host){
-    if(host.headers)Object.assign(this.headersModel, host.headers)
+    if(host && host.headers){
+      Object.assign(this.headersModel, host.headers)
+    }
   }
 
   applyProtocol(){
@@ -83,7 +87,7 @@ import * as rjonHelper from "./rjonHelper"
   }
 
   getDefaultBodyModel(){
-    const firstSample = rjonHelper.defToArray(this.route['sample'])
+    const firstSample = rjonHelper.defToArray(this.route.sample)
     const rtn = this.bodyModel || (firstSample.length&&firstSample[0].request)
     return rtn ? JSON.stringify(rtn, null, 2) : ''
   }
@@ -129,5 +133,20 @@ import * as rjonHelper from "./rjonHelper"
     .catch(e=>console.log(this.error=e))
     .then(()=>--this.sending)
     .then(()=>this.responseView='map')
+  }
+
+  save(){
+    this.route.path = this.pathModel
+    this.route.method = this.methodModel
+
+console.log('this.pathModel', this.route)
+
+    if(this.bodyModel){
+      this.route.sample = this.route.sample || [{}]
+      this.route.sample[0].body = this.bodyModel
+    }
+
+    this.lastSave = Date.now()
+    this.onSave.emit(this.route)
   }
 }

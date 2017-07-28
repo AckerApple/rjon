@@ -12,6 +12,7 @@ var TestRoute = (function () {
         this.route = {};
         this.spaceSaving = true;
         this.hostModelChange = new core_1.EventEmitter();
+        this.onSave = new core_1.EventEmitter();
         this.headersModel = { 'Content-Type': 'application/json' };
         this.contentTypeModel = 'application/json';
         this.rjonHelper = rjonHelper;
@@ -55,8 +56,9 @@ var TestRoute = (function () {
             this.applyProtocol();
     };
     TestRoute.prototype.applyHostHeaders = function (host) {
-        if (host.headers)
+        if (host && host.headers) {
             Object.assign(this.headersModel, host.headers);
+        }
     };
     TestRoute.prototype.applyProtocol = function () {
         if (!this.hostModel || !this.hostModel.protocol)
@@ -64,7 +66,7 @@ var TestRoute = (function () {
         this.protocolModel = this.hostModel.protocol;
     };
     TestRoute.prototype.getDefaultBodyModel = function () {
-        var firstSample = rjonHelper.defToArray(this.route['sample']);
+        var firstSample = rjonHelper.defToArray(this.route.sample);
         var rtn = this.bodyModel || (firstSample.length && firstSample[0].request);
         return rtn ? JSON.stringify(rtn, null, 2) : '';
     };
@@ -106,6 +108,17 @@ var TestRoute = (function () {
             .then(function () { return --_this.sending; })
             .then(function () { return _this.responseView = 'map'; });
     };
+    TestRoute.prototype.save = function () {
+        this.route.path = this.pathModel;
+        this.route.method = this.methodModel;
+        console.log('this.pathModel', this.route);
+        if (this.bodyModel) {
+            this.route.sample = this.route.sample || [{}];
+            this.route.sample[0].body = this.bodyModel;
+        }
+        this.lastSave = Date.now();
+        this.onSave.emit(this.route);
+    };
     TestRoute.decorators = [
         { type: core_1.Component, args: [{
                     selector: 'test-route',
@@ -124,6 +137,7 @@ var TestRoute = (function () {
         'spaceSaving': [{ type: core_1.Input },],
         'hostModel': [{ type: core_1.Input },],
         'hostModelChange': [{ type: core_1.Output },],
+        'onSave': [{ type: core_1.Output },],
     };
     return TestRoute;
 }());
