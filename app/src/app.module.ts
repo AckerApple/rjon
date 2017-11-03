@@ -28,7 +28,7 @@ import { OverviewComponent } from "./OverviewComponent.component"
 import { RjonMerge } from "./RjonMerge.component"
 import { RjonTester } from "./RjonTester.component"
 
-import { RjonModule } from "./rjon/index"
+import { RjonModule } from "./rjon/RjonModule"
 
 import { string as rjonBuilder } from "./templates/rjon-builder.pug"
 @Component({
@@ -97,8 +97,6 @@ import { string as rjonViewer } from "./templates/rjon-viewer.pug"
   constructor(public AppData:AppData){}
 }
 
-console.log('console.log()',BrowserModule)
-
 @NgModule({
   imports:[
     BrowserModule,
@@ -121,8 +119,6 @@ console.log('console.log()',BrowserModule)
     RjonMerge,
     RjonViewer,
     ...stateDecs
-    //...ackDecs,
-    //...ackPipes
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [ AppComponent ]
 }) export class AppModule { }

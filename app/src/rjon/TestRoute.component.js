@@ -6,10 +6,17 @@ var test_route_pug_1 = require("./templates/test-route.pug");
 var ack_angular_1 = require("ack-angular");
 var rjonHelper = require("./rjonHelper");
 /** interface to test a single route */
-var /** interface to test a single route */
-TestRoute = /** @class */ (function () {
+var TestRoute = /** @class */ (function () {
     function TestRoute(AckApi) {
         this.AckApi = AckApi;
+        this.route = {};
+        this.spaceSaving = true;
+        this.hostModelChange = new core_1.EventEmitter();
+        this.onSave = new core_1.EventEmitter();
+        this.headersModel = { 'Content-Type': 'application/json' };
+        this.contentTypeModel = 'application/json';
+        this.rjonHelper = rjonHelper;
+        this.sending = 0;
     }
     TestRoute.prototype.ngOnInit = function () {
         var _this = this;
@@ -111,6 +118,26 @@ TestRoute = /** @class */ (function () {
         }
         this.lastSave = Date.now();
         this.onSave.emit(this.route);
+    };
+    TestRoute.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'test-route',
+                    template: test_route_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
+    /** @nocollapse */
+    TestRoute.ctorParameters = function () { return [
+        { type: ack_angular_1.AckApi, },
+    ]; };
+    TestRoute.propDecorators = {
+        'route': [{ type: core_1.Input },],
+        'headers': [{ type: core_1.Input },],
+        'hosts': [{ type: core_1.Input },],
+        'spaceSaving': [{ type: core_1.Input },],
+        'hostModel': [{ type: core_1.Input },],
+        'hostModelChange': [{ type: core_1.Output },],
+        'onSave': [{ type: core_1.Output },],
     };
     return TestRoute;
 }());

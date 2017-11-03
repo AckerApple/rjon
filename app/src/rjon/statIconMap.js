@@ -27,5 +27,6 @@ exports.statIconMap = {
     'thumbup': { icon: '👍', type: 'thumbup', details: 'Route is liked' },
     'turtle': { icon: '🐢', type: 'turtle', details: 'Route often is slow to respond' },
     'wrench': { icon: '🔧', type: 'wrench', details: 'Work is being performed against route' }
+    //'white_circle' : {icon:'⚪', type:'white_circle', details:'Route is marked'},
 };
 //# sourceMappingURL=statIconMap.js.map

@@ -19,29 +19,21 @@ function AssertionError(message) {
     this.message = message;
 }
 AssertionError.prototype = Object.create(Error.prototype);
-var ɵ0 = function (a, b, message) {
-    if (a == b)
-        return;
-    throw message ? new AssertionError(message) : new AssertionError(a + ' == ' + b);
-};
-exports.ɵ0 = ɵ0;
 var assert = {
-    equal: ɵ0
+    equal: function (a, b, message) {
+        if (a == b)
+            return;
+        throw message ? new AssertionError(message) : new AssertionError(a + ' == ' + b);
+    }
 };
 /*if (process.platform === 'win32') {
   icons.check = '\u221A';
 }*/
-var /*if (process.platform === 'win32') {
-  icons.check = '\u221A';
-}*/
-Tester = /** @class */ (function () {
+var Tester = /** @class */ (function () {
     function Tester() {
     }
     //public requestSampleRoute:any
-    //public requestSampleRoute:any
-    Tester.prototype.log = 
-    //public requestSampleRoute:any
-    function (options) {
+    Tester.prototype.log = function (options) {
         options = options || {};
         switch (options.type) {
             case 'success':
@@ -63,21 +55,7 @@ Tester = /** @class */ (function () {
         host - server address
       }
     */
-    /**
-        @options{
-          port - what port to conduct test on
-          method - limit tests to only matching methods
-          host - server address
-        }
-      */
-    Tester.prototype.testRoutes = /**
-        @options{
-          port - what port to conduct test on
-          method - limit tests to only matching methods
-          host - server address
-        }
-      */
-    function (routes, options) {
+    Tester.prototype.testRoutes = function (routes, options) {
         var _this = this;
         var passing = [];
         var failing = [];
@@ -95,12 +73,6 @@ Tester = /** @class */ (function () {
                 return processTestError(test, err);
             }
             ++successCount;
-            /*let msg = test.name
-                  if(test.time>75){
-                    msg += ' ('+test.time+'ms)'
-                  }else if(test.time>37){
-                    msg += ' ('+test.time+'ms)'
-                  }*/
             /*let msg = test.name
             if(test.time>75){
               msg += ' ('+test.time+'ms)'
@@ -203,62 +175,7 @@ Tester = /** @class */ (function () {
       return req.send(urlPath,{spread:false})
       .then(this.testRouteSampleResponse(route,sample))
     }*/
-    //HOLD ONTO
-    /*ackRequestSampleRoute(sample, route, options){
-        options = options || {}
-        options.host = options.host || 'localhost'
-    
-        const simplePath = this.getRouteSamplePath(route, sample)
-    
-        const req = ack.req()
-    
-        if(sample.post){
-          req.postVar(sample.post)
-        }
-    
-        if(route.method){
-          req.method(route.method)
-        }
-    
-        if(sample.request){
-          req.json(result)
-        }
-    
-        const urlPath = 'http://'+options.host+':'+options.port + simplePath
-    
-        //send request
-        return req.send(urlPath,{spread:false})
-        .then(this.testRouteSampleResponse(route,sample))
-      }*/
-    Tester.prototype.requestSampleRoute = 
-    //HOLD ONTO
-    /*ackRequestSampleRoute(sample, route, options){
-        options = options || {}
-        options.host = options.host || 'localhost'
-    
-        const simplePath = this.getRouteSamplePath(route, sample)
-    
-        const req = ack.req()
-    
-        if(sample.post){
-          req.postVar(sample.post)
-        }
-    
-        if(route.method){
-          req.method(route.method)
-        }
-    
-        if(sample.request){
-          req.json(result)
-        }
-    
-        const urlPath = 'http://'+options.host+':'+options.port + simplePath
-    
-        //send request
-        return req.send(urlPath,{spread:false})
-        .then(this.testRouteSampleResponse(route,sample))
-      }*/
-    function (sample, route, options) {
+    Tester.prototype.requestSampleRoute = function (sample, route, options) {
         throw new Error('Expected requestSampleRoute override');
     };
     /**
@@ -268,32 +185,16 @@ Tester = /** @class */ (function () {
         host - server address
       }
     */
-    /**
-        @options{
-          port - what port to conduct test on
-          method - limit tests to only matching methods
-          host - server address
-        }
-      */
-    Tester.prototype.getTestBySampleRoute = /**
-        @options{
-          port - what port to conduct test on
-          method - limit tests to only matching methods
-          host - server address
-        }
-      */
-    function (sample, route, options) {
+    Tester.prototype.getTestBySampleRoute = function (sample, route, options) {
         var _this = this;
         if (sample.response) {
             //foo request by sample.response
-            return function () {
-                return ({
-                    fooResponse: true,
-                    statusCode: 200,
-                    headers: __assign({ "content-type": "application/json" }, options.headers),
-                    body: JSON.stringify(sample.response)
-                });
-            };
+            return function () { return ({
+                fooResponse: true,
+                statusCode: 200,
+                headers: __assign({ "content-type": "application/json" }, options.headers),
+                body: JSON.stringify(sample.response)
+            }); };
         }
         return function () {
             var timeout = sample.test.timeout || 2000;

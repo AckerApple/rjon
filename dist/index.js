@@ -5,5 +5,5 @@ exports.RjonModule = RjonModule_1.RjonModule;
 var components_1 = require("./components");
 exports.components = components_1.declarations;
 //export { declarations as pipes } from "./pipes";
-//export * from "./providers";
+//export * from "./providers"; 
 //# sourceMappingURL=index.js.map

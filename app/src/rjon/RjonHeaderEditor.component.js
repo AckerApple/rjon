@@ -5,6 +5,7 @@ var rjon_header_editor_pug_1 = require("./templates/rjon-header-editor.pug");
 var prefx_1 = require("./prefx");
 var RjonHeaderEditor = /** @class */ (function () {
     function RjonHeaderEditor() {
+        this.dataChange = new core_1.EventEmitter();
     }
     RjonHeaderEditor.prototype.add = function () {
         this.data = this.data || {};
@@ -17,6 +18,19 @@ var RjonHeaderEditor = /** @class */ (function () {
     };
     RjonHeaderEditor.prototype.getKeys = function () {
         return this.data ? Object.keys(this.data) : [];
+    };
+    RjonHeaderEditor.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'rjon-header-editor',
+                    template: rjon_header_editor_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
+    /** @nocollapse */
+    RjonHeaderEditor.ctorParameters = function () { return []; };
+    RjonHeaderEditor.propDecorators = {
+        'data': [{ type: core_1.Input },],
+        'dataChange': [{ type: core_1.Output },],
     };
     return RjonHeaderEditor;
 }());

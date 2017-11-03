@@ -16,6 +16,11 @@ var Dump = /** @class */ (function () {
         //return nodedump(input, options)
         return nodedump.dump(input, Object.assign({ hideTypes: ['Function'] }, options));
     };
+    Dump.decorators = [
+        { type: core_1.Pipe, args: [{ name: 'dump' },] },
+    ];
+    /** @nocollapse */
+    Dump.ctorParameters = function () { return []; };
     return Dump;
 }());
 exports.Dump = Dump;
