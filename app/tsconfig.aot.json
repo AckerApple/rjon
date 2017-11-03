@@ -15,6 +15,9 @@
     "lib": ["es2015", "dom"],
     "outDir": "aot"
   },
+  "include":[
+    "../package.json"
+  ],
   "files": [
     "typings.d.ts",
     "src/app.module.ts"
@@ -22,8 +25,6 @@
   "angularCompilerOptions": {
     "genDir": "aot",
     "skipMetadataEmit" : true,
-    "_skipTemplateCodegen": true,
-    "_strictMetadataEmit": true,
     "entryModule": "app.module#AppModule"
   }
 }

@@ -9,10 +9,15 @@ import { EventEmitter, Output, Input, Component } from '@angular/core'
   template:rjonMarkdown,
   animations:fxArray
 }) export class RjonMarkdown{
-  public statIconMap = statIconMap
+  testRoute
+  editRoute
+  editHost
+  host
+  route
+  statIconMap = statIconMap
 
-  @Input() public rjon
-  @Output() public onChange = new EventEmitter()
+  @Input() rjon
+  @Output() onChange = new EventEmitter()
 
   serverUrlByRoute(host, route, sample){
     return rjonHelper.serverUrlByRoute(host, route, sample)

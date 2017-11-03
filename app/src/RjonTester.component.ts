@@ -50,8 +50,9 @@ import { fxArray } from "./rjon/prefx"
       const protocol = this.hostModel.protcol || (this.hostModel.port==443?'https':'http')
       const url = protocol + '://'+this.hostModel.hostname+':'+this.hostModel.port + simplePath
       const reqops = {
-        method : route.method || 'GET'
-        ,body: sample.request || sample.post
+        method : route.method || 'GET',
+        body: sample.request || sample.post,
+        headers: options.headers
       }
 
       //send request
@@ -128,8 +129,9 @@ import { fxArray } from "./rjon/prefx"
 
     this.testlog.length = 0
     this.testing = true
+    const options = {...this.hostModel, headers:this.AppData.rjon.headers}
 
-    return this.myTester.testRoutes(this.actualRoutes, this.hostModel)
+    return this.myTester.testRoutes(this.actualRoutes, options)
     //.then( results=>this.testResults=results )
     //.then( results=>console.log('results',results) )
     .catch( e=>console.log(this.error=e) )

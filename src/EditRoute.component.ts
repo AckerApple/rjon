@@ -11,6 +11,8 @@ import { Tester } from "./rjonTester"
   template:editRoute,
   animations:fxArray
 }) export class EditRoute{
+  statusView
+  GroupNames
   statIconMap = statIconMap
   testGroups = []
   

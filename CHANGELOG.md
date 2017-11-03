@@ -1,6 +1,9 @@
 # rjon - Change Log
 All notable changes to this project will be documented here.
 
+## [0.2.0] - 2017-11-03
+- updated dependencies
+
 ## [0.0.9] - 2017-06-28
 ### Added
 - Ability to add/edit/delete hosts

@@ -18,7 +18,7 @@ import {
   lastSaveAt
   rjonSaves = {}
 
-  @Input() rjon = {routes:[], hosts:[]}
+  @Input() rjon:any = {routes:[], hosts:[]}
   @Output() rjonChange = new EventEmitter()
   @Input() rjonString = '{"routes":[], "hosts":[]}'
   @Output() rjonStringChange = new EventEmitter()

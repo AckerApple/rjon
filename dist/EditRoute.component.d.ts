@@ -1,5 +1,7 @@
 import { EventEmitter } from '@angular/core';
 export declare class EditRoute {
+    statusView: any;
+    GroupNames: any;
     statIconMap: {
         'baby': {
             icon: string;

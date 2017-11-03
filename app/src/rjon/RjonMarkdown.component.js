@@ -5,16 +5,16 @@ var rjonHelper = require("./rjonHelper");
 var statIconMap_1 = require("./statIconMap");
 var rjon_markdown_pug_1 = require("./templates/rjon-markdown.pug");
 var core_1 = require("@angular/core");
-var RjonMarkdown = (function () {
+var RjonMarkdown = /** @class */ (function () {
     function RjonMarkdown() {
-        this.statIconMap = statIconMap_1.statIconMap;
-        this.onChange = new core_1.EventEmitter();
     }
     RjonMarkdown.prototype.serverUrlByRoute = function (host, route, sample) {
         return rjonHelper.serverUrlByRoute(host, route, sample);
     };
     /* deprecated */
-    RjonMarkdown.prototype.defToArray = function (sample) {
+    /* deprecated */
+    RjonMarkdown.prototype.defToArray = /* deprecated */
+    function (sample) {
         return rjonHelper.defToArray(sample);
     };
     RjonMarkdown.prototype.deleteRoute = function (route) {
@@ -34,19 +34,6 @@ var RjonMarkdown = (function () {
                 return;
             }
         }
-    };
-    RjonMarkdown.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: 'rjon-markdown',
-                    template: rjon_markdown_pug_1.string,
-                    animations: prefx_1.fxArray
-                },] },
-    ];
-    /** @nocollapse */
-    RjonMarkdown.ctorParameters = function () { return []; };
-    RjonMarkdown.propDecorators = {
-        'rjon': [{ type: core_1.Input },],
-        'onChange': [{ type: core_1.Output },],
     };
     return RjonMarkdown;
 }());

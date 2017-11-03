@@ -1,6 +1,6 @@
-import { Ng2PageScrollModule } from 'ng2-page-scroll';
-
-import { NgModule } from '@angular/core'
+//import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { BrowserModule }  from '@angular/platform-browser';
+import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule }   from '@angular/forms'
 import{ HttpModule } from '@angular/http'
@@ -12,12 +12,15 @@ import { AckModule } from "ack-angular"
 @NgModule({
   imports:[
     CommonModule
+    ,BrowserModule
     ,FormsModule
     ,HttpModule
     ,AckModule
-    ,Ng2PageScrollModule.forRoot()
+    //,Ng2PageScrollModule.forRoot()
   ]
   ,declarations: declarations
-  //,providers:providers
-  ,exports:[ Ng2PageScrollModule, ...declarations ]
+  ,exports:[
+    //Ng2PageScrollModule,
+    ...declarations
+  ]
 }) export class RjonModule {}

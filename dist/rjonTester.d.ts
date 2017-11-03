@@ -1,4 +1,9 @@
 import 'rxjs/add/operator/toPromise';
+export interface routeConfig {
+    port: number | string;
+    host: string;
+    headers: {};
+}
 export declare class Tester {
     log(options: any): void;
     /**
@@ -8,10 +13,7 @@ export declare class Tester {
         host - server address
       }
     */
-    testRoutes(routes: any, options: {
-        port: number | string;
-        host: string;
-    }): Promise<{
+    testRoutes(routes: any, options: routeConfig): Promise<{
         passing: any;
         failing: any;
     }>;

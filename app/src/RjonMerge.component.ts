@@ -9,10 +9,11 @@ import { array } from "ack-angular/pipes.class"
   template: rjonMerge,
   animations: fxArray
 }) export class RjonMerge {
-  public rjonMerge = {}
-  public viewRjonMergeResults:boolean
-  public mergeError
-  public compareResults = {
+  mergeRjonString
+  rjonMerge = {}
+  viewRjonMergeResults:boolean
+  mergeError
+  compareResults = {
     add:{hosts:[], routes:[]},
     drop:{hosts:[], routes:[]}
   }

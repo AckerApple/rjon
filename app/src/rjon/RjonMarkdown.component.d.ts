@@ -1,5 +1,10 @@
 import { EventEmitter } from '@angular/core';
 export declare class RjonMarkdown {
+    testRoute: any;
+    editRoute: any;
+    editHost: any;
+    host: any;
+    route: any;
     statIconMap: {
         'baby': {
             icon: string;

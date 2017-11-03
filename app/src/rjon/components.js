@@ -8,7 +8,7 @@ var RjonMarkdown_component_1 = require("./RjonMarkdown.component");
 var RjonHeaderEditor_component_1 = require("./RjonHeaderEditor.component");
 var RjonNotesEditor_component_1 = require("./RjonNotesEditor.component");
 var nodedump = require("nodedump");
-var Dump = (function () {
+var Dump = /** @class */ (function () {
     function Dump() {
     }
     Dump.prototype.transform = function (input, options) {
@@ -16,11 +16,6 @@ var Dump = (function () {
         //return nodedump(input, options)
         return nodedump.dump(input, Object.assign({ hideTypes: ['Function'] }, options));
     };
-    Dump.decorators = [
-        { type: core_1.Pipe, args: [{ name: 'dump' },] },
-    ];
-    /** @nocollapse */
-    Dump.ctorParameters = function () { return []; };
     return Dump;
 }());
 exports.Dump = Dump;

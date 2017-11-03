@@ -16,6 +16,10 @@ br
       option
       option(*ngFor="let item of testGroups" "[value]"=item) {{item}}
 
+.margin-xs
+  label Headers
+  rjon-header-editor([data]="AppData.rjon.headers")
+
 br
 
 .pad-top.flex.text-center(*ngIf="hostModel" "[@500]"="'fadeInUp'")

@@ -6,6 +6,12 @@ const icons = {
   check:'✓'
 }
 
+export interface routeConfig{
+  port:number|string,
+  host:string,
+  headers:{}
+}
+
 function AssertionError(message){
   this.name = this.constructor.name;
   this.message = message
@@ -51,7 +57,7 @@ export class Tester{
       host - server address
     }
   */
-  testRoutes(routes, options:{port:number|string, host:string}){
+  testRoutes(routes, options:routeConfig){
     const passing = []
     const failing = []
     const errs = []
@@ -210,7 +216,8 @@ export class Tester{
         fooResponse:true,
         statusCode:200,
         headers:{
-          "content-type":"application/json"
+          "content-type":"application/json",
+          ...options.headers
         },
         body:JSON.stringify(sample.response)
       })
@@ -324,7 +331,7 @@ export class Tester{
       return;
     }
 
-    return {test:test,name:itsName,sample:sample}
+    return {test:test, name:itsName, sample:sample}
   }
 
   public static getRouteSamplePath(route,sample:{path:string,params:any}={path:null,params:null}){

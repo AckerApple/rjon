@@ -36,6 +36,14 @@ import { string as rjonBuilder } from "./templates/rjon-builder.pug"
   template:rjonBuilder,
   animations:fxArray
 }) export class RjonBuilder{
+  loadOfflineName
+  viewRjonMerge
+  loadByOfflineName
+  dedup
+  screenWidthModel
+  stateName
+  isSwaping
+
   constructor(public AppData:AppData){}
 
   routeToBgClass(route){
@@ -68,8 +76,13 @@ import { string as rjonAppStage } from "./templates/rjon-app-stage.pug"
   template: rjonAppStage,
   animations: fxArray
 }) export class AppComponent {
-  public version = packJson['version']
-  @Input() public panelAnim = 'slideInRight'
+  screenWidthModel
+  routeDocWatcher
+  stateName
+  isSwaping
+  isBackMode
+  version = packJson['version']
+  @Input() panelAnim = 'slideInRight'
 
   constructor(public AppData:AppData){}
 }
@@ -84,14 +97,16 @@ import { string as rjonViewer } from "./templates/rjon-viewer.pug"
   constructor(public AppData:AppData){}
 }
 
+console.log('console.log()',BrowserModule)
+
 @NgModule({
   imports:[
     BrowserModule,
     BrowserAnimationsModule,
     routing,
     FormsModule,
-    AckModule,
-    RjonModule
+    RjonModule,
+    AckModule
   ],
   providers: [
     AppData,

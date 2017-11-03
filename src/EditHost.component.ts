@@ -10,6 +10,7 @@ import { string } from "./templates/edit-host.pug"
   template:string,
   animations:fxArray
 }) export class EditHost{
+  route
   //statIconMap = statIconMap
   
   @Input() hostModel
