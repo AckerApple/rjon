@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var prefx_1 = require("./prefx");
 var rjon_notes_editor_pug_1 = require("./templates/rjon-notes-editor.pug");
-var RjonNotesEditor = /** @class */ (function () {
+var RjonNotesEditor = (function () {
     function RjonNotesEditor() {
         this.dataChange = new core_1.EventEmitter();
     }
@@ -22,8 +22,8 @@ var RjonNotesEditor = /** @class */ (function () {
     /** @nocollapse */
     RjonNotesEditor.ctorParameters = function () { return []; };
     RjonNotesEditor.propDecorators = {
-        'data': [{ type: core_1.Input },],
-        'dataChange': [{ type: core_1.Output },],
+        "data": [{ type: core_1.Input },],
+        "dataChange": [{ type: core_1.Output },],
     };
     return RjonNotesEditor;
 }());

@@ -6,11 +6,18 @@ var edit_host_pug_1 = require("./templates/edit-host.pug");
 //import { pipes } from "ack-angular/pipes.class"
 //import * as rjonHelper from "./rjonHelper"
 //import { statIconMap } from "./statIconMap"
-var EditHost = /** @class */ (function () {
+var EditHost = (function () {
     function EditHost() {
         this.onChange = new core_1.EventEmitter();
         this.onClose = new core_1.EventEmitter();
     }
+    EditHost.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'edit-host',
+                    template: edit_host_pug_1.string,
+                    animations: prefx_1.fxArray
+                },] },
+    ];
     /*
       addNote(){
         this.route.notes = pipes.array(this.route.notes)
@@ -35,19 +42,12 @@ var EditHost = /** @class */ (function () {
         test.body = JSON.parse(value)
       }
     */
-    EditHost.decorators = [
-        { type: core_1.Component, args: [{
-                    selector: 'edit-host',
-                    template: edit_host_pug_1.string,
-                    animations: prefx_1.fxArray
-                },] },
-    ];
     /** @nocollapse */
     EditHost.ctorParameters = function () { return []; };
     EditHost.propDecorators = {
-        'hostModel': [{ type: core_1.Input },],
-        'onChange': [{ type: core_1.Output },],
-        'onClose': [{ type: core_1.Output },],
+        "hostModel": [{ type: core_1.Input },],
+        "onChange": [{ type: core_1.Output },],
+        "onClose": [{ type: core_1.Output },],
     };
     return EditHost;
 }());

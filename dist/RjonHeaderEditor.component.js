@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var rjon_header_editor_pug_1 = require("./templates/rjon-header-editor.pug");
 var prefx_1 = require("./prefx");
-var RjonHeaderEditor = /** @class */ (function () {
+var RjonHeaderEditor = (function () {
     function RjonHeaderEditor() {
         this.dataChange = new core_1.EventEmitter();
     }
@@ -29,8 +29,8 @@ var RjonHeaderEditor = /** @class */ (function () {
     /** @nocollapse */
     RjonHeaderEditor.ctorParameters = function () { return []; };
     RjonHeaderEditor.propDecorators = {
-        'data': [{ type: core_1.Input },],
-        'dataChange': [{ type: core_1.Output },],
+        "data": [{ type: core_1.Input },],
+        "dataChange": [{ type: core_1.Output },],
     };
     return RjonHeaderEditor;
 }());

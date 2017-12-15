@@ -5,7 +5,7 @@ var rjonHelper = require("./rjonHelper");
 var statIconMap_1 = require("./statIconMap");
 var rjon_markdown_pug_1 = require("./templates/rjon-markdown.pug");
 var core_1 = require("@angular/core");
-var RjonMarkdown = /** @class */ (function () {
+var RjonMarkdown = (function () {
     function RjonMarkdown() {
         this.statIconMap = statIconMap_1.statIconMap;
         this.onChange = new core_1.EventEmitter();
@@ -14,7 +14,9 @@ var RjonMarkdown = /** @class */ (function () {
         return rjonHelper.serverUrlByRoute(host, route, sample);
     };
     /* deprecated */
-    RjonMarkdown.prototype.defToArray = function (sample) {
+    /* deprecated */
+    RjonMarkdown.prototype.defToArray = /* deprecated */
+    function (sample) {
         return rjonHelper.defToArray(sample);
     };
     RjonMarkdown.prototype.deleteRoute = function (route) {
@@ -45,8 +47,8 @@ var RjonMarkdown = /** @class */ (function () {
     /** @nocollapse */
     RjonMarkdown.ctorParameters = function () { return []; };
     RjonMarkdown.propDecorators = {
-        'rjon': [{ type: core_1.Input },],
-        'onChange': [{ type: core_1.Output },],
+        "rjon": [{ type: core_1.Input },],
+        "onChange": [{ type: core_1.Output },],
     };
     return RjonMarkdown;
 }());

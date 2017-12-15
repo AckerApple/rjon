@@ -6,7 +6,7 @@ var test_route_pug_1 = require("./templates/test-route.pug");
 var ack_angular_1 = require("ack-angular");
 var rjonHelper = require("./rjonHelper");
 /** interface to test a single route */
-var TestRoute = /** @class */ (function () {
+var TestRoute = (function () {
     function TestRoute(AckApi) {
         this.AckApi = AckApi;
         this.route = {};
@@ -111,7 +111,6 @@ var TestRoute = /** @class */ (function () {
     TestRoute.prototype.save = function () {
         this.route.path = this.pathModel;
         this.route.method = this.methodModel;
-        console.log('this.pathModel', this.route);
         if (this.bodyModel) {
             this.route.sample = this.route.sample || [{}];
             this.route.sample[0].body = this.bodyModel;
@@ -131,13 +130,13 @@ var TestRoute = /** @class */ (function () {
         { type: ack_angular_1.AckApi, },
     ]; };
     TestRoute.propDecorators = {
-        'route': [{ type: core_1.Input },],
-        'headers': [{ type: core_1.Input },],
-        'hosts': [{ type: core_1.Input },],
-        'spaceSaving': [{ type: core_1.Input },],
-        'hostModel': [{ type: core_1.Input },],
-        'hostModelChange': [{ type: core_1.Output },],
-        'onSave': [{ type: core_1.Output },],
+        "route": [{ type: core_1.Input },],
+        "headers": [{ type: core_1.Input },],
+        "hosts": [{ type: core_1.Input },],
+        "spaceSaving": [{ type: core_1.Input },],
+        "hostModel": [{ type: core_1.Input },],
+        "hostModelChange": [{ type: core_1.Output },],
+        "onSave": [{ type: core_1.Output },],
     };
     return TestRoute;
 }());

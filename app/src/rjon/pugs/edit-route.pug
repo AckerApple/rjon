@@ -1,0 +1,109 @@
+h3 Edit Route : {{ route.path }}
+
+form("(onFormChanged)"="onChange.emit(route)")
+  .flex-wrap.child-margin-xxs.child-margin-bottom
+    .flex-1
+      label Path
+      input.width-full("[(ngModel)]"="route.path" name="route.path")
+
+    .flex-1
+      label Select Method
+      select.width-full("[(ngModel)]"="route.method" name="route.method")
+        option("*ngFor"="let item of ['GET','POST','PUT','PATCH','DELETE']" "[value]"="item")
+          |{{ item }}
+
+    .flex-1
+      label Description
+      input.width-full("[(ngModel)]"="route.description" name="route.description")
+  
+    .width-full
+      label Notes
+      rjon-notes-editor([data]="route.notes")
+  
+    .width-full
+      label Groups
+      .flex-wrap.child-margin-xxs
+        ack-array("[(array)]"="route.groupNames" "[(ref)]"="GroupNames")
+        .flex(*ngFor="let item of route.groupNames|array;let i=index;trackBy:0|indexTrack")
+          input(type="text" "[(ngModel)]"="route.groupNames[i]" name="groupName{{i}}" placeholder="Testing group name")
+          a.pad-h-xs.bg-assertive.border-assertive.text-white("(click)"="GroupNames.splice(i)" "[title]"="route.groupNames[i]")
+            |-
+        div(*ngIf="testGroups.length")
+          select.width-full("(change)"="GroupNames.push($event.target.value);$event.target.selectedIndex=0")
+            option -- Add Group by Select --
+            option(*ngFor="let item of testGroups" "[value]"=item) {{item}}
+        a.pad-h-xs.bg-positive.border-positive.text-white("(click)"="GroupNames.push('')")
+          |+ Add Group
+
+      //-absolute-overflow-x
+        pre.sample-code {{route.groupNames | json}}
+
+  .margin-xs(*ngIf="(route.sample|array).length" "[@500]"="'fadeInUp'")
+    h4 Samples
+
+    .child-margin-xxs(*ngFor="let sample of route.sample|array; let sampleIndex=index" "[@500]"="'fadeInUp'")
+      div
+        label Sample Path
+        input.width-full("[(ngModel)]"="sample.path"  "[name]"="'sample.path'+sampleIndex" placeholder="{{ route.path }}")
+      div(#sampleRequest="var" "[var]"="{request:sample.request?(sample.request|json):'', testBody:sample.test?(sample.test.body|json):''}")
+        |Sample Request Body
+        textarea.width-full.height-200("[ngModel]"="sampleRequest.var.request" "(change)"="setSampleRequest(sample,sampleRequest.var.request)" "[name]"="'sample.request'+sampleIndex")
+      div
+        .flex
+          h4.flex-1 Sample Test
+          div
+            a.pad-h.text-success.bg-success(*ngIf="sample.test==null" "(click)"="sample.test={}")
+              |add test
+        .test-sm(*ngIf="sample.test" "[@500]"="'fadeInUp'")
+          .flex-wrap.child-pad-xxs
+            .flex-1
+              label Title
+              input.width-full("[(ngModel)]"="sample.test.title"  "[name]"="'sample.test.title'+sampleIndex" placeholder="test label")
+            .flex-1
+              label Timeout
+              input.width-full(type="number" "[(ngModel)]"="sample.test.timeout" "[name]"="'sample.test.timeout'+sampleIndex")
+            .flex-1
+              label statusCode
+              input.width-full(type="number" "[(ngModel)]"="sample.test.statusCode" "[name]"="'sample.test.statusCode'+sampleIndex")
+            .flex-1
+              label &nbsp;
+              div
+                input(type="checkbox" "[(ngModel)]"="sample.test.only" "[name]"="'sample.test.only'+sampleIndex" "[attr.id]"="'sample.test.only'+sampleIndex")
+                label("[attr.for]"="'sample.test.only'+sampleIndex") only
+            .flex-1
+              label &nbsp;
+              div
+                input(type="checkbox" "[(ngModel)]"="sample.test.skip" "[name]"="'sample.test.skip'+sampleIndex" "[attr.id]"="'sample.test.skip'+sampleIndex")
+                label([attr.for]="'sample.test.skip'+sampleIndex") skip
+          .pad-xxs
+            |Test Body
+            textarea.width-full.height-200("[ngModel]"="sampleRequest.var.testBody" "(change)"="setTestBody(sample.test, sampleRequest.var.testBody)" "[name]"="'sample.test'+sampleIndex")
+          .pad-xxs.text-right
+            a.pad-h.text-danger.bg-danger("(click)"="sample.test=null")
+              |remove test
+      
+  .flex.child-pad-xxs.child-margin-xxs.text-center.text-xs.text-positive
+    a.flex-1.border-positive.border("(click)"="addSample()")
+      |add sample
+
+  br
+  .margin-xxs
+    .flex-valign-bottom
+      label.flex-1 Status
+      .flex.child-pad-h-xs.border.border-grey-4x.radius-5
+        a("(click)"="statusView='cells'" "[ngClass]"="{'bg-energized':!statusView||statusView=='cells'}")
+          |cells
+        a.border-left.border-grey-4x("(click)"="statusView='table'" "[ngClass]"="{'bg-energized':statusView=='table'}")
+          |table
+    .flex-wrap.child-margin-xxs.text-center(*ngIf="!statusView||statusView=='cells'" "[@500]"="'fadeInUp'")
+      .flex-1(*ngFor="let key of statIconMap|keys")
+        .text-center.text-3x
+          .hover-bg-energized.flex-valign-center.inline-block.border.radius-half("[ngClass]"="(route.status|array).indexOf(key)>=0?'bg-success border-success':'opacity-60 bg-grey-5x border-grey-5x'" "(click)"="toggleRouteStatus(key)")
+            a.width-40.height-40.flex-valign-center.flex-center([attr.title]="statIconMap[key].details")
+              span {{ statIconMap[key].icon }}
+        //-.text-xs.pad-v-xxs {{ key }}
+        //-.text-xs.width-100.height-20.overflow
+          |{{ statIconMap[key].details }}
+    icon-table(*ngIf="statusView=='table'" "[@500]"="'fadeInUp'" "(onClick)"="toggleRouteStatus($event)" "[activeIcons]"="(route.status|array)")
+      
+

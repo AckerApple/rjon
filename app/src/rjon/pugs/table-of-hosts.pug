@@ -1,0 +1,12 @@
+.markdown-body
+  table("[class.table-hover-warning]"="selectable")
+    thead
+      tr
+        th PROTOCOL
+        th HOSTNAME
+        th PORT
+    tbody
+      tr(*ngFor="let host of hosts|array" "(click)"="select.emit(host)" "[class.cursor-pointer]"="selectable")
+        td {{ host.protocol || 'http' }}
+        td {{ host.hostname }}
+        td {{ host.port }}

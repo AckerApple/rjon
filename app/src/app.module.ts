@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AckModule } from "ack-angular"
 import * as packJson from "../../package.json"
 
-import { RouteReporter } from "ack-angular/RouteReporter.component"
+import { RouteReporter } from "ack-angular/RouteReporter.directive"
 import { RouteWatchReporter } from "ack-angular/RouteWatchReporter"
 
 import { fxArray } from "./rjon/prefx"

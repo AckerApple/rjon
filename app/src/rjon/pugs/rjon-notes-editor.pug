@@ -1,0 +1,5 @@
+div(*ngFor="let note of data|array; let i=index; trackBy:0|indexTrack" "[@500]"="'fadeInUp'")
+  input.width-full("[(ngModel)]"="data[i]" "[name]"="'data'+i")
+
+a.block.border-positive.border.bg-positive.text-white("(click)"="add()")
+  |add note

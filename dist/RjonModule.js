@@ -9,7 +9,7 @@ var http_1 = require("@angular/http");
 //import { providers } from "./providers"
 var components_1 = require("./components");
 var ack_angular_1 = require("ack-angular");
-var RjonModule = /** @class */ (function () {
+var RjonModule = (function () {
     function RjonModule() {
     }
     RjonModule.decorators = [

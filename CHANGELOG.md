@@ -1,6 +1,9 @@
 # rjon - Change Log
 All notable changes to this project will be documented here.
 
+## [0.3.0] - 2017-11-03
+- built on angular 5
+
 ## [0.2.0] - 2017-11-03
 - updated dependencies
 

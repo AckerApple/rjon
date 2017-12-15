@@ -1,0 +1,9 @@
+table.table-hover-energized.width-full.table-pad-xs.border-collapse.table-striped
+  tr
+    td icon
+    td name
+    td details
+  tr.cursor-pointer(*ngFor="let key of statIconMap|keys" "[ngClass]"="(activeIcons|array).indexOf(key)>=0?'bg-success':null" "(click)"="onClick.emit(key)")
+    td {{ statIconMap[key].icon }}
+    td {{ key | uppercase }}
+    td {{ statIconMap[key].details }}

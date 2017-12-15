@@ -8,7 +8,7 @@ var RjonMarkdown_component_1 = require("./RjonMarkdown.component");
 var RjonHeaderEditor_component_1 = require("./RjonHeaderEditor.component");
 var RjonNotesEditor_component_1 = require("./RjonNotesEditor.component");
 var nodedump = require("nodedump");
-var Dump = /** @class */ (function () {
+var Dump = (function () {
     function Dump() {
     }
     Dump.prototype.transform = function (input, options) {

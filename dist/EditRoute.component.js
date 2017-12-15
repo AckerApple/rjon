@@ -6,7 +6,7 @@ var edit_route_pug_1 = require("./templates/edit-route.pug");
 var pipes_class_1 = require("ack-angular/pipes.class");
 var statIconMap_1 = require("./statIconMap");
 var rjonTester_1 = require("./rjonTester");
-var EditRoute = /** @class */ (function () {
+var EditRoute = (function () {
     function EditRoute() {
         this.statIconMap = statIconMap_1.statIconMap;
         this.testGroups = [];
@@ -57,12 +57,12 @@ var EditRoute = /** @class */ (function () {
     /** @nocollapse */
     EditRoute.ctorParameters = function () { return []; };
     EditRoute.propDecorators = {
-        'route': [{ type: core_1.Input },],
-        'routes': [{ type: core_1.Input },],
-        'hosts': [{ type: core_1.Input },],
-        'hostModel': [{ type: core_1.Input },],
-        'onChange': [{ type: core_1.Output },],
-        'onClose': [{ type: core_1.Output },],
+        "route": [{ type: core_1.Input },],
+        "routes": [{ type: core_1.Input },],
+        "hosts": [{ type: core_1.Input },],
+        "hostModel": [{ type: core_1.Input },],
+        "onChange": [{ type: core_1.Output },],
+        "onClose": [{ type: core_1.Output },],
     };
     return EditRoute;
 }());
