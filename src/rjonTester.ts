@@ -1,10 +1,8 @@
-import 'rxjs/add/operator/toPromise';
+//import 'rxjs/add/operator/toPromise';
 import { array } from "ack-angular/pipes.class"
-import * as ack from "ack-x/index-browser"
+import { ack } from "ack-x/index-browser"
 
-const icons = {
-  check:'✓'
-}
+//const icons = {check:'✓'}
 
 export interface routeConfig{
   port:number|string,
@@ -61,7 +59,7 @@ export class Tester{
     const passing = []
     const failing = []
     const errs = []
-    let successCount = 0
+    //let successCount = 0
 
     const processTestError = (test,err)=>{
       const msg = errs.length+') '+test.name
@@ -76,7 +74,7 @@ export class Tester{
         return processTestError(test,err)
       }
 
-      ++successCount
+      //++successCount
 
       /*let msg = test.name
       if(test.time>75){
@@ -223,7 +221,6 @@ export class Tester{
       })
     }
 
-
     return () => {
       const timeout = sample.test.timeout || 2000
       const promise = this.requestSampleRoute(sample, route, options)//ignite
@@ -235,7 +232,7 @@ export class Tester{
   }
 
   testRouteSampleResponse(route,sample){
-    const simplePath = Tester.getRouteSamplePath(route, sample)
+    //const simplePath = Tester.getRouteSamplePath(route, sample)
 
     return function(res){
       var body = res.body
@@ -244,13 +241,13 @@ export class Tester{
 
       //see if json
       for(var key in res.headers){
-        if(key.toLowerCase()=='content-type'){
+        if(key.toLowerCase()==='content-type'){
           contentType = res.headers[key]
           break;
         }
       }
 
-      const method = (route.method || 'GET').toUpperCase()
+      //const method = (route.method || 'GET').toUpperCase()
       const isParseBody = !sample.request
 
       if(sample.test.cases){
@@ -377,7 +374,7 @@ export class Tester{
     })
 
     //remove duplicate groups
-    let find = -1
+    //let find = -1
     for(let x=groups.length-1; x >= 0; --x){
       //remove duplicates that appear before current
       while( (find=>find>=0 && find<x)( groups.indexOf(groups[x]) ) ){

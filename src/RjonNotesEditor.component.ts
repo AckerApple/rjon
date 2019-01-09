@@ -1,5 +1,5 @@
 import { EventEmitter, Input, Output, Component } from '@angular/core'
-import { fxArray } from "./prefx"
+import { fxArray } from "ack-angular-fx"
 import { string } from "./templates/rjon-notes-editor.pug"
 
 @Component({

@@ -1,9 +1,11 @@
 import { AckOffline } from "ack-angular"
-import { Component, EventEmitter } from '@angular/core'
-import { fxArray } from "./rjon/prefx"
+import {
+  Component//, EventEmitter
+} from '@angular/core'
+import { fxArray } from "ack-angular-fx"
 import { AppData } from "./AppData"
 import { string as overviewComponent } from "./templates/overview-component.pug"
-import { array } from "ack-angular/pipes.class"
+//import { array } from "ack-angular/pipes.class"
 
 @Component({
   selector: 'overview-component',

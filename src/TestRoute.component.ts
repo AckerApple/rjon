@@ -1,5 +1,5 @@
 import { Input, Output, Component, EventEmitter } from '@angular/core'
-import { fxArray } from "./prefx"
+import { fxArray } from "ack-angular-fx"
 import { string as testRoute } from "./templates/test-route.pug"
 import { AckApi } from "ack-angular"
 import * as rjonHelper from "./rjonHelper"
@@ -14,8 +14,8 @@ import * as rjonHelper from "./rjonHelper"
   @Input() headers
   @Input() hosts
   @Input() spaceSaving:boolean=true
-  @Input() hostModel
-  @Output() hostModelChange = new EventEmitter()
+  @Input() hostModel:any
+  @Output() hostModelChange:EventEmitter<any> = new EventEmitter()
   @Output() onSave = new EventEmitter()
 
   lastSave:number
@@ -39,15 +39,19 @@ import * as rjonHelper from "./rjonHelper"
     this.pathModel = this.route['path']
     this.methodModel = this.route['method']
     this.bodyModel = this.getDefaultBodyModel()
-    this.hostModel = this.getDefaultHostModel()
-    this.applyHostHeaders(this.hostModel)
+    //this.hostModel = this.getDefaultHostModel()
+    
+    if( this.hostModel ){
+      this.applyHostHeaders( this.hostModel )
+    }
+    
     this.applyProtocol()
 
     if(this.headers)Object.assign(this.headersModel, this.headers)
     
     setTimeout(()=>{
       this.route = this.route || {}
-      this.hostModelChange.emit(this.hostModel)
+      //this.hostModelChange.emit(this.hostModel)
     }, 0)
   }
 
@@ -75,7 +79,7 @@ import * as rjonHelper from "./rjonHelper"
     if(!this.protocolModel)this.applyProtocol()
   }
 
-  applyHostHeaders(host){
+  applyHostHeaders( host ){
     if(host && host.headers){
       Object.assign(this.headersModel, host.headers)
     }
@@ -102,9 +106,7 @@ import * as rjonHelper from "./rjonHelper"
     this.response = null
     this.error = null
 
-    if(this.hostModel){
-      this.send()
-    }
+    this.send()
   }
 
   getProtocol(){
@@ -113,12 +115,19 @@ import * as rjonHelper from "./rjonHelper"
   }
 
   send(){
-    const port = this.hostModel.port||80
-    const protocol = this.getProtocol()
-    const host = protocol + this.hostModel.hostname
-    const route = (this.pathModel.substring(0, 1)=='/' ? '' : '/') + this.pathModel
-    const url = host+':' + port + route
+    let port = 80
+    let host = ""
+    let route = this.pathModel
 
+    if( this.hostModel ){
+      const protocol = this.getProtocol()
+      port = this.hostModel.port || port
+      host = protocol + this.hostModel.hostname + ':' + port
+      route = (this.pathModel.substring(0, 1)=='/' ? '' : '/') + this.pathModel
+    }
+
+    const url = host + route
+console.log("url",url)
     const config={
       method:this.methodModel,
       url:url,

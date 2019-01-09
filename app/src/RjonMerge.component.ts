@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core'
-import { fxArray } from "./rjon/prefx"
+import { fxArray } from "ack-angular-fx"
 import { AppData } from "./AppData"
 import { string as rjonMerge } from "./templates/rjon-merge.pug"
 import { array } from "ack-angular/pipes.class"
@@ -44,7 +44,7 @@ import { array } from "ack-angular/pipes.class"
     try{
       rjonString = rjonString.replace(/\u003d/g,'&')
       const rjon = JSON.parse(rjonString)
-      const save = this.getRjonMerge(this.AppData.rjon, rjon)
+      this.getRjonMerge(this.AppData.rjon, rjon)
       this.AppData.setSaveRjon(this.AppData.rjon)
     }catch(e){
       console.log(e)

@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "strict": false,
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -15,7 +18,8 @@
     "outDir":"www"
   },
   "include":[
-    "../package.json"
+    "../package.json",
+    "./index.ts"
   ],
   "files": [
     "typings.d.ts"

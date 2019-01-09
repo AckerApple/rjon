@@ -1,5 +1,5 @@
 import { Input, Output, Component, EventEmitter } from '@angular/core'
-import { fxArray } from "./prefx"
+import { fxArray } from "ack-angular-fx"
 import { string } from "./templates/edit-host.pug"
 //import { pipes } from "ack-angular/pipes.class"
 //import * as rjonHelper from "./rjonHelper"

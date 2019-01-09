@@ -1,6 +1,6 @@
 import { EventEmitter, Input, Output, Component } from '@angular/core'
 import { string } from "./templates/rjon-header-editor.pug"
-import { fxArray } from "./prefx"
+import { fxArray } from "ack-angular-fx"
 
 @Component({
   selector:'rjon-header-editor',

@@ -3,9 +3,9 @@
 import { FormsModule }   from '@angular/forms'
 import {
   //Pipe,
-  EventEmitter,
+  //EventEmitter,
   Input,
-  Output,
+  //Output,
   Component,
   NgModule
 } from '@angular/core'
@@ -17,18 +17,16 @@ import * as packJson from "../../package.json"
 import { RouteReporter } from "ack-angular/RouteReporter.directive"
 import { RouteWatchReporter } from "ack-angular/RouteWatchReporter"
 
-import { fxArray } from "./rjon/prefx"
+import { fxArray } from "ack-angular-fx"
 import { routing, declarations as stateDecs } from "./states.object"
 
-//import { string as markdownCss } from "./markdown.css"
-import * as rjonHelper from "./rjon/rjonHelper"
 import { AppData } from "./AppData"
 
 import { OverviewComponent } from "./OverviewComponent.component"
 import { RjonMerge } from "./RjonMerge.component"
 import { RjonTester } from "./RjonTester.component"
 
-import { RjonModule } from "./rjon/RjonModule"
+import { RjonModule } from "../../src/RjonModule"
 
 import { string as rjonBuilder } from "./templates/rjon-builder.pug"
 @Component({
@@ -77,7 +75,6 @@ import { string as rjonAppStage } from "./templates/rjon-app-stage.pug"
   animations: fxArray
 }) export class AppComponent {
   screenWidthModel
-  routeDocWatcher
   stateName
   isSwaping
   isBackMode
@@ -104,7 +101,7 @@ import { string as rjonViewer } from "./templates/rjon-viewer.pug"
     routing,
     FormsModule,
     RjonModule,
-    AckModule
+    AckModule.forRoot()
   ],
   providers: [
     AppData,

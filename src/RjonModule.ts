@@ -1,10 +1,9 @@
 //import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { BrowserModule }  from '@angular/platform-browser';
-import { NgModule, ModuleWithProviders } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule }   from '@angular/forms'
 import{ HttpModule } from '@angular/http'
-//import { providers } from "./providers"
 import { declarations } from "./components"
 
 import { AckModule } from "ack-angular"

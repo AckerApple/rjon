@@ -1,4 +1,4 @@
-import { fxArray } from "./prefx"
+import { fxArray } from "ack-angular-fx"
 import * as rjonHelper from "./rjonHelper"
 import { statIconMap } from "./statIconMap"
 import { string as rjonMarkdown } from "./templates/rjon-markdown.pug"

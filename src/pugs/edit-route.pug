@@ -23,7 +23,10 @@ form("(onFormChanged)"="onChange.emit(route)")
     .width-full
       label Groups
       .flex-wrap.child-margin-xxs
-        ack-array("[(array)]"="route.groupNames" "[(ref)]"="GroupNames")
+        ack-array(
+          #GroupNames = ""
+          "[(array)]"="route.groupNames"
+        )
         .flex(*ngFor="let item of route.groupNames|array;let i=index;trackBy:0|indexTrack")
           input(type="text" "[(ngModel)]"="route.groupNames[i]" name="groupName{{i}}" placeholder="Testing group name")
           a.pad-h-xs.bg-assertive.border-assertive.text-white("(click)"="GroupNames.splice(i)" "[title]"="route.groupNames[i]")

@@ -1,7 +1,7 @@
 import { EventEmitter, Input, Output, Component } from '@angular/core'
 import { string } from "./templates/table-of-routes.pug"
 import { statIconMap } from "./statIconMap"
-import { fxArray } from "./prefx"
+import { fxArray } from "ack-angular-fx"
 
 @Component({
   selector:'table-of-routes',

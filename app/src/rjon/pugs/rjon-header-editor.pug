@@ -1,9 +1,0 @@
-.flex.child-pad-xxs(*ngFor="let item of getKeys(); let i=index; trackBy:0|indexTrack" "[@500]"="'fadeInUp'")
-  input.flex-1("[value]"="item" "(change)"="data[$event.target.value]=data[item];drop(item)" placeholder="header name")
-  span =
-  input.flex-1("[(ngModel)]"="data[item]" placeholder="header value")
-  a.bg-assertive.border.border-assertive.pad-h("(click)"="drop(item)" style="color:white")
-    |remove
-
-.text-right
-  a.text-sm.text-blue.underline("(click)"="add()") add header

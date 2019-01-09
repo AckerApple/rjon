@@ -1,4 +1,8 @@
-import { Pipe, EventEmitter, Input, Output, Component } from '@angular/core'
+import {
+  Pipe//,
+  //EventEmitter, Input
+  //, Output, Component
+} from '@angular/core'
 import { TestRoute } from "./TestRoute.component"
 import { EditRoute } from "./EditRoute.component"
 import { EditHost } from "./EditHost.component"
@@ -6,7 +10,7 @@ import { RjonMarkdown } from "./RjonMarkdown.component"
 import { RjonHeaderEditor } from "./RjonHeaderEditor.component"
 import { RjonNotesEditor } from "./RjonNotesEditor.component"
 
-import * as nodedump from 'nodedump'
+import * as nodedump from 'nodedump/nodedump-client/nodedump-client-min'
 @Pipe({name: 'dump'}) export class Dump {
   transform(input, options={}) {
     //return nodedump(input, options)

@@ -1,4 +1,15 @@
-import { Http, Response, Request } from '@angular/http';
+//import { Http, Response, Request } from '@angular/http';
+
+import {
+  //HttpParams,
+  HttpEventType,
+  //HttpHeaders,
+  HttpClient,
+  HttpRequest
+  //HttpResponse,
+  //HttpEvent
+} from "@angular/common/http"
+
 
 import {
   Output,
@@ -8,8 +19,8 @@ import {
 } from '@angular/core'
 import { AppData } from "./AppData"
 import { string as rjonTester } from "./templates/rjon-tester.pug"
-import { Tester } from "./rjon/rjonTester"
-import { fxArray } from "./rjon/prefx"
+import { Tester } from "../../src/rjonTester"
+import { fxArray } from "ack-angular-fx"
 
 @Component({
   selector:'rjon-tester',
@@ -39,7 +50,11 @@ import { fxArray } from "./rjon/prefx"
   @Input() ref
   @Output() refChange = new EventEmitter()
 
-  constructor(public AppData:AppData, public http:Http){
+  constructor(
+    public AppData:AppData,
+    public HttpClient:HttpClient
+    //public http:Http
+  ){
     this.myTester.log = options=>this.testlog.push(options)
 
     this.myTester.requestSampleRoute = (sample, route, options)=>{
@@ -55,8 +70,43 @@ import { fxArray } from "./rjon/prefx"
         headers: options.headers
       }
 
+      const request = new HttpRequest(
+        reqops.method,
+        url,
+        reqops.body
+        //,{params, headers}
+      )
+
+      const promise = (resolve,reject)=>{
+        //let resolved = false
+        
+        //const req = 
+        this.HttpClient.request( request )
+        .subscribe(event=>{
+          if (event.type === HttpEventType.Response) {
+            //resolved = true
+            resolve( event )
+          }
+        },err=>{
+          //resolved=true
+          reject(err)
+        })
+
+        /*if( cfg.timeout ){
+          setTimeout(()=>{
+            if(resolved)return
+            req.unsubscribe()
+            const timeoutError = new TimeOutError("Request timed out. Server did NOT respond timely enough")
+            Object.assign(timeoutError,request)
+            timeoutError.timeout = cfg.timeout
+            reject( timeoutError )
+          }, cfg.timeout)
+        }*/
+      }
+
       //send request
-      return this.http.request(url, reqops).toPromise()
+      return //this.http.request(url, reqops).toPromise()
+      new Promise(promise)
       .then(response=>this.parseResponse(response))
       .catch( response=>Promise.reject(this.parseResponse(response)) )
     }

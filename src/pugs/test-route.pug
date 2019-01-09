@@ -7,7 +7,7 @@ div("*ngIf"="!(spaceSaving|boolean) || !tryingSend" "[@500]"="'fadeInUp'")
     .flex-1
       label method
       select.width-full("[(ngModel)]"="methodModel")
-        option("*ngFor"="let item of ['GET','POST','PUT','PATCH','DELETE']" "[value]"="item")
+        option("*ngFor"="let item of ['GET','POST','PUT','PATCH','DELETE','OPTIONS']" "[value]"="item")
           |{{ item }}
 
     .flex-1
@@ -101,7 +101,7 @@ div("*ngIf"="!(spaceSaving|boolean) || !tryingSend" "[@500]"="'fadeInUp'")
     span.fa.fa-spinner.fa-spin.fa-lg
     |&nbsp;Loading
 
-  .text-danger.child-pad-xs
+  //-.text-danger.child-pad-xs
     li("*ngIf"="!hostModel")
       |No host was selected
 

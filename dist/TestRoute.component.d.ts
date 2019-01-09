@@ -9,7 +9,7 @@ export declare class TestRoute {
     hosts: any;
     spaceSaving: boolean;
     hostModel: any;
-    hostModelChange: EventEmitter<{}>;
+    hostModelChange: EventEmitter<any>;
     onSave: EventEmitter<{}>;
     lastSave: number;
     headersModel: {

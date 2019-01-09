@@ -23,14 +23,16 @@ var TestRoute = (function () {
         this.pathModel = this.route['path'];
         this.methodModel = this.route['method'];
         this.bodyModel = this.getDefaultBodyModel();
-        this.hostModel = this.getDefaultHostModel();
-        this.applyHostHeaders(this.hostModel);
+        //this.hostModel = this.getDefaultHostModel()
+        if (this.hostModel) {
+            this.applyHostHeaders(this.hostModel);
+        }
         this.applyProtocol();
         if (this.headers)
             Object.assign(this.headersModel, this.headers);
         setTimeout(function () {
             _this.route = _this.route || {};
-            _this.hostModelChange.emit(_this.hostModel);
+            //this.hostModelChange.emit(this.hostModel)
         }, 0);
     };
     TestRoute.prototype.setContentType = function (type) {
@@ -78,9 +80,7 @@ var TestRoute = (function () {
         this.tryingSend = true;
         this.response = null;
         this.error = null;
-        if (this.hostModel) {
-            this.send();
-        }
+        this.send();
     };
     TestRoute.prototype.getProtocol = function () {
         if (this.hostModel.hostname.search(/^http(s)?:/) >= 0)
@@ -89,11 +89,17 @@ var TestRoute = (function () {
     };
     TestRoute.prototype.send = function () {
         var _this = this;
-        var port = this.hostModel.port || 80;
-        var protocol = this.getProtocol();
-        var host = protocol + this.hostModel.hostname;
-        var route = (this.pathModel.substring(0, 1) == '/' ? '' : '/') + this.pathModel;
-        var url = host + ':' + port + route;
+        var port = 80;
+        var host = "";
+        var route = this.pathModel;
+        if (this.hostModel) {
+            var protocol = this.getProtocol();
+            port = this.hostModel.port || port;
+            host = protocol + this.hostModel.hostname + ':' + port;
+            route = (this.pathModel.substring(0, 1) == '/' ? '' : '/') + this.pathModel;
+        }
+        var url = host + route;
+        console.log("url", url);
         var config = {
             method: this.methodModel,
             url: url,

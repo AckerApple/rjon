@@ -1,8 +1,8 @@
 import { Input, Output, Component, EventEmitter } from '@angular/core'
-import { fxArray } from "./prefx"
+import { fxArray } from "ack-angular-fx"
 import { string as editRoute } from "./templates/edit-route.pug"
 import { pipes } from "ack-angular/pipes.class"
-import * as rjonHelper from "./rjonHelper"
+//import * as rjonHelper from "./rjonHelper"
 import { statIconMap } from "./statIconMap"
 import { Tester } from "./rjonTester"
 
